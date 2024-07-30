@@ -90,6 +90,7 @@ export default {
   line-height: 1.2;
   font-family: "Londrina Solid", sans-serif;
   color: var(--text-color);
+  letter-spacing: 1.1px;
 }
 
 .video--work {

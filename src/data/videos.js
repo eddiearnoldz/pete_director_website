@@ -1,8 +1,8 @@
 export const videos = [
   {
-    title: "BBC STADIUM | SKY | COMMERCIAL",
+    title: "BBC Stadium Olympics | BBC | COMMERCIAL",
     image: '/assets/gifs/BBC_stadiumUK_full_length.gif',
-    filters: ['work_director', 'year_2022', 'clients_mazda' ],
+    filters: ['work_director', 'work_director', 'year_2012', 'clients_bbc' ],
     videoUrl: 'https://www.youtube.com/watch?v=kGVWEKP-32M'
   },
   {
@@ -52,6 +52,12 @@ export const videos = [
     image: '/assets/gifs/Gorillaz-19-2000.gif',
     filters: ['work_director', 'year_2018', 'clients_gorillaz'],
     videoUrl: 'https://www.youtube.com/watch?v=G1TvbXZDM-o'
+  },
+  {
+    title: "The Beatles - Outro | Rock Band | COMMERCIAL",
+    image: '/assets/gifs/The-Beatles-Rockband-Outro.gif',
+    filters: ['work_animator','year_2020', 'clients_renault'],
+    videoUrl: 'https://www.youtube.com/watch?v=1jThha5eKNg'
   },
   {
     title: "One Way Out | Gorillaz | Music Video",

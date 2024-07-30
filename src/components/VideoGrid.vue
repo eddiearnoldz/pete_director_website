@@ -93,37 +93,31 @@ export default defineComponent({
     const getGridTemplateColumns = (pos) => {
       switch (pos) {
         case 1:
-        case 6:
-        case 11:
-        case 16:
-        case 21:
-          return '40vw 15vw 15vw 15vw 15vw';
-        case 2:
         case 7:
-        case 12:
-        case 17:
-        case 22:
-          return '15vw 40vw 15vw 15vw 15vw';
-        case 3:
-        case 8:
         case 13:
-        case 18:
-        case 23:
-          return '15vw 15vw 40vw 15vw 15vw';
-        case 4:
-        case 9:
+        return '40vw 12vw 12vw 12vw 12vw 12vw';
+        case 2:
+        case 8:
         case 14:
-        case 19:
-        case 24:
-          return '15vw 15vw 15vw 40vw 15vw';
-        case 5:
-        case 10:
+          return '12vw 40vw 12vw 12vw 12vw 12vw';
+        case 3:
+        case 9:
         case 15:
-        case 20:
-        case 25:
-          return '15vw 15vw 15vw 15vw 40vw';
+          return '12vw 12vw 40vw 12vw 12vw 12vw';
+        case 4:
+        case 10:
+        case 16:
+          return '12vw 12vw 12vw 40vw 12vw 12vw';
+        case 5:
+        case 11:
+        case 17:
+          return '12vw 12vw 12vw 12vw 40vw 12vw ';
+        case 6:
+        case 12:
+        case 18:
+          return '12vw 12vw 12vw 12vw 12vw 40vw';
         default:
-          return '40vw 15vw 15vw 15vw 15vw';
+          return '40vw 12vw 12vw 12vw 12vw 12vw';
       }
     };
 
@@ -134,18 +128,21 @@ export default defineComponent({
         case 3:
         case 4:
         case 5:
-          return '60% 20% 20%';
         case 6:
+          return '60% 20% 20%';
         case 7:
         case 8:
         case 9:
         case 10:
-          return '20% 60% 20%';
         case 11:
         case 12:
+          return '20% 60% 20%';
         case 13:
         case 14:
         case 15:
+        case 16:
+        case 17:
+        case 18:
           return '20% 20% 60%';
         default:
           return '60% 20% 20%';
@@ -164,7 +161,7 @@ export default defineComponent({
 <style scoped>
 .video-grid {
   display: grid;
-  grid-template-columns: 40vw 15vw 15vw 15vw 15vw;
+  grid-template-columns: 40vw 12vw 12vw 12vw 12vw 12vw;
   grid-template-rows: 60% 20% 20%;
   padding: 2rem;
   padding-left: 0;

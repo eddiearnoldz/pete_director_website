@@ -219,7 +219,7 @@ export default defineComponent({
   }
 
   .clear-filters {
-    right: 2rem;
+    left: 0;
     bottom: 2rem;
     font-size: 1.7rem;
   }
