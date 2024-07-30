@@ -1,6 +1,7 @@
 :root {
   --text-color: #ef5512;
   --text-color-hover: #0E5302;
+  --background-color: #facdcd;
 }
 
 html,
@@ -8,7 +9,7 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  background-color: #fdbdbd;
+  background-color: var(--background-color);
   color: var(--text-color);
   font-family:"Architects Daughter", cursive;;
 }
@@ -37,7 +38,7 @@ header {
   padding: 1rem;
   justify-content: space-between;
   z-index: 3;
-  background-image: linear-gradient(to bottom,#fdbdbd, rgba(0, 0, 0, 0) 100%);
+  background-image: linear-gradient(to bottom,#facdcd, rgba(0, 0, 0, 0) 100%);
 }
 
 .logo {
