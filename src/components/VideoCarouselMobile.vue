@@ -6,7 +6,9 @@
       :class="['slide', { 'active-slide': activeIndex === index }]"
       :style="getSlideStyle(index)"
     >
-      <img :src="video.thumbnail" :alt="video.title" class="video-image" />
+      <div class="image-container">
+        <img :src="video.thumbnail" :alt="video.title" class="video-image" />
+      </div>
     </div>
   </div>
 </template>
@@ -150,11 +152,48 @@ export default defineComponent({
   scroll-snap-align: start;
 }
 
+.image-container {
+  width: 100%;
+  height: 25vh;
+  overflow: hidden;
+  position: relative;
+}
+
 .video-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 2px;
+  animation: zoom-in-out 20s infinite;
+  position: absolute;
+}
+
+.slide:nth-of-type(2n) .video-image {
+  animation: zoom-in-out-reverse 20s infinite;
+}
+
+@keyframes zoom-in-out {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes zoom-in-out-reverse {
+  0% {
+    transform: scale(1.4);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.4);
+  }
 }
 
 </style>

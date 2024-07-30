@@ -151,13 +151,14 @@ export default defineComponent({
   overflow: hidden;
   opacity: 0;
   animation: fadeIn 2s forwards;
-  z-index: 3;
+  z-index: 1;
 }
 
 @media screen and (min-width:768px) {
   .video_gallery {
     top: 75px;
     height: calc(100% - 75px);
+    z-index: 3;
   }
 }
 
