@@ -45,7 +45,6 @@ export default defineComponent({
 
     const handleMouseOver = (video, pos) => {
       try {
-        lastHoveredPos.value = pos;
         
         const work = video.filters
           .filter(filter => filter.includes('work'))
@@ -74,22 +73,12 @@ export default defineComponent({
     const handleMouseLeave = () => {
       try {
         updatevideoTitle('', '', '');
-
-        if (lastHoveredPos.value) {
           const gridContainer = document.querySelector('.video-grid');
-          gridContainer.style.gridTemplateColumns = getGridTemplateColumns(lastHoveredPos.value);
-          gridContainer.style.gridTemplateRows = getGridTemplateRows(lastHoveredPos.value);
+          gridContainer.style.gridTemplateColumns = getGridTemplateColumns('40vw 12vw 12vw 12vw 12vw 12vw');
+          gridContainer.style.gridTemplateRows = getGridTemplateRows('60% 20% 20%');
           gridContainer.style.transition = 'grid-template-columns 1s ease, grid-template-rows 1s ease';
 
-          document.querySelectorAll('.grid-item').forEach(item => {
-            item.classList.remove('enlarged', 'shrunken');
-            if (item.getAttribute('data-pos') == lastHoveredPos.value) {
-              item.classList.add('enlarged');
-            } else {
-              item.classList.add('shrunken');
-            }
-          });
-        }
+          document.querySelectorAll('.grid-item')[0].classList.add('enlarged');
       } catch (error) {
         console.error('Error in handleMouseLeave:', error);
       }

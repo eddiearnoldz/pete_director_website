@@ -108,6 +108,10 @@ export default defineComponent({
       };
     };
 
+    const closePlayer = () => {
+      selectedVideo.value = null;
+    };
+
     onMounted(() => {
       window.addEventListener('resize', updateView);
     });
@@ -147,6 +151,7 @@ export default defineComponent({
   overflow: hidden;
   opacity: 0;
   animation: fadeIn 2s forwards;
+  z-index: 3;
 }
 
 @media screen and (min-width:768px) {

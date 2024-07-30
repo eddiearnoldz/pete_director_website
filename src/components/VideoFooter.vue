@@ -52,7 +52,7 @@ export default {
     backgroundStyle() {
       if (window.innerWidth >= 768) {
         return {
-          backgroundImage: `linear-gradient(to top, var(--text-color-hover), var(--text-color-hover) 100%)`,
+          backgroundColor: `linear-gradient(to top, var(--text-color-hover), var(--text-color-hover) 100%)`,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
