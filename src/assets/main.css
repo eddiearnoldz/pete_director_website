@@ -1,0 +1,120 @@
+:root {
+  --text-color: #ef5512;
+  --text-color-hover: #0E5302;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #fdbdbd;
+  color: var(--text-color);
+  font-family:"Architects Daughter", cursive;;
+}
+
+#app {
+  height: 100dvh;
+  width: 100vw;
+
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  width: calc(100% - 2rem);
+  padding: 1rem;
+  justify-content: space-between;
+  z-index: 3;
+}
+
+.logo {
+  z-index: 1;
+}
+
+.logo a {
+  font-size: 40px;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.4s;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  font-size: 40px;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.4s;
+  position: relative;
+}
+
+nav a::before {
+ content: '';
+ position: absolute;
+ width: 0%;
+ transform: rotate(3deg);
+ transform-origin: bottom left;
+ bottom: 0;
+ height: 4px;
+ background-color: var( --text-color-hover);
+  transition: width 0.4s;
+}
+
+nav a.router-link-active {
+  color: var(--text-color-hover);
+}
+
+nav a.router-link-active::before {
+  width: 100%;
+  transition: width 0.4s;
+}
+
+nav a:nth-of-type(2n):before {
+  transform: rotate(-3deg);
+}
+
+nav a:hover::before {
+ width: 100%;
+  transition: width 0.4s;
+}
+
+ nav a:hover,
+ .logo a:hover {
+  color: var( --text-color-hover);
+  transition: color 0.4s;
+}
+
+.londrina-solid-regular {
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.architects-daughter-regular {
+  font-family: "Architects Daughter", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@media screen and (min-width:768px) {
+  header {
+    padding: 1rem 2rem;
+    width: calc(100% - 4rem);
+  }
+}
+
+
