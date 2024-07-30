@@ -170,7 +170,7 @@ export default defineComponent({
   padding-left: 0;
   overflow-x: scroll;
   height: 70vh;
-  width: max-content;
+  width: 100%;
   margin-left: auto;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;

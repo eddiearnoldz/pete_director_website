@@ -122,6 +122,7 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 @media screen and (min-width:768px) {
