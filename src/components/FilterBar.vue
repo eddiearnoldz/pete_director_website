@@ -229,4 +229,11 @@ export default defineComponent({
     transition: color 0.4s;
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .filter-bar {
+    width: 40%;
+    overflow: visible;
+  }
+}
 </style>

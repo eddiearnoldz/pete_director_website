@@ -52,11 +52,10 @@ export default {
     backgroundStyle() {
       if (window.innerWidth >= 768) {
         return {
-          backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 100%), url(${this.activevideoImage})`,
+          backgroundImage: `linear-gradient(to top, var(--text-color-hover), var(--text-color-hover) 100%)`,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
-          color: 'transparent',
           backgroundClip: 'text',
           WebkitBackgroundClip: 'text'
         };
@@ -89,12 +88,15 @@ export default {
   font-weight: bold; /* Adjust as needed */
   text-align: left;
   line-height: 1.2;
+  font-family: "Londrina Solid", sans-serif;
+  color: var(--text-color);
 }
 
 .video--work {
   font-size: 16px;
   text-align: right;
   margin-top: 0.5rem;
+  color: var(--text-color-hover);
 }
 
 .title-wrapper {
@@ -136,20 +138,30 @@ export default {
 
   .title-wrapper {
     margin-left: auto;
-    flex-direction: row;
+    flex-direction: column;
     width: max-content;
-    gap: 10px;
+    gap: 0px;
+    width: 100%;
   }
 }
 
 @media screen and (min-width: 1024px) {
   
   .video-title {
-    font-size: 40px;
+    font-size: clamp(40px, 2.2vw, 60px);
+    margin-right: 0;
+    margin-left: auto;
+    width: 100%;
+    text-align: right;
   }
 
   .video--work {
     font-size: 30px;
+    margin-right: 0;
+    margin-left: auto;
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
   }
 
   .video-footer {
@@ -157,7 +169,8 @@ export default {
   }
 
   .title-wrapper {
-    width: 50%;
+    width: auto;
+    height: 100%;
   }
 }
 </style>

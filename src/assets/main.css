@@ -23,8 +23,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
   width: 100%;
+  position: absolute;
+  top: 75px;
 }
 
 header {
@@ -36,6 +37,7 @@ header {
   padding: 1rem;
   justify-content: space-between;
   z-index: 3;
+  background-image: linear-gradient(to bottom,#fdbdbd, rgba(0, 0, 0, 0) 100%);
 }
 
 .logo {

@@ -97,33 +97,33 @@ export default defineComponent({
         case 11:
         case 16:
         case 21:
-          return '50vw 20vw 20vw 20vw 20vw';
+          return '40vw 15vw 15vw 15vw 15vw';
         case 2:
         case 7:
         case 12:
         case 17:
         case 22:
-          return '20vw 50vw 20vw 20vw 20vw';
+          return '15vw 40vw 15vw 15vw 15vw';
         case 3:
         case 8:
         case 13:
         case 18:
         case 23:
-          return '20vw 20vw 50vw 20vw 20vw';
+          return '15vw 15vw 40vw 15vw 15vw';
         case 4:
         case 9:
         case 14:
         case 19:
         case 24:
-          return '20vw 20vw 20vw 50vw 20vw';
+          return '15vw 15vw 15vw 40vw 15vw';
         case 5:
         case 10:
         case 15:
         case 20:
         case 25:
-          return '20vw 20vw 20vw 20vw 50vw';
+          return '15vw 15vw 15vw 15vw 40vw';
         default:
-          return '50vw 20vw 25vw 20vw 20vw';
+          return '40vw 15vw 15vw 15vw 15vw';
       }
     };
 
@@ -134,21 +134,21 @@ export default defineComponent({
         case 3:
         case 4:
         case 5:
-          return '50% 25% 25%';
+          return '60% 20% 20%';
         case 6:
         case 7:
         case 8:
         case 9:
         case 10:
-          return '25% 50% 25%';
+          return '20% 60% 20%';
         case 11:
         case 12:
         case 13:
         case 14:
         case 15:
-          return '25% 25% 50%';
+          return '20% 20% 60%';
         default:
-          return '50% 25% 25%';
+          return '60% 20% 20%';
       }
     };
 
@@ -164,8 +164,8 @@ export default defineComponent({
 <style scoped>
 .video-grid {
   display: grid;
-  grid-template-columns: 50vw 20vw 20vw 20vw 20vw;
-  grid-template-rows: 50% 25% 25%;
+  grid-template-columns: 40vw 15vw 15vw 15vw 15vw;
+  grid-template-rows: 60% 20% 20%;
   padding: 2rem;
   padding-left: 0;
   overflow-x: scroll;

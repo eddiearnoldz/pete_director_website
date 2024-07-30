@@ -123,13 +123,20 @@ export default defineComponent({
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
 }
 
 @media screen and (min-width:768px) {
   .video_gallery {
     top: 75px;
     height: calc(100% - 75px);
+  }
+}
 
+@keyframes fadeIn {
+  to {
+    opacity: 1;
   }
 }
 </style>

@@ -36,7 +36,7 @@ export const videos = [
     videoUrl: 'https://www.youtube.com/watch?v=G1TvbXZDM-o'
   },
   {
-    title: "Five and the Miss Jewels | Great Western Railway | COMMERCIAL",
+    title: "Five and the Missing Jewels | Great Western Railway | COMMERCIAL",
     image: '/assets/gifs/Great-Western-Railway-Five-&-The-Missing-Jewels.gif',
     filters: ['work_director', 'year_2018', 'clients_gorillaz'],
     videoUrl: 'https://www.youtube.com/watch?v=1jThha5eKNg'
@@ -54,7 +54,7 @@ export const videos = [
     videoUrl: 'https://www.youtube.com/watch?v=G1TvbXZDM-o'
   },
   {
-    title: "One Way Out | Grillaz | Music Video",
+    title: "One Way Out | Gorillaz | Music Video",
     image: '/assets/gifs/Gorillaz-DARE-(Official-Video).gif',
     filters: ['work_director', 'year_2018', 'clients_gorillaz'],
     videoUrl: 'https://www.youtube.com/watch?v=G1TvbXZDM-o'

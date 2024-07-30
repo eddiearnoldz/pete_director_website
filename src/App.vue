@@ -16,7 +16,7 @@ const closeMobileMenu = () => {
 <template>
   <header>
     <div class="logo">
-      <RouterLink class="londrina-solid-regular" to="/"><span>PETE DIRECTOR</span></RouterLink>
+      <RouterLink class="londrina-solid-regular" to="/"><span>PETE CANDELAND</span></RouterLink>
     </div>
     <nav class="desktop-nav">
       <RouterLink class="londrina-solid-regular" to="/" @click="closeMobileMenu">work</RouterLink>
