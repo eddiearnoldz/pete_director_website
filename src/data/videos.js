@@ -1,9 +1,21 @@
 export const videos = [
   {
+    title: "Tomorrow | Gorillaz | usic Video",
+    image: '/assets/gifs/Gorillaz-Tomorrow-Comes-Today-(Official-Video)-720p.gif',
+    filters: ['work_director', 'year_2018', 'clients_gorillaz'],
+    videoUrl: 'https://www.youtube.com/watch?v=1jThha5eKNg'
+  },
+  {
     title: "BBC Stadium Olympics | BBC | COMMERCIAL",
     image: '/assets/gifs/BBC_stadiumUK_full_length.gif',
     filters: ['work_director', 'work_director', 'year_2012', 'clients_bbc' ],
     videoUrl: 'https://www.youtube.com/watch?v=kGVWEKP-32M'
+  },
+  {
+    title: "Stylo | Gorillaz | Music Video",
+    image: '/assets/gifs/Gorillaz-Stylo-(Official-Video).gif',
+    filters: ['work_director', 'year_2018', 'clients_gorillaz'],
+    videoUrl: 'https://www.youtube.com/watch?v=1jThha5eKNg'
   },
   {
     title: "MAZDA | COMMERCIAL",
@@ -24,10 +36,10 @@ export const videos = [
     videoUrl: 'https://www.youtube.com/watch?v=kGVWEKP-32M'
   },
   {
-    title: "The Beatles | Rock Band | COMMERCIAL",
-    image: '/assets/gifs/Beatles_Rockband.gif',
-    filters: ['work_animator','year_2020', 'clients_renault'],
-    videoUrl: 'https://www.youtube.com/watch?v=1jThha5eKNg'
+    title: "19 2000 | Gorillaz | Music Video",
+    image: '/assets/gifs/Gorillaz-19-2000.gif',
+    filters: ['work_director', 'year_2018', 'clients_gorillaz'],
+    videoUrl: 'https://www.youtube.com/watch?v=G1TvbXZDM-o'
   },
   {
     title: "Sky Go | Sky | FILM",
@@ -42,14 +54,14 @@ export const videos = [
     videoUrl: 'https://www.youtube.com/watch?v=1jThha5eKNg'
   },
   {
-    title: "Finlandia | Finland | COMMERCIAL",
-    image: '/assets/gifs/FINLANDIA.gif',
+    title: "Rock The House | Gorillaz | Music Video",
+    image: '/assets/gifs/Gorillaz-Rock-The-House-(Official-Video).gif',
     filters: ['work_director', 'year_2018', 'clients_gorillaz'],
-    videoUrl: 'https://www.youtube.com/watch?v=G1TvbXZDM-o'
+    videoUrl: 'https://www.youtube.com/watch?v=1jThha5eKNg'
   },
   {
-    title: "19 2000 | Gorillaz | Music Video",
-    image: '/assets/gifs/Gorillaz-19-2000.gif',
+    title: "Finlandia | Finland | COMMERCIAL",
+    image: '/assets/gifs/FINLANDIA.gif',
     filters: ['work_director', 'year_2018', 'clients_gorillaz'],
     videoUrl: 'https://www.youtube.com/watch?v=G1TvbXZDM-o'
   },
@@ -83,27 +95,16 @@ export const videos = [
     filters: ['work_director', 'year_2018', 'clients_gorillaz'],
     videoUrl: 'https://www.youtube.com/watch?v=1jThha5eKNg'
   },
+
   {
-    title: "Rock The House | Gorillaz | Music Video",
-    image: '/assets/gifs/Gorillaz-Rock-The-House-(Official-Video).gif',
-    filters: ['work_director', 'year_2018', 'clients_gorillaz'],
-    videoUrl: 'https://www.youtube.com/watch?v=1jThha5eKNg'
-  },
-  {
-    title: "Stylo | Gorillaz | Music Video",
-    image: '/assets/gifs/Gorillaz-Stylo-(Official-Video).gif',
-    filters: ['work_director', 'year_2018', 'clients_gorillaz'],
+    title: "The Beatles | Rock Band | COMMERCIAL",
+    image: '/assets/gifs/Beatles_Rockband.gif',
+    filters: ['work_animator','year_2020', 'clients_renault'],
     videoUrl: 'https://www.youtube.com/watch?v=1jThha5eKNg'
   },
   {
     title: "On Melancholy Hill | Gorillaz | usic Video",
     image: '/assets/gifs/Gorillaz-On-Melancholy-Hill-(Official Video).gif',
-    filters: ['work_director', 'year_2018', 'clients_gorillaz'],
-    videoUrl: 'https://www.youtube.com/watch?v=1jThha5eKNg'
-  },
-  {
-    title: "Tomorrow | Gorillaz | usic Video",
-    image: '/assets/gifs/Gorillaz-Tomorrow-Comes-Today-(Official-Video)-720p.gif',
     filters: ['work_director', 'year_2018', 'clients_gorillaz'],
     videoUrl: 'https://www.youtube.com/watch?v=1jThha5eKNg'
   }
