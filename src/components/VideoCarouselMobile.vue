@@ -6,7 +6,7 @@
       :class="['slide', { 'active-slide': activeIndex === index }]"
       :style="getSlideStyle(index)"
     >
-      <img :src="video.image" :alt="video.title" class="video-image" />
+      <img :src="video.thumbnail" :alt="video.title" class="video-image" />
     </div>
   </div>
 </template>

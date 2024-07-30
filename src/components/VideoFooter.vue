@@ -121,6 +121,7 @@ export default {
   
   .video--work {
     font-size: 20px;
+    min-height: 30px;
   }
 
   .video-footer {
@@ -139,7 +140,7 @@ export default {
 
   .title-wrapper {
     margin-left: auto;
-    flex-direction: column;
+    flex-direction: row;
     width: max-content;
     gap: 0px;
     width: 100%;

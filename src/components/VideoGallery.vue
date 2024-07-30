@@ -5,13 +5,14 @@
       :videos="filteredvideos" 
       :selectedFilters="selectedFilters"
       @update-video-title="updatevideoTitle"
-    ></video-carousel-mobile>
+    />
     <video-grid 
       v-else 
       :videos="filteredvideos" 
       :selectedFilters="selectedFilters"
       @update-video-title="updatevideoTitle"
-    ></video-grid>
+      @video-selected="selectVideo"
+    />
     <video-footer 
       :filters="filters" 
       :toggleFilter="toggleFilter" 
@@ -20,7 +21,15 @@
       :activevideoImage="activevideoImage"
       :activevideoWork="activevideoWork"
       :selectedFilters="selectedFilters"
-    ></video-footer>
+    />
+    <VideoPlayer
+      v-if="selectedVideo"
+      :video-url="selectedVideo.videoUrl"
+      :autoplay="selectedVideo.autoplay"
+      :loop="selectedVideo.loop"
+      :controls="selectedVideo.controls"
+      @close="selectedVideo = null"
+    />
   </div>
 </template>
 
@@ -30,9 +39,10 @@ import videoCarouselMobile from '@/components/VideoCarouselMobile.vue';
 import videoGrid from '@/components/VideoGrid.vue';
 import videoFooter from '@/components/VideoFooter.vue';
 import { videos } from '@/data/videos';
+import VideoPlayer from '@/components/VideoPlayer.vue';
 
 export default defineComponent({
-  components: { videoCarouselMobile, videoGrid, videoFooter },
+  components: { videoCarouselMobile, videoGrid, videoFooter, VideoPlayer },
   setup() {
     const isMobileView = ref(window.innerWidth < 768);
     const selectedFilters = ref([]);
@@ -57,6 +67,7 @@ export default defineComponent({
     const activevideoTitle = ref('');
     const activevideoImage = ref('');
     const activevideoWork = ref([]);
+    const selectedVideo = ref(null);
 
     const toggleFilter = filter => {
       const index = selectedFilters.value.indexOf(filter);
@@ -85,7 +96,16 @@ export default defineComponent({
     const updatevideoTitle = ({ title, image, work }) => {
       activevideoTitle.value = title;
       activevideoImage.value = image;
-      activevideoWork.value = work;
+      activevideoWork.value = Array.isArray(work) ? work : [work];
+    };
+
+    const selectVideo = (video) => {
+      selectedVideo.value = {
+        videoUrl: video.videoUrl,
+        autoplay: true,
+        loop: false,
+        controls: true,
+      };
     };
 
     onMounted(() => {
@@ -107,7 +127,9 @@ export default defineComponent({
       updatevideoTitle,
       toggleFilter,
       clearFilters,
-      filteredvideos
+      filteredvideos,
+      selectVideo,
+      selectedVideo
     };
   }
 });
@@ -115,10 +137,10 @@ export default defineComponent({
 
 <style scoped>
 .video_gallery {
-  position: absolute;
+  position: relative;
   top: 0;
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

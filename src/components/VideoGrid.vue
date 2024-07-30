@@ -7,6 +7,7 @@
       :data-pos="index + 1"
       @mouseover="handleMouseOver(video, index + 1)"
       @mouseleave="handleMouseLeave"
+      @click="handleClick(video)"
     >
       <img :src="video.image" :alt="video.title" class="video-image" />
     </div>
@@ -27,7 +28,7 @@ export default defineComponent({
       default: () => []
     }
   },
-  emits: ['update-video-title'],
+  emits: ['update-video-title', 'video-selected'],
   setup(props, { emit }) {
     const lastHoveredPos = ref(null); // Store the last hovered position
 
@@ -44,8 +45,12 @@ export default defineComponent({
 
     const handleMouseOver = (video, pos) => {
       try {
-        lastHoveredPos.value = pos; // Update the last hovered position
-        const work = video.filters.filter(filter => filter.includes('work')).map(filter => filter.replace('work_', '').replace("-", " "));
+        lastHoveredPos.value = pos;
+        
+        const work = video.filters
+          .filter(filter => filter.includes('work'))
+          .map(filter => filter.replace('work_', '').replace("-", " "));
+
         updatevideoTitle(video.title, video.image, work);
 
         const gridContainer = document.querySelector('.video-grid');
@@ -88,6 +93,10 @@ export default defineComponent({
       } catch (error) {
         console.error('Error in handleMouseLeave:', error);
       }
+    };
+
+    const handleClick = (video) => {
+      emit('video-selected', video);
     };
 
     const getGridTemplateColumns = (pos) => {
@@ -152,7 +161,8 @@ export default defineComponent({
     return {
       filteredvideos,
       handleMouseOver,
-      handleMouseLeave
+      handleMouseLeave,
+      handleClick,
     };
   },
 });
