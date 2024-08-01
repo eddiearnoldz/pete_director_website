@@ -44,21 +44,21 @@ export const videos = [
   {
     title: "19 2000 | Gorillaz | Music Video",
     image: '/assets/gifs/Gorillaz-19-2000.gif',
-    filters: ['work_director', 'year_2018', 'clients_gorillaz'],
+    filters: ['work_director', 'work_gorillaz', 'year_2018', 'clients_gorillaz'],
     videoUrl: 'https://www.youtube.com/watch?v=G1TvbXZDM-o',
     thumbnail: '/assets/thumbnails/gorillaz_19_2000.webp'
   },
   {
     title: "Sky Go | Sky | FILM",
     image: '/assets/gifs/Sky0-Directors-Cut.gif',
-    filters: ['work_director', 'year_2018', 'clients_gorillaz'],
+    filters: ['work_director', 'year_2018', 'clients_sky'],
     videoUrl: 'https://www.youtube.com/watch?v=G1TvbXZDM-o',
     thumbnail: '/assets/thumbnails/sky_commercial.webp'
   },
   {
     title: "Five and the Missing Jewels | Great Western Railway | COMMERCIAL",
     image: '/assets/gifs/Great-Western-Railway-Five-&-The-Missing-Jewels.gif',
-    filters: ['work_director', 'year_2018', 'clients_gorillaz'],
+    filters: ['work_director', 'year_2018', 'clients_great-western'],
     videoUrl: 'https://www.youtube.com/watch?v=1jThha5eKNg',
     thumbnail: '/assets/thumbnails/great_western_five_missing_jewels.webp'
   },
@@ -72,7 +72,7 @@ export const videos = [
   {
     title: "Finlandia | Finland | COMMERCIAL",
     image: '/assets/gifs/FINLANDIA.gif',
-    filters: ['work_director', 'year_2018', 'clients_gorillaz'],
+    filters: ['work_director', 'year_2018', 'clients_finlandia'],
     videoUrl: 'https://www.youtube.com/watch?v=G1TvbXZDM-o',
     thumbnail: '/assets/thumbnails/finlandia.webp'
   },
@@ -86,28 +86,28 @@ export const videos = [
   {
     title: "DARE | Gorillaz | Music Video",
     image: '/assets/gifs/Gorillaz-DARE-(Official-Video).gif',
-    filters: ['work_director', 'year_2018', 'clients_gorillaz'],
+    filters: ['work_director', 'work_gorillaz', 'year_2018', 'clients_gorillaz'],
     videoUrl: 'https://www.youtube.com/watch?v=G1TvbXZDM-o',
     thumbnail: '/assets/thumbnails/gorillaz_dare.webp'
   },
   {
     title: "Dirty Harry | Gorillaz | Music Video",
     image: '/assets/gifs/Gorillaz-Dirty-Harry-(Official-Video)-360p.gif',
-    filters: ['work_director', 'year_2018', 'clients_gorillaz'],
+    filters: ['work_director', 'work_gorillaz', 'year_2018', 'clients_gorillaz'],
     videoUrl: 'https://www.youtube.com/watch?v=kGVWEKP-32M',
     thumbnail: '/assets/thumbnails/gorillaz_dirty_harry.webp'
   },
   {
     title: "El Mañana | Gorillaz | Music Video",
     image: '/assets/gifs/Gorillaz-El-Manana.gif',
-    filters: ['work_director', 'year_2018', 'clients_gorillaz'],
+    filters: ['work_director', 'work_gorillaz', 'year_2018', 'clients_gorillaz'],
     videoUrl: 'https://www.youtube.com/watch?v=1jThha5eKNg',
     thumbnail: '/assets/thumbnails/gorillaz_el_manana.webp'
   },
   {
     title: "Feel Good Inc | Gorillaz | Music Video",
     image: '/assets/gifs/Gorillaz-Feel-Good-Inc.-(Official-Video).gif',
-    filters: ['work_director', 'year_2018', 'clients_gorillaz'],
+    filters: ['work_director', 'work_gorillaz', 'year_2018', 'clients_gorillaz'],
     videoUrl: 'https://www.youtube.com/watch?v=1jThha5eKNg',
     thumbnail: '/assets/thumbnails/gorillaz_feel_good_inc.webp'
   },
@@ -122,7 +122,7 @@ export const videos = [
   {
     title: "On Melancholy Hill | Gorillaz | Music Video",
     image: '/assets/gifs/Gorillaz-On-Melancholy-Hill-(Official Video).gif',
-    filters: ['work_director', 'year_2018', 'clients_gorillaz'],
+    filters: ['work_director', 'work_gorillaz', 'year_2018', 'clients_gorillaz'],
     videoUrl: 'https://www.youtube.com/watch?v=1jThha5eKNg',
     thumbnail: '/assets/thumbnails/gorillaz_on_melancholy_hill.webp'
   }
