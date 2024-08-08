@@ -79,7 +79,7 @@ export const videos = [
   {
     title: "The Beatles - Outro | Rock Band | COMMERCIAL",
     image: '/assets/gifs/The-Beatles-Rockband-Outro.gif',
-    filters: ['work_animator','year_2020', 'clients_renault'],
+    filters: ['work_animator','year_2020', 'rockband'],
     videoUrl: 'https://www.youtube.com/watch?v=1jThha5eKNg',
     thumbnail: '/assets/thumbnails/beatles_outro.webp'
   },
@@ -115,7 +115,7 @@ export const videos = [
   {
     title: "The Beatles | Rock Band | COMMERCIAL",
     image: '/assets/gifs/Beatles_Rockband.gif',
-    filters: ['work_animator','year_2020', 'clients_renault'],
+    filters: ['work_animator','year_2020', 'clients_rockband'],
     videoUrl: 'https://www.youtube.com/watch?v=1jThha5eKNg',
     thumbnail: '/assets/thumbnails/rockband_beatles.webp'
   },
