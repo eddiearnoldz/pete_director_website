@@ -3,14 +3,14 @@ export const videos = [
     title: "Tomorrow | Gorillaz | Music Video",
     image: '/assets/gifs/Gorillaz-Tomorrow-Comes-Today-(Official-Video)-720p.gif',
     filters: ['work_director', 'year_2018', 'clients_gorillaz'],
-    videoUrl: 'https://vimeo.com/377951727',
+    videoUrl: 'https://vimeo.com/678279129',
     thumbnail:'/assets/thumbnails/gorillaz_tomorrow.webp'
   },
   {
     title: "BBC Stadium Olympics | BBC | COMMERCIAL",
     image: '/assets/gifs/BBC_stadiumUK_full_length.gif',
     filters: ['work_director', 'work_animator', 'year_2012', 'clients_bbc' ],
-    videoUrl: 'https://www.youtube.com/watch?v=kGVWEKP-32M',
+    videoUrl: 'https://vimeo.com/800348039',
     thumbnail: '/assets/thumbnails/bbc_olympics.webp'
   },
   {
@@ -126,5 +126,4 @@ export const videos = [
     videoUrl: 'https://www.youtube.com/watch?v=1jThha5eKNg',
     thumbnail: '/assets/thumbnails/gorillaz_on_melancholy_hill.webp'
   }
-  
 ];

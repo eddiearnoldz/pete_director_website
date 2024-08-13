@@ -57,10 +57,10 @@ export default defineComponent({
       'year_2023',
       'year_2024',
       'clients_gorillaz',
+      'clients_great-western',
       'clients_bbc',
       'clients_mazda',
       'clients_sky',
-      'clients_great-western',
       'clients_rockband',
       'clients_finlandia'
     ]);

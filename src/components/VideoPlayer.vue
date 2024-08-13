@@ -5,7 +5,7 @@
         ref="videoPlayer"
         :video-url="videoUrl"
         class="embed-container"
-        :options="{'responsive':true, muted: true, autoplay: autoplay, loop: loop, controls: controls}"
+        :options="{'responsive':true, autoplay: autoplay, loop: loop, controls: controls}"
         @ready="onPlayerReady"
       />
       <button @click="closePlayer" class="close-button">X</button>
