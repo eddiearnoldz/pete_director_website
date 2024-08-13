@@ -1,6 +1,7 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
+import gsap from 'gsap'
 
 const showMobileMenu = ref(false)
 
@@ -11,6 +12,99 @@ const toggleMobileMenu = () => {
 const closeMobileMenu = () => {
   showMobileMenu.value = false
 }
+
+const isMobile = () => window.innerWidth <= 768
+
+onMounted(() => {
+  const logoText = document.querySelector('.logo span')
+  logoText.innerHTML = logoText.textContent
+    .split('')
+    .map((letter) => `<span class="letter">${letter === ' ' ? '&nbsp;' : letter}</span>`)
+    .join('')
+
+  const letters = document.querySelectorAll('.logo .letter')
+  const navLinks = document.querySelectorAll('.desktop-nav a')
+
+  // Split the text in nav links into individual letters
+  navLinks.forEach((link) => {
+    const linkText = link.textContent
+    link.innerHTML = linkText
+      .split('')
+      .map((letter) => `<span class="letter">${letter === ' ' ? '&nbsp;' : letter}</span>`)
+      .join('')
+  })
+
+  const navLetters = document.querySelectorAll('.desktop-nav .letter')
+
+  // Create a GSAP timeline for the logo letters
+  const tl = gsap.timeline({
+    onComplete: () => {
+      // Cleanup or additional actions after the timeline finishes
+      letters.forEach((letter) => {
+        // Ensure the final state is set correctly
+        gsap.set(letter, { clearProps: 'all' })
+      })
+    }
+  })
+
+  // Add a scaling effect on load for each letter
+  tl.fromTo(
+    letters,
+    { y: -20, opacity: 0, rotate: -20 },
+    {
+      y: 0,
+      opacity: 1,
+      rotate: 0,
+      ease: 'elastic.out(1,0.3)',
+      duration: 3,
+      delay: 0.5,
+      stagger: 0.05
+    }
+  )
+
+  // Add hover animations for each letter in the logo
+  if (!isMobile()) {
+    letters.forEach((letter) => {
+      letter.addEventListener('mouseenter', () => {
+        gsap.to(letter, {
+          y: 10,
+          ease: 'elastic.out(1, 0.9)',
+          duration: 3
+        })
+      })
+
+      letter.addEventListener('mouseleave', () => {
+        gsap.to(letter, {
+          y: 0,
+          ease: 'elastic.out(1, 0.9)',
+          duration: 3,
+          transformOrigin: 'center'
+        })
+      })
+    })
+
+    // Apply the same hover animations to each individual letter of the nav links
+    navLetters.forEach((letter) => {
+      letter.addEventListener('mouseenter', () => {
+        gsap.to(letter, {
+          y: -10,
+          ease: 'elastic.out(1, 0.9)',
+          duration: 3
+        })
+      })
+
+      letter.addEventListener('mouseleave', () => {
+        gsap.to(letter, {
+          y: 0,
+          ease: 'elastic.out(1, 0.9)',
+          duration: 3,
+          transformOrigin: 'center'
+        })
+      })
+    })
+  }
+})
+
 </script>
 
 <template>
@@ -21,14 +115,23 @@ const closeMobileMenu = () => {
     <nav class="desktop-nav">
       <RouterLink class="londrina-solid-regular" to="/" @click="closeMobileMenu">work</RouterLink>
       <RouterLink class="londrina-solid-regular" to="/about">about</RouterLink>
-      <a class="londrina-solid-regular" href="mailto:eddiearnoldz@me.com">contact</a>
+      <a class="londrina-solid-regular" href="mailto:petecandeland@gmail.com">contact</a>
     </nav>
     <div class="hamburger" @click="toggleMobileMenu">☰</div>
     <div class="mobile-nav" :class="{ open: showMobileMenu }">
       <a class="close-btn" @click="closeMobileMenu">&times;</a>
-      <RouterLink class="londrina-solid-regular animated" to="/" @click="closeMobileMenu">work</RouterLink>
-      <RouterLink class="londrina-solid-regular animated" to="/about" @click="closeMobileMenu">about</RouterLink>
-      <a class="londrina-solid-regular animated" href="mailto:eddiearnoldz@me.com" @click="closeMobileMenu">contact</a>
+      <RouterLink class="londrina-solid-regular animated" to="/" @click="closeMobileMenu"
+        >work</RouterLink
+      >
+      <RouterLink class="londrina-solid-regular animated" to="/about" @click="closeMobileMenu"
+        >about</RouterLink
+      >
+      <a
+        class="londrina-solid-regular animated"
+        href="mailto:eddiearnoldz@me.com"
+        @click="closeMobileMenu"
+        >contact</a
+      >
     </div>
   </header>
 
@@ -53,7 +156,7 @@ nav a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #fdb6b6;
+  background-color:  var(--background-color);
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -117,7 +220,6 @@ nav a {
 
 .mobile-nav.open .close-btn {
   opacity: 1;
-  transition-delay: 1s; /* Delay to match the background animation */
 }
 
 @media screen and (max-width: 768px) {

@@ -1,7 +1,7 @@
 :root {
-  --text-color: #ef5512;
-  --text-color-hover: #0E5302;
-  --background-color: #facdcd;
+  --text-color: #ff2600;
+  --text-color-hover: #148600;
+  --background-color: #fda4eb;
 }
 
 html,
@@ -38,7 +38,7 @@ header {
   padding: 1rem;
   justify-content: space-between;
   z-index: 3;
-  background-image: linear-gradient(to bottom,#facdcd, rgba(0, 0, 0, 0) 100%);
+  background-image: linear-gradient(to bottom, var(--background-color), rgba(0, 0, 0, 0) 100%);
 }
 
 .logo {
@@ -98,7 +98,7 @@ nav a:hover::before {
  nav a:hover,
  .logo a:hover {
   color: var( --text-color-hover);
-  transition: color 0.4s;
+  transition: color 0.6s;
 }
 
 .londrina-solid-regular {
@@ -113,11 +113,18 @@ nav a:hover::before {
   font-style: normal;
 }
 
+.logo .letter,
+.desktop-nav .letter {
+  display: inline-block;
+}
+
 @media screen and (min-width:768px) {
   header {
     padding: 1rem 2rem;
     width: calc(100% - 4rem);
   }
+
+
 }
 
 

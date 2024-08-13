@@ -150,7 +150,7 @@ export default defineComponent({
   justify-content: space-between;
   overflow: hidden;
   opacity: 0;
-  animation: fadeIn 2s forwards;
+  animation: fadeIn 3s forwards;
   z-index: 1;
 }
 

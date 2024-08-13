@@ -22,7 +22,7 @@
 
 .fade-in {
   opacity: 0;
-  animation: fadeIn 2s forwards;
+  animation: fadeIn 3s forwards;
   max-width: 800px;
   font-size: clamp(14px, 21.5vw, 20px);
 }
