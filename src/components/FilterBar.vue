@@ -2,7 +2,7 @@
   <div class="filter-bar">
     <div v-if="!isMobile || isOpen" class="filters">
       <div class="filter-group" v-for="(group, index) in groupedFilters" :key="index">
-        <div :class="['filter-options', columnClass(group.filters.length)]">
+        <div :class="['filter-options']">
           <button
             v-for="filter in group.filters"
             :key="filter"
@@ -67,24 +67,11 @@ export default defineComponent({
         filters: groups[key]
       }));
     });
-
-    const columnClass = (length) => {
-      if (length > 12) {
-        return 'four-columns';
-      } else if (length >= 9) {
-        return 'three-columns';
-      } else if (length >= 6) {
-        return 'two-columns';
-      }
-      return '';
-    };
-
     return {
       isMobile,
       isOpen,
       groupedFilters,
       toggleFilters,
-      columnClass
     };
   },
   methods: {
@@ -179,31 +166,10 @@ export default defineComponent({
   flex-direction: column;
   align-items: flex-start;
   margin-left: 10px;
+  max-height: 70px;
+  column-gap: 20px
 }
 
-.filter-options.two-columns {
-  display: grid;
-  grid-template-columns: repeat(2, max-content);
-  grid-auto-rows: min-content;
-  column-gap: 10px;
-  place-items: start;
-}
-
-.filter-options.three-columns {
-  display: grid;
-  grid-template-columns: repeat(3, max-content);
-  grid-auto-rows: min-content;
-  column-gap: 10px;
-  place-items: start;
-}
-
-.filter-options.four-columns {
-  display: grid;
-  grid-template-columns: repeat(4, max-content);
-  grid-auto-rows: min-content;
-  column-gap: 10px;
-  place-items: start;
-}
 
 .filter-bar button {
   padding: 1px;
@@ -237,13 +203,13 @@ export default defineComponent({
 @media (min-width: 768px) {
   .filters {
     display: flex !important;
-    gap: clamp(10px, 3vw, 30px);
+    margin-right: auto;
   }
 
   .filter-bar button,
   .filter-group h3,
   .filter-bar h2 {
-    font-size: clamp(1.5rem, 2vh, 3rem);
+    font-size: clamp(1rem, 1.7vw, 1.6rem);
   }
 
   .filter-group h3 {
@@ -254,6 +220,10 @@ export default defineComponent({
     left: 0;
     bottom: 2rem;
     font-size: 1.7rem;
+  }
+
+  .filter-options {
+    max-height: 110px;
   }
 
   .filter-bar button:hover {

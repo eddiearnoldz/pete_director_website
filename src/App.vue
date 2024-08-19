@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import gsap from 'gsap'
 
@@ -24,6 +24,7 @@ onMounted(() => {
 
   const letters = document.querySelectorAll('.logo .letter')
   const navLinks = document.querySelectorAll('.desktop-nav a')
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav a.animated')
 
   // Split the text in nav links into individual letters
   navLinks.forEach((link) => {
@@ -35,6 +36,16 @@ onMounted(() => {
   })
 
   const navLetters = document.querySelectorAll('.desktop-nav .letter')
+
+  mobileNavLinks.forEach((link) => {
+    const linkText = link.textContent
+    link.innerHTML = linkText
+      .split('')
+      .map((letter) => `<span class="letter">${letter === ' ' ? '&nbsp;' : letter}</span>`)
+      .join('')
+  })
+
+  const mobileNavLetters = document.querySelectorAll('.mobile-nav .letter')
 
   // Create a GSAP timeline for the logo letters
   const tl = gsap.timeline({
@@ -65,23 +76,31 @@ onMounted(() => {
   // Add hover animations for each letter in the logo
   if (!isMobile()) {
     letters.forEach((letter) => {
-      letter.addEventListener('mouseenter', () => {
-        gsap.to(letter, {
-          y: 10,
-          ease: 'elastic.out(1, 0.9)',
-          duration: 3
-        })
-      })
+    let hoverAnimation;
 
-      letter.addEventListener('mouseleave', () => {
-        gsap.to(letter, {
-          y: 0,
+    letter.addEventListener('mouseenter', () => {
+      if (hoverAnimation?.isActive()) {
+        return; // Do nothing if any animation is active
+      }
+
+      hoverAnimation = gsap.timeline()
+        .to(letter, {
           ease: 'elastic.out(1, 0.9)',
+          rotateY: 360,
           duration: 3,
-          transformOrigin: 'center'
+          transformOrigin: 'center',
+          color: gsap.utils.random(["#ff2600", "#148600", "#eeff00", "#fd01c6", "#1aff00", "#7700ff", "#003cff"])
         })
-      })
-    })
+        .to(letter, {
+          rotateY: 0,
+          ease: 'elastic.out(1, 0.9)',
+          duration: 2,
+          transformOrigin: 'center',
+          color: "#ff2600"
+    }); 
+    });
+  });
+
 
     // Apply the same hover animations to each individual letter of the nav links
     navLetters.forEach((letter) => {
@@ -103,6 +122,28 @@ onMounted(() => {
       })
     })
   }
+
+  watch(showMobileMenu, (newValue) => {
+    if (newValue) {
+      const mobileNavLetters = document.querySelectorAll('.mobile-nav .letter')
+      gsap.fromTo(
+        mobileNavLetters,
+        { y: -100, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          ease: 'elastic.out(1,0.3)',
+          duration: 2,
+          stagger: {
+            from: "random",
+            amount: 0.3,
+            each: 0.1
+          },
+          delay: 0.5
+        }
+      )
+    }
+  })
 })
 
 </script>
@@ -128,7 +169,7 @@ onMounted(() => {
       >
       <a
         class="londrina-solid-regular animated"
-        href="mailto:eddiearnoldz@me.com"
+        href="mailto:petecandeland@gmail.com"
         @click="closeMobileMenu"
         >contact</a
       >
@@ -163,10 +204,8 @@ nav a {
   gap: 1rem;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-100%);
   transition:
-    transform 1s ease-in-out,
-    opacity 1s ease-in-out,
+    opacity 0.3s ease-in-out,
     visibility 0s linear 1s;
 }
 
@@ -174,47 +213,23 @@ nav a {
   display: flex;
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
   transition:
-    transform 1s ease-in-out,
-    opacity 1s ease-in-out;
+    opacity 0.5s ease-in-out;
 }
 
 .mobile-nav a.animated {
   color: var(--text-color);
   text-decoration: none;
   font-size: 2.5rem;
-  opacity: 0;
-  transform: translateY(-20px);
-  transition:
-    opacity 0.5s ease,
-    transform 0.5s ease;
-}
-
-.mobile-nav.open a.animated {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.mobile-nav a.animated:nth-child(2) {
-  transition-delay: 1.1s;
-}
-
-.mobile-nav a.animated:nth-child(3) {
-  transition-delay: 1.2s;
-}
-
-.mobile-nav a.animated:nth-child(4) {
-  transition-delay: 1.3s;
 }
 
 .close-btn {
-  font-size: 4rem;
+  font-size: 5rem;
   cursor: pointer;
   opacity: 0;
   position: absolute;
-  top: 0;
-  right: 1rem;
+  top: -8px;
+  right: 1.2rem;
   transition: opacity 1s ease;
 }
 
