@@ -21,14 +21,14 @@ export const videos = [
     thumbnail:'/assets/thumbnails/gorillaz_stylo.webp'
   },
   {
-    title: "MAZDA | COMMERCIAL",
+    title: "MAZDA | MAZDA | COMMERCIAL",
     image: '/assets/gifs/mazda.gif',
     filters: ['work_animator','year_2023', 'clients_sky'],
     videoUrl: 'https://www.youtube.com/watch?v=1jThha5eKNg',
     thumbnail: '/assets/thumbnails/mazda.webp'
   },
   {
-    title: "THE ROCK BAND | ROCKBAND | FILM",
+    title: "ROCK BAND I | ROCKBAND | COMMERCIAL",
     image: '/assets/gifs/Rockband.gif',
     filters: ['work_director', 'year_2024', 'clients_great-western'],
     videoUrl: 'https://www.youtube.com/watch?v=G1TvbXZDM-o',
@@ -42,7 +42,7 @@ export const videos = [
     thumbnail:'/assets/thumbnails/great_western_famous_five.webp'
   },
   {
-    title: "19 2000 | Gorillaz | Music Video",
+    title: "19-2000 | Gorillaz | Music Video",
     image: '/assets/gifs/Gorillaz-19-2000.gif',
     filters: ['work_director', 'work_gorillaz', 'year_2018', 'clients_gorillaz'],
     videoUrl: 'https://www.youtube.com/watch?v=G1TvbXZDM-o',
@@ -75,6 +75,13 @@ export const videos = [
     filters: ['work_director', 'year_2018', 'clients_finlandia'],
     videoUrl: 'https://www.youtube.com/watch?v=G1TvbXZDM-o',
     thumbnail: '/assets/thumbnails/finlandia.webp'
+  },
+  {
+    title: "Clint Eastwood | Gorillaz | Music Video",
+    image: '/assets/gifs/Gorillaz-Clint Eastwood-(Official-Video).gif',
+    filters: ['work_director', 'work_gorillaz', 'year_2018', 'clients_gorillaz'],
+    videoUrl: 'https://www.youtube.com/watch?v=G1TvbXZDM-o',
+    thumbnail: '/assets/thumbnails/gorillaz_dare.webp'
   },
   {
     title: "The Beatles - Outro | Rock Band | COMMERCIAL",
@@ -111,7 +118,6 @@ export const videos = [
     videoUrl: 'https://www.youtube.com/watch?v=1jThha5eKNg',
     thumbnail: '/assets/thumbnails/gorillaz_feel_good_inc.webp'
   },
-
   {
     title: "The Beatles | Rock Band | COMMERCIAL",
     image: '/assets/gifs/Beatles_Rockband.gif',
@@ -125,5 +131,103 @@ export const videos = [
     filters: ['work_director', 'work_gorillaz', 'year_2018', 'clients_gorillaz'],
     videoUrl: 'https://www.youtube.com/watch?v=1jThha5eKNg',
     thumbnail: '/assets/thumbnails/gorillaz_on_melancholy_hill.webp'
-  }
+  },
+  {
+    title: "Riot | Pentakill Mortal Reminder | Music Video",
+    image: '/assets/gifs/Gorillaz-On-Melancholy-Hill-(Official Video).gif',
+    filters: ['work_director', 'work_music-video', 'year_2018', 'clients_gorillaz'],
+    videoUrl: 'https://www.youtube.com/watch?v=1jThha5eKNg',
+    thumbnail: '/assets/thumbnails/gorillaz_on_melancholy_hill.webp'
+  },
+  {
+    title: "Tennessee Honey | Jack Daniels | Commercial",
+    image: '/assets/gifs/Gorillaz-On-Melancholy-Hill-(Official Video).gif',
+    filters: ['work_director', 'year_2022', 'clients_gorillaz'],
+    videoUrl: 'https://www.youtube.com/watch?v=1jThha5eKNg',
+    thumbnail: '/assets/thumbnails/gorillaz_on_melancholy_hill.webp'
+  },
+  {
+    title: "Red Bull Music Academy | Red Bull | Commercial",
+    image: '/assets/gifs/Gorillaz-On-Melancholy-Hill-(Official Video).gif',
+    filters: ['work_director', 'year_2022', 'clients_gorillaz'],
+    videoUrl: 'https://www.youtube.com/watch?v=1jThha5eKNg',
+    thumbnail: '/assets/thumbnails/gorillaz_on_melancholy_hill.webp'
+  },
+  {
+    title: "Red Bull Music Academy | Red Bull | Commercial",
+    image: '/assets/gifs/Gorillaz-On-Melancholy-Hill-(Official Video).gif',
+    filters: ['work_director', 'year_2022', 'clients_gorillaz'],
+    videoUrl: 'https://www.youtube.com/watch?v=1jThha5eKNg',
+    thumbnail: '/assets/thumbnails/gorillaz_on_melancholy_hill.webp'
+  },
+  {
+    title: "Guitar Hero II | Guitar Hero | Commercial",
+    image: '/assets/gifs/Gorillaz-On-Melancholy-Hill-(Official Video).gif',
+    filters: ['work_director', 'year_2022', 'clients_gorillaz'],
+    videoUrl: 'https://www.youtube.com/watch?v=1jThha5eKNg',
+    thumbnail: '/assets/thumbnails/gorillaz_on_melancholy_hill.webp'
+  },
+  {
+    title: "THE ROCK BAND II | ROCKBAND | COMMERCIAL",
+    image: '/assets/gifs/Rockband.gif',
+    filters: ['work_director', 'year_2024', 'clients_great-western'],
+    videoUrl: 'https://www.youtube.com/watch?v=G1TvbXZDM-o',
+    thumbnail: '/assets/thumbnails/rockband.webp'
+  },
+  {
+    title: "Richboom | Cannon | Music Video",
+    image: '/assets/gifs/Rockband.gif',
+    filters: ['work_director', 'year_2024', 'clients_great-western'],
+    videoUrl: 'https://www.youtube.com/watch?v=G1TvbXZDM-o',
+    thumbnail: '/assets/thumbnails/rockband.webp'
+  },
+  {
+    title: "Words of Love | The Beatles | Music Video",
+    image: '/assets/gifs/Rockband.gif',
+    filters: ['work_director', 'year_2024', 'clients_great-western'],
+    videoUrl: 'https://www.youtube.com/watch?v=G1TvbXZDM-o',
+    thumbnail: '/assets/thumbnails/rockband.webp'
+  },
+  {
+    title: "Gods and Monsters | Sizzle",
+    image: '/assets/gifs/Rockband.gif',
+    filters: ['work_director', 'year_2024', 'clients_great-western'],
+    videoUrl: 'https://www.youtube.com/watch?v=G1TvbXZDM-o',
+    thumbnail: '/assets/thumbnails/rockband.webp'
+  },
+  {
+    title: "Feel Good Inc and Hung Up | Gorillaz ft. Madonna | LIVE",
+    image: '/assets/gifs/Rockband.gif',
+    filters: ['work_director', 'year_2006', 'clients_great-western'],
+    videoUrl: 'https://www.youtube.com/watch?v=G1TvbXZDM-o',
+    thumbnail: '/assets/thumbnails/rockband.webp'
+  },
+  {
+    title: "Feel Good Inc | Gorillaz @ MTV EMA's | LIVE",
+    image: '/assets/gifs/Rockband.gif',
+    filters: ['work_director', 'year_2006', 'clients_great-western'],
+    videoUrl: 'https://www.youtube.com/watch?v=G1TvbXZDM-o',
+    thumbnail: '/assets/thumbnails/rockband.webp'
+  },
+  {
+    title: "Clint Eastwood | Gorillaz @ BRITs | LIVE",
+    image: '/assets/gifs/Rockband.gif',
+    filters: ['work_director', 'year_2006', 'clients_great-western'],
+    videoUrl: 'https://www.youtube.com/watch?v=G1TvbXZDM-o',
+    thumbnail: '/assets/thumbnails/rockband.webp'
+  },
+  {
+    title: "Dirty Harry | Gorillaz @ BRITs | LIVE",
+    image: '/assets/gifs/Rockband.gif',
+    filters: ['work_director', 'year_2006', 'clients_great-western'],
+    videoUrl: 'https://www.youtube.com/watch?v=G1TvbXZDM-o',
+    thumbnail: '/assets/thumbnails/rockband.webp'
+  },
+  {
+    title: "Kia Sportage | Kia | COMMERCIAL",
+    image: '/assets/gifs/Rockband.gif',
+    filters: ['work_director', 'year_2006', 'clients_great-western'],
+    videoUrl: 'https://www.youtube.com/watch?v=G1TvbXZDM-o',
+    thumbnail: '/assets/thumbnails/rockband.webp'
+  },
 ];

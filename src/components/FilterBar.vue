@@ -6,7 +6,7 @@
           <button
             v-for="filter in group.filters"
             :key="filter"
-            @click="toggleFilter(filter)"
+            @click="handleFilterClick(filter, $event)"
             :class="{ active: isSelected(filter) }"
           >
             {{ filter.split("_")[1].replace("-", " ") }}
@@ -22,6 +22,7 @@
 
 <script>
 import { defineComponent, ref, computed } from 'vue';
+import gsap from 'gsap';
 
 export default defineComponent({
   props: {
@@ -95,7 +96,38 @@ export default defineComponent({
     },
     clearFilters() {
       this.$emit('clear-filters');
+    },
+    handleFilterClick(filter, event) {
+      const target = event.currentTarget;
+
+      // Ensure the target exists before applying animation
+      if (!target) {
+        console.warn('GSAP target not found:', target);
+        return;
+      }
+
+      const isFilterSelected = this.isSelected(filter);
+      this.toggleFilter(filter);
+
+      if (isFilterSelected) {
+        // If the filter was selected and is now being removed
+        gsap.to(target, {
+          x: 0, // Move back to the original position
+          duration: 0.3,
+          ease: "elastic.out(0.1, 0.8)"
+        });
+      } else {
+        // If the filter is being selected
+        gsap.to(target,
+          { 
+            x: -10, 
+            duration: 0.3, 
+            ease: "elastic.out(0.1, 0.8)"
+          }
+        );
+      }
     }
+
   }
 });
 </script>

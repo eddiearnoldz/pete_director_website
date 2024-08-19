@@ -74,8 +74,8 @@ export default defineComponent({
       try {
         updatevideoTitle('', '', '');
           const gridContainer = document.querySelector('.video-grid');
-          gridContainer.style.gridTemplateColumns = getGridTemplateColumns('40vw 12vw 12vw 12vw 12vw 12vw');
-          gridContainer.style.gridTemplateRows = getGridTemplateRows('60% 20% 20%');
+          gridContainer.style.gridTemplateColumns = getGridTemplateColumns('30vw 10vw 10vw 10vw 10vw 10vw 10vw 10vw');
+          gridContainer.style.gridTemplateRows = getGridTemplateRows('40% 20% 20% 20%');
           gridContainer.style.transition = 'grid-template-columns 1s ease, grid-template-rows 1s ease';
 
           document.querySelectorAll('.grid-item')[0].classList.add('enlarged');
@@ -88,63 +88,32 @@ export default defineComponent({
       emit('video-selected', video);
     };
 
+    const columnLayouts = [
+      '30vw 10vw 10vw 10vw 10vw 10vw 10vw 10vw', // 1, 9, 17, 25, 33, ...
+      '10vw 30vw 10vw 10vw 10vw 10vw 10vw 10vw', // 2, 10, 18, 26, 34, ...
+      '10vw 10vw 30vw 10vw 10vw 10vw 10vw 10vw', // 3, 11, 19, 27, 35, ...
+      '10vw 10vw 10vw 30vw 10vw 10vw 10vw 10vw', // 4, 12, 20, 28, 36, ...
+      '10vw 10vw 10vw 10vw 30vw 10vw 10vw 10vw', // 5, 13, 21, 29, 37, ...
+      '10vw 10vw 10vw 10vw 10vw 30vw 10vw 10vw', // 6, 14, 22, 30, 38, ...
+      '10vw 10vw 10vw 10vw 10vw 10vw 30vw 10vw', // 7, 15, 23, 31, 39, ...
+      '10vw 10vw 10vw 10vw 10vw 10vw 10vw 30vw'  // 8, 16, 24, 32, 40, ...
+    ];
+
     const getGridTemplateColumns = (pos) => {
-      switch (pos) {
-        case 1:
-        case 7:
-        case 13:
-        return '40vw 12vw 12vw 12vw 12vw 12vw';
-        case 2:
-        case 8:
-        case 14:
-          return '12vw 40vw 12vw 12vw 12vw 12vw';
-        case 3:
-        case 9:
-        case 15:
-          return '12vw 12vw 40vw 12vw 12vw 12vw';
-        case 4:
-        case 10:
-        case 16:
-          return '12vw 12vw 12vw 40vw 12vw 12vw';
-        case 5:
-        case 11:
-        case 17:
-          return '12vw 12vw 12vw 12vw 40vw 12vw ';
-        case 6:
-        case 12:
-        case 18:
-          return '12vw 12vw 12vw 12vw 12vw 40vw';
-        default:
-          return '40vw 12vw 12vw 12vw 12vw 12vw';
-      }
+      const normalizedPos = (pos - 1) % 8;
+      return columnLayouts[normalizedPos];
     };
 
+    const rowLayouts = [
+      '40% 20% 20% 20%', // 1-8
+      '20% 40% 20% 20%', // 9-16
+      '20% 20% 40% 20%', // 17-24
+      '20% 20% 20% 40%'  // 25-32
+    ];
+
     const getGridTemplateRows = (pos) => {
-      switch (pos) {
-        case 1:
-        case 2:
-        case 3:
-        case 4:
-        case 5:
-        case 6:
-          return '60% 20% 20%';
-        case 7:
-        case 8:
-        case 9:
-        case 10:
-        case 11:
-        case 12:
-          return '20% 60% 20%';
-        case 13:
-        case 14:
-        case 15:
-        case 16:
-        case 17:
-        case 18:
-          return '20% 20% 60%';
-        default:
-          return '60% 20% 20%';
-      }
+      const normalizedPos = Math.floor((pos - 1) / 8) % 4;
+      return rowLayouts[normalizedPos];
     };
 
     return {
