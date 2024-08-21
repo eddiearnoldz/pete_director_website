@@ -110,8 +110,6 @@ export default {
 
 
 @media screen and (min-width: 768px) {
-
-
   .video-title,
   .video--work {
     font-size: 30px;
@@ -168,6 +166,8 @@ export default {
 
   .video-footer {
     flex-direction: row-reverse;
+    max-width: 1800px;
+    margin: auto;
   }
 
   .title-wrapper {

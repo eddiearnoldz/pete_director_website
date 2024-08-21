@@ -9,7 +9,7 @@
             @click="handleFilterClick(filter, $event)"
             :class="{ active: isSelected(filter) }"
           >
-            {{ filter.split("_")[1].replace("-", " ") }}
+          {{ formatFilterName(filter) }}
           </button>
         </div>
         <h3>{{ group.name.replace("-", " ") }}</h3>
@@ -113,8 +113,15 @@ export default defineComponent({
           }
         );
       }
-    }
-
+    },
+    formatFilterName(filter) {
+      // Split on "_" and "-" and capitalize each word
+      return filter
+        .split('_')[1] // Get the part after the underscore
+        .split('-') // Split by hyphen
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize each word
+        .join(' '); // Join words with a space
+    },
   }
 });
 </script>
@@ -181,7 +188,7 @@ export default defineComponent({
   margin: 0px;
   font-family: "Architects Daughter", cursive;
   transition: color 0.4s;
-  line-height: 1.1;
+  line-height: 1;
   text-transform: capitalize;
 }
 
@@ -209,7 +216,7 @@ export default defineComponent({
   .filter-bar button,
   .filter-group h3,
   .filter-bar h2 {
-    font-size: clamp(1rem, 1.7vw, 1.6rem);
+    font-size: clamp(0.8rem, 0.9vw, 1.1rem);
   }
 
   .filter-group h3 {

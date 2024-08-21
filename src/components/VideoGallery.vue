@@ -48,22 +48,31 @@ export default defineComponent({
     const isMobileView = ref(window.innerWidth < 768);
     const selectedFilters = ref([]);
     const filters = ref([
-      'work_director',
       'work_animator',
+      'work_director',
       'work_gorillaz',
-      'year_2019',
-      'year_2020',
-      'year_2021',
-      'year_2022',
-      'year_2023',
       'year_2024',
+      'year_2023',
+      'year_2022',
+      'year_2021',
+      'year_2020',
+      'year_2019',
+      'genre_commercial',
+      'genre_live', 
+      'genre_music-video', 
+      'genre_sizzle',
+      'clients_BBC',
+      'clients_finlandia',
       'clients_gorillaz',
       'clients_great-western',
-      'clients_bbc',
+      'clients_guitar-hero',
+      'clients_jack-daniels',
+      'clients_kia',
+      'clients_league-of-legends',
       'clients_mazda',
-      'clients_sky',
+      'clients_skyo',
       'clients_rockband',
-      'clients_finlandia'
+      'clients_red-bull',
     ]);
     const activevideoTitle = ref('');
     const activevideoImage = ref('');
