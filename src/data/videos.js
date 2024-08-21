@@ -35,9 +35,9 @@ export const videos = [
     thumbnail: '/assets/thumbnails/gorillaz_dirty_harry.webp'
   },
   {
-    title: "ROCK BAND I | ROCKBAND | Commercial",
+    title: "Rock Band I | Rock Band | Commercial",
     image: '/assets/gifs/Rockband-I.gif',
-    filters: ['work_director', 'genre_commercial', 'year_2024', 'clients_rockband'],
+    filters: ['work_director', 'genre_commercial', 'year_2024', 'clients_rock-band'],
     videoUrl: 'https://vimeo.com/1001264309',
     thumbnail: '/assets/thumbnails/rockband.webp'
   },
@@ -98,9 +98,9 @@ export const videos = [
     thumbnail: '/assets/thumbnails/gorillaz-clint-eastwood.webp'
   },
   {
-    title: "The Beatles - Outro | Rockband | Commercial",
+    title: "The Beatles - Outro | Rock Band | Commercial",
     image: '/assets/gifs/The-Beatles-Rockband-Outro.gif',
-    filters: ['work_animator', 'genre_commercial' ,'year_2020', 'client_rockband'],
+    filters: ['work_animator', 'genre_commercial' ,'year_2020', 'clients_rock-band', 'clients_the-beatles'],
     videoUrl: 'https://vimeo.com/1001268582',
     thumbnail: '/assets/thumbnails/beatles_outro.webp'
   },
@@ -135,7 +135,7 @@ export const videos = [
   {
     title: "The Beatles | Rock Band | Commercial",
     image: '/assets/gifs/Beatles_Rockband.gif',
-    filters: ['work_animator', 'genre_commercial' ,'year_2020', 'clients_rockband'],
+    filters: ['work_animator', 'genre_commercial' ,'year_2020', 'clients_rock-band', 'clients_the-beatles'],
     videoUrl: 'https://vimeo.com/1001268085',
     thumbnail: '/assets/thumbnails/rockband_beatles.webp'
   },
@@ -175,7 +175,7 @@ export const videos = [
     thumbnail: '/assets/thumbnails/guitar-hero-II-thumbnail.webp'
   },
   {
-    title: "The Rock band II | Rock band | Commercial",
+    title: "Rock Band II | Rock Band | Commercial",
     image: '/assets/gifs/Rockband-II.gif',
     filters: ['work_director', 'genre_commercial' , 'year_2024', 'clients_rock-band'],
     videoUrl: 'https://vimeo.com/1001265240',
@@ -198,7 +198,7 @@ export const videos = [
   {
     title: "Words of Love | The Beatles | Music Video",
     image: '/assets/gifs/The-Beatles-Words-of-Love.gif',
-    filters: ['work_director', 'genre_music-video' , 'year_2024', 'clients_The-Beatles'],
+    filters: ['work_director', 'genre_music-video' , 'year_2024', 'clients_the-beatles'],
     videoUrl: 'https://vimeo.com/1001282939',
     thumbnail: '/assets/thumbnails/beatles-words-with-love-thumbnail.webp'
   },

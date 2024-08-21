@@ -82,8 +82,24 @@ export default defineComponent({
       return this.selectedFilters.includes(filter);
     },
     clearFilters() {
-      this.$emit('clear-filters');
-    },
+  const buttons = document.querySelectorAll('.filter-bar button');
+
+  buttons.forEach((button) => {
+    if (button.classList.contains('active')) {
+      gsap.to(button, {
+        x: 0,
+        duration: 0.3,
+        ease: 'elastic.out(0.1, 0.8)',
+        onComplete: () => {
+          button.classList.remove('active');
+        },
+      });
+    }
+  });
+
+  // Emit the event to clear the filters
+  this.$emit('clear-filters');
+},
     handleFilterClick(filter, event) {
       const target = event.currentTarget;
 

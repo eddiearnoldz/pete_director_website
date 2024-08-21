@@ -1,7 +1,8 @@
 :root {
-  --text-color: #ff2600;
-  --text-color-hover: #148600;
-  --background-color: #fda4ea;
+  --text-color: #f5f838;
+  --text-color-hover: #23cc05;
+  --background-color: #fa38d0;
+  --customCOlor: #8000ff;
 }
 
 html,
@@ -76,7 +77,7 @@ nav a::before {
  transform: rotate(3deg);
  transform-origin: bottom left;
  bottom: 0;
- height: 4px;
+ height: clamp(2px, 0.3vw, 4px);
  background-color: var( --text-color-hover);
   transition: width 0.4s;
 }
@@ -127,8 +128,6 @@ nav a:hover::before {
     padding: 1rem 2rem;
     width: calc(100% - 4rem);
   }
-
-
 }
 
 

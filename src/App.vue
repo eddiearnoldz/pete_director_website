@@ -6,7 +6,17 @@ import VideoPlayer from '@/components/VideoPlayer.vue';
 
 const showMobileMenu = ref(false);
 const showPlayer = ref(false);
-const vimeoUrl = "https://vimeo.com/1001251940" 
+const vimeoUrl = "https://vimeo.com/1001251940";
+const brightColors = [
+  '#ff0019', // Bright Red
+  '#00fae6', // Bright Cyan
+  '#70def7', // Bright Sky Blue
+  '#9906fa', // Bright Purple
+  '#0f1af9', // Bright Blue
+  '#2ad10c', // Bright Green
+  '#8000ff', // Bright Purple
+  '#ffe205'  // Bright Yellow
+];
 
 const toggleMobileMenu = () => {
   showMobileMenu.value = !showMobileMenu.value
@@ -101,14 +111,14 @@ onMounted(() => {
           rotateY: 360,
           duration: 3,
           transformOrigin: 'center',
-          color: gsap.utils.random(["#ff2600", "#148600", "#eeff00", "#fd01c6", "#1aff00", "#7700ff", "#003cff"])
+          color: gsap.utils.random(brightColors)
         })
         .to(letter, {
           rotateY: 0,
           ease: 'elastic.out(1, 0.9)',
           duration: 2,
           transformOrigin: 'center',
-          color: "#ff2600"
+          color: "#f5f838"
     }); 
     });
   });
@@ -163,7 +173,7 @@ onMounted(() => {
 <template>
   <header>
     <div class="logo">
-      <RouterLink class="londrina-solid-regular" to="/"><span>PETE CANDELAND</span></RouterLink>
+      <RouterLink class="londrina-solid-regular" to="/" @click="closeMobileMenu"><span>PETE CANDELAND</span></RouterLink>
     </div>
     <nav class="desktop-nav">
       <RouterLink class="londrina-solid-regular" to="/" @click="closeMobileMenu">work</RouterLink>

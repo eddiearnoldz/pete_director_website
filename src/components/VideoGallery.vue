@@ -70,9 +70,10 @@ export default defineComponent({
       'clients_kia',
       'clients_league-of-legends',
       'clients_mazda',
-      'clients_skyo',
-      'clients_rockband',
+      'clients_rock-band',
       'clients_red-bull',
+      'clients_skyo',
+      'clients_the-beatles',
     ]);
     const activevideoTitle = ref('');
     const activevideoImage = ref('');
