@@ -168,7 +168,6 @@ export default defineComponent({
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 2px;
   aspect-ratio: 3/2;
   transform: scale(1);
   transition: transform 0.3s, margin 0.3s;
