@@ -7,7 +7,7 @@ export const videos = [
     thumbnail:'/assets/thumbnails/gorillaz_tomorrow.webp'
   },
   {
-    title: "BBC Stadium Olympics | BBC | COMMERCIAL",
+    title: "BBC Stadium Olympics | BBC | Commercial",
     image: '/assets/gifs/BBC_stadiumUK_full_length.gif',
     filters: ['work_director', 'genre_commercial', 'work_animator', 'year_2012', 'clients_bbc' ],
     videoUrl: 'https://vimeo.com/1001261655',
@@ -21,7 +21,7 @@ export const videos = [
     thumbnail:'/assets/thumbnails/gorillaz_stylo.webp'
   },
   {
-    title: "Incredible World | MAZDA | COMMERCIAL",
+    title: "Incredible World | MAZDA | Commercial",
     image: '/assets/gifs/mazda.gif',
     filters: ['work_animator', 'genre_commercial', 'year_2023', 'clients_mazda'],
     videoUrl: 'https://vimeo.com/1001264197',
@@ -35,14 +35,14 @@ export const videos = [
     thumbnail: '/assets/thumbnails/gorillaz_dirty_harry.webp'
   },
   {
-    title: "ROCK BAND I | ROCKBAND | COMMERCIAL",
+    title: "ROCK BAND I | ROCKBAND | Commercial",
     image: '/assets/gifs/Rockband-I.gif',
     filters: ['work_director', 'genre_commercial', 'year_2024', 'clients_rockband'],
     videoUrl: 'https://vimeo.com/1001264309',
     thumbnail: '/assets/thumbnails/rockband.webp'
   },
   {
-    title: "Famous Five | Great Western Railway | COMMERCIAL",
+    title: "Famous Five | Great Western Railway | Commercial",
     image: '/assets/gifs/Great-Western-Railway-Famous-Five-Directors-Cut.gif',
     filters: ['work_director', 'genre_commercial' ,'year_2019', 'clients_great-western' ],
     videoUrl: 'https://vimeo.com/1001262508',
@@ -63,7 +63,7 @@ export const videos = [
     thumbnail: '/assets/thumbnails/sky_commercial.webp'
   },
   {
-    title: "Five and the Missing Jewels | Great Western Railway | COMMERCIAL",
+    title: "Five and the Missing Jewels | Great Western Railway | Commercial",
     image: '/assets/gifs/Great-Western-Railway-Five-&-The-Missing-Jewels.gif',
     filters: ['work_director', 'genre_commercial' , 'year_2018', 'clients_great-western'],
     videoUrl: 'https://vimeo.com/1001263136',
@@ -84,7 +84,7 @@ export const videos = [
     thumbnail: '/assets/thumbnails/gorillaz_rock_the_house.webp'
   },
   {
-    title: "Finlandia | Finland | COMMERCIAL",
+    title: "Finlandia | Finlandia Vodka | Commercial",
     image: '/assets/gifs/FINLANDIA.gif',
     filters: ['work_director', 'genre_commercial' , 'year_2018', 'clients_finlandia'],
     videoUrl: 'https://vimeo.com/1001262122',
@@ -98,7 +98,7 @@ export const videos = [
     thumbnail: '/assets/thumbnails/gorillaz-clint-eastwood.webp'
   },
   {
-    title: "The Beatles - Outro | Rockband | COMMERCIAL",
+    title: "The Beatles - Outro | Rockband | Commercial",
     image: '/assets/gifs/The-Beatles-Rockband-Outro.gif',
     filters: ['work_animator', 'genre_commercial' ,'year_2020', 'client_rockband'],
     videoUrl: 'https://vimeo.com/1001268582',
@@ -126,14 +126,14 @@ export const videos = [
     thumbnail: '/assets/thumbnails/gorillaz_feel_good_inc.webp'
   },
   {
-    title: "Kia Sportage | Kia | COMMERCIAL",
+    title: "Kia Sportage | Kia | Commercial",
     image: '/assets/gifs/Kia_Sportage.gif',
     filters: ['work_director', 'genre_commercial' , 'year_2006', 'clients_kia'],
     videoUrl: 'https://vimeo.com/1001264171',
     thumbnail: '/assets/thumbnails/kia_sportage_thumbnail.webp'
   },
   {
-    title: "The Beatles | Rock Band | COMMERCIAL",
+    title: "The Beatles | Rock Band | Commercial",
     image: '/assets/gifs/Beatles_Rockband.gif',
     filters: ['work_animator', 'genre_commercial' ,'year_2020', 'clients_rockband'],
     videoUrl: 'https://vimeo.com/1001268085',
@@ -175,7 +175,7 @@ export const videos = [
     thumbnail: '/assets/thumbnails/guitar-hero-II-thumbnail.webp'
   },
   {
-    title: "The Rock band II | Rock band | COMMERCIAL",
+    title: "The Rock band II | Rock band | Commercial",
     image: '/assets/gifs/Rockband-II.gif',
     filters: ['work_director', 'genre_commercial' , 'year_2024', 'clients_rock-band'],
     videoUrl: 'https://vimeo.com/1001265240',

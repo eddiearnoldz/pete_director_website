@@ -58,11 +58,15 @@ nav {
 }
 
 nav a {
-  font-size: clamp(30px, 3vw, 40px);
+  font-size: clamp(20px, 2vw, 30px);
   text-decoration: none;
   color: var(--text-color);
   transition: color 0.4s;
   position: relative;
+  -webkit-user-select: none;       
+  -moz-user-select: none; 
+  -ms-user-select: none;
+  user-select: none; 
 }
 
 nav a::before {

@@ -174,7 +174,8 @@ export default defineComponent({
   align-items: flex-start;
   margin-left: 10px;
   max-height: 70px;
-  column-gap: 20px
+  column-gap: 20px;
+  width: max-content;
 }
 
 

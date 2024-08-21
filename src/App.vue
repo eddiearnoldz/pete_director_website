@@ -2,8 +2,11 @@
 import { ref, onMounted, watch } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import gsap from 'gsap'
+import VideoPlayer from '@/components/VideoPlayer.vue';
 
-const showMobileMenu = ref(false)
+const showMobileMenu = ref(false);
+const showPlayer = ref(false);
+const vimeoUrl = "https://vimeo.com/1001251940" 
 
 const toggleMobileMenu = () => {
   showMobileMenu.value = !showMobileMenu.value
@@ -11,6 +14,15 @@ const toggleMobileMenu = () => {
 
 const closeMobileMenu = () => {
   showMobileMenu.value = false
+}
+
+const closePlayer = () => {
+  showPlayer.value = false // Close the video player
+}
+
+const openShowreel = () => {
+  showPlayer.value = true 
+  closeMobileMenu()
 }
 
 const isMobile = () => window.innerWidth <= 768
@@ -155,6 +167,7 @@ onMounted(() => {
     </div>
     <nav class="desktop-nav">
       <RouterLink class="londrina-solid-regular" to="/" @click="closeMobileMenu">work</RouterLink>
+      <a class="londrina-solid-regular" href="#" @click.prevent="openShowreel">showreel</a>
       <RouterLink class="londrina-solid-regular" to="/about">about</RouterLink>
       <a class="londrina-solid-regular" href="mailto:petecandeland@gmail.com">contact</a>
     </nav>
@@ -163,7 +176,8 @@ onMounted(() => {
       <a class="close-btn" @click="closeMobileMenu">&times;</a>
       <RouterLink class="londrina-solid-regular animated" to="/" @click="closeMobileMenu"
         >work</RouterLink
-      >
+        >
+        <a class="londrina-solid-regular animated" href="#" @click.prevent="openShowreel">showreel</a>
       <RouterLink class="londrina-solid-regular animated" to="/about" @click="closeMobileMenu"
         >about</RouterLink
       >
@@ -171,10 +185,19 @@ onMounted(() => {
         class="londrina-solid-regular animated"
         href="mailto:petecandeland@gmail.com"
         @click="closeMobileMenu"
-        >contact</a
-      >
+        >contact
+      </a>
     </div>
   </header>
+
+  <VideoPlayer
+    v-if="showPlayer"
+    :video-url="vimeoUrl"
+    :autoplay="true"
+    :loop="false"
+    :controls="true"
+    @close="closePlayer"
+  />
 
   <RouterView />
 </template>
