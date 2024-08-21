@@ -96,7 +96,7 @@ export default {
 }
 
 .video-container {
-  width: 90%;
+  width: 75%;
   height: 100%;
 }
 
@@ -110,6 +110,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 10vh;
 }
 
 .loading-indicator {
@@ -158,6 +159,10 @@ export default {
     height: 50px;
     width: 50px;
     padding: 20px;
+  }
+
+  .embed-container {
+    margin-top: 0;
   }
 }
 </style>

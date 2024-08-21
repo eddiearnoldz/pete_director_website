@@ -5,6 +5,7 @@
       :key="index"
       :class="['slide', { 'active-slide': activeIndex === index }]"
       :style="getSlideStyle(index)"
+      @click="selectVideo(video)"
     >
       <div class="image-container">
         <img :src="video.thumbnail" :alt="video.title" class="video-image" />
@@ -27,7 +28,7 @@ export default defineComponent({
       default: () => []
     }
   },
-  emits: ['update-video-title'],
+  emits: ['update-video-title', 'video-selected'],
   setup(props, { emit }) {
     const activeIndex = ref(0);
     const carouselContainer = ref(null);
@@ -94,6 +95,10 @@ export default defineComponent({
       });
     };
 
+    const selectVideo = (video) => {
+      emit('video-selected', video);
+    };
+
     const initializeScaling = () => {
       const container = carouselContainer.value;
       const slides = container.children;
@@ -123,7 +128,8 @@ export default defineComponent({
       activeIndex,
       filteredvideos,
       getSlideStyle,
-      carouselContainer
+      carouselContainer,
+      selectVideo,
     };
   }
 });

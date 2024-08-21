@@ -5,6 +5,7 @@
       :videos="filteredvideos" 
       :selectedFilters="selectedFilters"
       @update-video-title="updatevideoTitle"
+      @video-selected="selectVideo"
     />
     <video-grid 
       v-else 

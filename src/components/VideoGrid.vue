@@ -129,8 +129,8 @@ export default defineComponent({
 <style scoped>
 .video-grid {
   display: grid;
-  grid-template-columns: 40vw 12vw 12vw 12vw 12vw 12vw;
-  grid-template-rows: 60% 20% 20%;
+  grid-template-columns: 30vw 10vw 10vw 10vw 10vw 10vw 10vw 10vw;
+  grid-template-rows: 40% 20% 20% 20%;
   padding: 2rem;
   padding-left: 0;
   overflow-x: scroll;

@@ -58,7 +58,7 @@ nav {
 }
 
 nav a {
-  font-size: 40px;
+  font-size: clamp(30px, 3vw, 40px);
   text-decoration: none;
   color: var(--text-color);
   transition: color 0.4s;
