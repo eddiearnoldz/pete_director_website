@@ -74,7 +74,7 @@ export const videos = [
     image: '/assets/gifs/Gorillaz-Feel-Good-Inc-live.gif',
     filters: ['work_director', 'year_2006', 'clients_gorillaz'],
     videoUrl: 'https://vimeo.com/1001251290',
-    thumbnail: '/assets/thumbnails/rockband.webp'
+    thumbnail: '/assets/thumbnails/gorillaz-feel-good-inc-live.webp'
   },
   {
     title: "Rock The House | Gorillaz | Music Video",
@@ -95,7 +95,7 @@ export const videos = [
     image: '/assets/gifs/Gorillaz-Clint Eastwood-(Official-Video).gif',
     filters: ['work_director', 'work_gorillaz', 'year_2018', 'clients_gorillaz'],
     videoUrl: 'https://vimeo.com/1001272848',
-    thumbnail: '/assets/thumbnails/gorillaz_dare.webp'
+    thumbnail: '/assets/thumbnails/gorillaz-clint-eastwood.webp'
   },
   {
     title: "The Beatles - Outro | Rockband | COMMERCIAL",
@@ -130,7 +130,7 @@ export const videos = [
     image: '/assets/gifs/Kia_Sportage.gif',
     filters: ['work_director', 'year_2006', 'clients_kia'],
     videoUrl: 'https://vimeo.com/1001264171',
-    thumbnail: '/assets/thumbnails/rockband.webp'
+    thumbnail: '/assets/thumbnails/kia_sportage_thumbnail.webp'
   },
   {
     title: "The Beatles | Rock Band | COMMERCIAL",
@@ -151,76 +151,76 @@ export const videos = [
     image: '/assets/gifs/Riot-Pentakill-Mortal-Reminder.gif',
     filters: ['work_director', 'work_music-video', 'year_2018', 'clients_gorillaz'],
     videoUrl: 'https://vimeo.com/1001280164',
-    thumbnail: '/assets/thumbnails/gorillaz_on_melancholy_hill.webp'
+    thumbnail: '/assets/thumbnails/pentakill-thumbnail.webp'
   },
   {
     title: "Tennessee Honey | Jack Daniels | Commercial",
     image: '/assets/gifs/Jack_Daniels _Tennessee_Honey.gif',
     filters: ['work_director', 'year_2022', 'clients_gorillaz'],
     videoUrl: 'https://vimeo.com/1001264119',
-    thumbnail: '/assets/thumbnails/gorillaz_on_melancholy_hill.webp'
+    thumbnail: '/assets/thumbnails/jack-daniels-thumbnail.webp'
   },
   {
     title: "Red Bull Music Academy | Red Bull | Commercial",
     image: '/assets/gifs/Red-Bull-Music-Academy.gif',
     filters: ['work_director', 'year_2022', 'clients_red-bull'],
     videoUrl: 'https://vimeo.com/1001264309',
-    thumbnail: '/assets/thumbnails/gorillaz_on_melancholy_hill.webp'
+    thumbnail: '/assets/thumbnails/red-bull-thumbnail.webp'
   },
   {
     title: "Guitar Hero II | Guitar Hero | Commercial",
     image: '/assets/gifs/Guitar-Hero-II.gif',
     filters: ['work_director', 'year_2022', 'clients_gorillaz'],
     videoUrl: 'https://vimeo.com/1001268508',
-    thumbnail: '/assets/thumbnails/gorillaz_on_melancholy_hill.webp'
+    thumbnail: '/assets/thumbnails/guitar-hero-II-thumbnail.webp'
   },
   {
     title: "THE ROCK BAND II | ROCKBAND | COMMERCIAL",
     image: '/assets/gifs/Rockband-II.gif',
     filters: ['work_director', 'year_2024', 'clients_great-western'],
     videoUrl: 'https://vimeo.com/1001265240',
-    thumbnail: '/assets/thumbnails/rockband.webp'
+    thumbnail: '/assets/thumbnails/the-rockband-II-thumbnail.webp'
   },
   {
     title: "Richboom | Cannon | Music Video",
     image: '/assets/gifs/Richboom_Cannon_v1.gif',
     filters: ['work_director', 'year_2024', 'clients_cannon'],
     videoUrl: 'https://vimeo.com/1001277447',
-    thumbnail: '/assets/thumbnails/rockband.webp'
+    thumbnail: '/assets/thumbnails/richboom-cannon-thumbnail.webp'
   },
   {
     title: "Dirty Harry | Gorillaz @ BRITs | LIVE",
     image: '/assets/gifs/Gorillaz-Dirty-Harry-Live.gif',
     filters: ['work_director', 'year_2006', 'clients_gorillaz'],
     videoUrl: 'https://vimeo.com/1001251197',
-    thumbnail: '/assets/thumbnails/rockband.webp'
+    thumbnail: '/assets/thumbnails/gorillaz-dirty-harry-live.webp'
   },
   {
     title: "Words of Love | The Beatles | Music Video",
     image: '/assets/gifs/The-Beatles-Words-of-Love.gif',
     filters: ['work_director', 'year_2024', 'clients_The-Beatles'],
     videoUrl: 'https://vimeo.com/1001282939',
-    thumbnail: '/assets/thumbnails/rockband.webp'
+    thumbnail: '/assets/thumbnails/beatles-words-with-love-thumbnail.webp'
   },
   {
     title: "Gods and Monsters | Sizzle",
     image: '/assets/gifs/Monsters-Sizzle.gif',
     filters: ['work_director', 'year_2024'],
     videoUrl: 'https://vimeo.com/1001257684',
-    thumbnail: '/assets/thumbnails/rockband.webp'
+    thumbnail: '/assets/thumbnails/monster-sizzle-thumbnail.webp'
   },
   {
-    title: "Feel Good Inc and Hung Up | Gorillaz ft. Madonna | LIVE",
+    title: "Feel Good Inc. and Hung Up | Gorillaz ft. Madonna | LIVE",
     image: '/assets/gifs/Gorillaz-Madonna-Feel-Good-Hung-Up-live.gif',
     filters: ['work_director', 'year_2006', 'clients_gorillaz'],
     videoUrl: 'https://vimeo.com/1001251450',
-    thumbnail: '/assets/thumbnails/rockband.webp'
+    thumbnail: '/assets/thumbnails/gorillaz-ft-madonna-live-thumbnail.webp'
   },
   {
     title: "Clint Eastwood | Gorillaz @ BRITs | LIVE",
     image: '/assets/gifs/Gorillaz-Clint-Eastwood-Live.gif',
     filters: ['work_director', 'year_2006', 'clients_gorillaz'],
     videoUrl: 'https://vimeo.com/1001251021/847126dd9c',
-    thumbnail: '/assets/thumbnails/rockband.webp'
+    thumbnail: '/assets/thumbnails/gorillaz-clint-eastwood-live.webp'
   }
 ];

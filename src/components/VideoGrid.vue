@@ -5,11 +5,12 @@
       :key="index"
       class="grid-item"
       :data-pos="index + 1"
-      @mouseover="handleMouseOver(video, index + 1)"
-      @mouseleave="handleMouseLeave"
+      @mouseover="handleMouseOver(video, index)"
+      @mouseleave="handleMouseLeave(index)"
       @click="handleClick(video)"
     >
-      <img :src="video.image" :alt="video.title" class="video-image" />
+    <img :src="video.thumbnail" :alt="video.title" class="video-thumbnail" />
+    <img v-show="showGif[index]" :src="video.image" :alt="video.title" class="video-gif" />
     </div>
   </div>
 </template>
@@ -30,7 +31,7 @@ export default defineComponent({
   },
   emits: ['update-video-title', 'video-selected'],
   setup(props, { emit }) {
-    const lastHoveredPos = ref(null); // Store the last hovered position
+    const showGif = ref([]);
 
     const filteredvideos = computed(() => {
       if (props.selectedFilters.length === 0) return props.videos;
@@ -45,6 +46,8 @@ export default defineComponent({
 
     const handleMouseOver = (video, pos) => {
       try {
+
+        showGif.value[pos] = true;
         
         const work = video.filters
           .filter(filter => filter.includes('work'))
@@ -53,13 +56,13 @@ export default defineComponent({
         updatevideoTitle(video.title, video.image, work);
 
         const gridContainer = document.querySelector('.video-grid');
-        gridContainer.style.gridTemplateColumns = getGridTemplateColumns(pos);
-        gridContainer.style.gridTemplateRows = getGridTemplateRows(pos);
+        gridContainer.style.gridTemplateColumns = getGridTemplateColumns(pos + 1);
+        gridContainer.style.gridTemplateRows = getGridTemplateRows(pos + 1);
         gridContainer.style.transition = 'grid-template-columns 1s ease, grid-template-rows 1s ease';
 
         document.querySelectorAll('.grid-item').forEach((item, index) => {
           item.classList.remove('enlarged', 'shrunken');
-          if (index + 1 === pos) {
+          if (index === pos) {
             item.classList.add('enlarged');
           } else {
             item.classList.add('shrunken');
@@ -70,8 +73,10 @@ export default defineComponent({
       }
     };
 
-    const handleMouseLeave = () => {
+    const handleMouseLeave = (index) => {
       try {
+        showGif.value[index] = false;
+
         updatevideoTitle('', '', '');
           const gridContainer = document.querySelector('.video-grid');
           gridContainer.style.gridTemplateColumns = getGridTemplateColumns('30vw 10vw 10vw 10vw 10vw 10vw 10vw 10vw');
@@ -121,6 +126,7 @@ export default defineComponent({
       handleMouseOver,
       handleMouseLeave,
       handleClick,
+      showGif
     };
   },
 });
@@ -164,16 +170,33 @@ export default defineComponent({
   opacity: 0.9;
 }
 
-.video-image {
+.video-thumbnail, .video-gif {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  aspect-ratio: 3/2;
-  transform: scale(1);
-  transition: transform 0.3s, margin 0.3s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s;
 }
 
-.video-image:hover {
-  transform: scale(1.2);
+.video-thumbnail {
+  opacity: 1;
+}
+
+.video-gif {
+  opacity: 0;
+}
+
+.grid-item:hover .video-thumbnail {
+  opacity: 0;
+  transition: opacity 1s;
+  transition-delay: 1s;
+}
+
+.grid-item:hover .video-gif {
+  opacity: 1;
+  transition: opacity 1s;
+  transition-delay: 1s;
 }
 </style>
