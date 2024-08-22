@@ -159,7 +159,7 @@ export default defineComponent({
   display: grid;
   grid-template-columns: 30vw 10vw 10vw 10vw 10vw 10vw 10vw 10vw;
   grid-template-rows: 40% 20% 20% 20%;
-  padding: 2rem;
+  padding: 2rem 0 1rem;
   padding-left: 0;
   overflow-x: scroll;
   height: 70vh;
@@ -170,7 +170,6 @@ export default defineComponent({
   z-index: 2;
   transition: grid-template-columns 1s ease, grid-template-rows 1s ease;
   max-width: 1800px;
-  margin: auto;
 }
 
 .video-grid::-webkit-scrollbar {

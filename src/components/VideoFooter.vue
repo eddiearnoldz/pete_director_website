@@ -70,19 +70,19 @@ export default {
 .video-footer {
   position: fixed;
   bottom: 0;
-  width: calc(100% - 2rem);
+  width: 100%;
   color: var(--text-color);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px 1rem;
+  padding: 1rem 0;
   background-image: linear-gradient(to top,var(--background-color), rgba(0, 0, 0, 0) 100%);
 }
 
 .video-title,
 .video--work {
-  width: 100%;
-  margin-right: auto;
+  width: calc(100% - 2rem);
+  margin: 0 auto;
   text-align: center;
   font-size: 24px; /* Adjust as needed */
   font-weight: bold; /* Adjust as needed */
@@ -114,6 +114,14 @@ export default {
     font-size: 30px;
     margin-right: auto;
     width: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+
+  .video-title {
+    margin: 0;
   }
   
   .video--work {
@@ -126,21 +134,21 @@ export default {
     padding: 2rem;
     padding-top: 0;
     display: flex;
-    gap: 10px;
     flex-direction: column;
     background-image: none;
     width: calc(100% - 4rem);
     z-index: 1;
     background-image: none;
-    margin-top: auto;
   }
 
   .title-wrapper {
     margin-left: auto;
     flex-direction: row;
     width: max-content;
-    gap: 0px;
     width: 100%;
+    min-height: 40px;
+    gap: 10px;
+    align-items: flex-end;
   }
 }
 
@@ -152,26 +160,36 @@ export default {
     margin-left: auto;
     width: 100%;
     text-align: right;
+    justify-content: flex-end;
   }
 
   .video--work {
     font-size: 30px;
     margin-right: 0;
     margin-left: auto;
-    position: absolute;
-    bottom: 2rem;
-    right: 2rem;
-  }
-
-  .video-footer {
-    flex-direction: row-reverse;
-    max-width: 1800px;
-    margin: auto;
   }
 
   .title-wrapper {
     width: auto;
+    flex-direction: row;
     height: 100%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .video-footer {
+    flex-direction: row-reverse;
+  }
+  .title-wrapper {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    flex-direction: column;
+  }
+
+  .video-footer {
+    max-width: 1800px;
+    margin: 0 auto;
   }
 }
 </style>

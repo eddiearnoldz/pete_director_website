@@ -50,7 +50,6 @@ export default defineComponent({
     const filters = ref([
       'work_animator',
       'work_director',
-      'work_gorillaz',
       'genre_commercial',
       'genre_live', 
       'genre_music-video', 

@@ -9,7 +9,7 @@ export const videos = [
   {
     title: "BBC Stadium Olympics | BBC | Commercial",
     image: '/assets/gifs/BBC_stadiumUK_full_length.gif',
-    filters: ['work_director', 'genre_commercial', 'work_animator', 'year_2012', 'clients_bbc' ],
+    filters: ['work_director', 'genre_commercial', 'work_animator', 'year_2012', 'clients_BBC' ],
     videoUrl: 'https://vimeo.com/1001261655',
     thumbnail: '/assets/thumbnails/bbc_olympics.webp'
   },
@@ -30,7 +30,7 @@ export const videos = [
   {
     title: "Dirty Harry | Gorillaz | Music Video",
     image: '/assets/gifs/Gorillaz-Dirty-Harry-(Official-Video)-360p.gif',
-    filters: ['work_director', 'genre_music-video', 'work_gorillaz', 'year_2018', 'clients_gorillaz'],
+    filters: ['work_director', 'genre_music-video', 'year_2018', 'clients_gorillaz'],
     videoUrl: 'https://vimeo.com/1001273264',
     thumbnail: '/assets/thumbnails/gorillaz_dirty_harry.webp'
   },
@@ -51,7 +51,7 @@ export const videos = [
   {
     title: "19-2000 | Gorillaz | Music Video",
     image: '/assets/gifs/Gorillaz-19-2000.gif',
-    filters: ['work_director', 'genre_music-video', 'work_gorillaz', 'year_2018', 'clients_gorillaz'],
+    filters: ['work_director', 'genre_music-video', 'year_2018', 'clients_gorillaz'],
     videoUrl: 'https://vimeo.com/1001272619',
     thumbnail: '/assets/thumbnails/gorillaz_19_2000.webp'
   },
@@ -93,7 +93,7 @@ export const videos = [
   {
     title: "Clint Eastwood | Gorillaz | Music Video",
     image: '/assets/gifs/Gorillaz-Clint Eastwood-(Official-Video).gif',
-    filters: ['work_director', 'genre_music-video' , 'work_gorillaz', 'year_2018', 'clients_gorillaz'],
+    filters: ['work_director', 'genre_music-video' , 'year_2018', 'clients_gorillaz'],
     videoUrl: 'https://vimeo.com/1001272848',
     thumbnail: '/assets/thumbnails/gorillaz-clint-eastwood.webp'
   },
@@ -107,21 +107,21 @@ export const videos = [
   {
     title: "DARE | Gorillaz | Music Video",
     image: '/assets/gifs/Gorillaz-DARE-(Official-Video).gif',
-    filters: ['work_director', 'genre_music-video' , 'work_gorillaz', 'year_2018', 'clients_gorillaz'],
+    filters: ['work_director', 'genre_music-video' , 'year_2018', 'clients_gorillaz'],
     videoUrl: 'https://vimeo.com/1001273137',
     thumbnail: '/assets/thumbnails/gorillaz_dare.webp'
   },
   {
     title: "El Mañana | Gorillaz | Music Video",
     image: '/assets/gifs/Gorillaz-El-Manana.gif',
-    filters: ['work_director', 'genre_music-video' , 'work_gorillaz', 'year_2018', 'clients_gorillaz'],
+    filters: ['work_director', 'genre_music-video' , 'year_2018', 'clients_gorillaz'],
     videoUrl: 'https://vimeo.com/1001273375',
     thumbnail: '/assets/thumbnails/gorillaz_el_manana.webp'
   },
   {
     title: "Feel Good Inc | Gorillaz | Music Video",
     image: '/assets/gifs/Gorillaz-Feel-Good-Inc.-(Official-Video).gif',
-    filters: ['work_director', 'genre_music-video' , 'work_gorillaz', 'year_2018', 'clients_gorillaz'],
+    filters: ['work_director', 'genre_music-video' , 'year_2018', 'clients_gorillaz'],
     videoUrl: 'https://vimeo.com/1001273857',
     thumbnail: '/assets/thumbnails/gorillaz_feel_good_inc.webp'
   },
@@ -142,14 +142,14 @@ export const videos = [
   {
     title: "On Melancholy Hill | Gorillaz | Music Video",
     image: '/assets/gifs/Gorillaz-On-Melancholy-Hill-(Official Video).gif',
-    filters: ['work_director', 'genre_music-video' , 'work_gorillaz', 'year_2018', 'clients_gorillaz'],
+    filters: ['work_director', 'genre_music-video', 'year_2018', 'clients_gorillaz'],
     videoUrl: 'https://vimeo.com/1001273955',
     thumbnail: '/assets/thumbnails/gorillaz_on_melancholy_hill.webp'
   },
   {
     title: "Riot | Pentakill Mortal Reminder | Music Video",
     image: '/assets/gifs/Riot-Pentakill-Mortal-Reminder.gif',
-    filters: ['work_director', 'genre_music-video' , 'work_music-video', 'year_2018', 'clients_league-of-legends'],
+    filters: ['work_director', 'genre_music-video', 'year_2018', 'clients_league-of-legends'],
     videoUrl: 'https://vimeo.com/1001280164',
     thumbnail: '/assets/thumbnails/pentakill-thumbnail.webp'
   },
@@ -170,7 +170,7 @@ export const videos = [
   {
     title: "Guitar Hero II | Guitar Hero | Commercial",
     image: '/assets/gifs/Guitar-Hero-II.gif',
-    filters: ['work_director', 'genre_commercial' , 'year_2022', 'clients_gorillaz'],
+    filters: ['work_director', 'genre_commercial' , 'year_2022', 'clients_guitar-hero'],
     videoUrl: 'https://vimeo.com/1001268508',
     thumbnail: '/assets/thumbnails/guitar-hero-II-thumbnail.webp'
   },
