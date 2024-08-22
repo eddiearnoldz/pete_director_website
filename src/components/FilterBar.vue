@@ -178,7 +178,11 @@ export default defineComponent({
   overflow-x: scroll;
   width: 100%;
   padding-left: 1rem;
+  scrollbar-width: none;
+}
 
+.filters-container::-webkit-scrollbar {
+  display: none;
 }
 
 .filters {
