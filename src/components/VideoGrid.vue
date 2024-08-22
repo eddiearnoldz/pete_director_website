@@ -9,7 +9,11 @@
       @mouseleave="handleMouseLeave(index)"
       @click="handleClick(video)"
     >
-    <img :src="video.image" :alt="video.title" class="video-gif" />
+    <img 
+        :src="isGifLoaded[index] ? video.image : video.thumbnail" 
+        :alt="video.title" 
+        class="video-img" 
+      />
     </div>
   </div>
 </template>
@@ -30,6 +34,19 @@ export default defineComponent({
   },
   emits: ['update-video-title', 'video-selected'],
   setup(props, { emit }) {
+    const isGifLoaded = ref(Array(props.videos.length).fill(false));
+
+    const preloadGif = (url, index) => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = url;
+        img.onload = () => {
+          isGifLoaded.value[index] = true; // Mark GIF as loaded
+          resolve(url);
+        };
+        img.onerror = reject;
+      });
+    };
 
     const filteredvideos = computed(() => {
       if (props.selectedFilters.length === 0) return props.videos;
@@ -42,9 +59,12 @@ export default defineComponent({
       emit('update-video-title', { title, image, work });
     };
 
-    const handleMouseOver = (video, pos) => {
+    const handleMouseOver = async (video, pos) => {
       try {
-        
+        if (!isGifLoaded.value[pos]) {
+          await preloadGif(video.image, pos); // Preload the GIF
+        }
+
         const work = video.filters
           .filter(filter => filter.includes('work'))
           .map(filter => filter.replace('work_', '').replace("-", " "));
@@ -71,14 +91,13 @@ export default defineComponent({
 
     const handleMouseLeave = (index) => {
       try {
-
         updatevideoTitle('', '', '');
-          const gridContainer = document.querySelector('.video-grid');
-          gridContainer.style.gridTemplateColumns = getGridTemplateColumns('30% 10% 10% 10% 10% 10% 10% 10%');
-          gridContainer.style.gridTemplateRows = getGridTemplateRows('40% 20% 20% 20%');
-          gridContainer.style.transition = 'grid-template-columns 1s ease, grid-template-rows 1s ease';
+        const gridContainer = document.querySelector('.video-grid');
+        gridContainer.style.gridTemplateColumns = getGridTemplateColumns('30% 10% 10% 10% 10% 10% 10% 10%');
+        gridContainer.style.gridTemplateRows = getGridTemplateRows('40% 20% 20% 20%');
+        gridContainer.style.transition = 'grid-template-columns 1s ease, grid-template-rows 1s ease';
 
-          document.querySelectorAll('.grid-item')[0].classList.add('enlarged');
+        document.querySelectorAll('.grid-item')[0].classList.add('enlarged');
       } catch (error) {
         console.error('Error in handleMouseLeave:', error);
       }
@@ -121,10 +140,12 @@ export default defineComponent({
       handleMouseOver,
       handleMouseLeave,
       handleClick,
+      isGifLoaded,
     };
   },
 });
 </script>
+
 
 <style scoped>
 .video-grid {
@@ -166,7 +187,7 @@ export default defineComponent({
   opacity: 0.9;
 }
 
-.video-gif {
+.video-img{
   width: 100%;
   height: 100%;
   object-fit: cover;
