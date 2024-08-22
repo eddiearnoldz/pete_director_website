@@ -6,6 +6,7 @@
       :selectedFilters="selectedFilters"
       @update-video-title="updatevideoTitle"
       @video-selected="selectVideo"
+      @thumbnails-loaded="handleThumbnailsLoaded"
     />
     <video-grid 
       v-else 
@@ -13,6 +14,7 @@
       :selectedFilters="selectedFilters"
       @update-video-title="updatevideoTitle"
       @video-selected="selectVideo"
+      @thumbnails-loaded="handleThumbnailsLoaded"
     />
     <video-footer 
       :filters="filters" 
@@ -44,7 +46,7 @@ import VideoPlayer from '@/components/VideoPlayer.vue';
 
 export default defineComponent({
   components: { videoCarouselMobile, videoGrid, videoFooter, VideoPlayer },
-  setup() {
+  setup(props, {emit}) {
     const isMobileView = ref(window.innerWidth < 768);
     const selectedFilters = ref([]);
     const filters = ref([
@@ -122,6 +124,11 @@ export default defineComponent({
       selectedVideo.value = null;
     };
 
+    const handleThumbnailsLoaded = () => {
+      console.log('Thumbnails loaded event caught in video-gallery!'); // Debugging line
+      emit('thumbnails-loaded');
+    };
+
     onMounted(() => {
       window.addEventListener('resize', updateView);
     });
@@ -143,7 +150,8 @@ export default defineComponent({
       clearFilters,
       filteredvideos,
       selectVideo,
-      selectedVideo
+      selectedVideo,
+      handleThumbnailsLoaded
     };
   }
 });

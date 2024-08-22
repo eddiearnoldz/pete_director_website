@@ -165,7 +165,7 @@ export default defineComponent({
 .filter-header {
   position: sticky;
   top: 0;
-  background-color: var(--background-color); /* Add a background color to prevent overlap */
+  background-color: transparent;
   z-index: 2; /* Ensure the header stays above the filters */
   display: flex;
   justify-content: flex-start;

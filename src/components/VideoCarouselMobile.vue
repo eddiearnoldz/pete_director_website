@@ -8,7 +8,7 @@
       @click="selectVideo(video)"
     >
       <div class="image-container">
-        <img :src="video.thumbnail" :alt="video.title" class="video-image" />
+        <img :src="video.thumbnail" :alt="video.title" @load="checkThumbnailLoaded(index)" class="video-image" />
       </div>
     </div>
   </div>
@@ -32,6 +32,7 @@ export default defineComponent({
   setup(props, { emit }) {
     const activeIndex = ref(0);
     const carouselContainer = ref(null);
+    const thumbnailsLoadedCount = ref(0); 
 
     const filteredvideos = computed(() => {
       if (props.selectedFilters.length === 0) return props.videos;
@@ -95,6 +96,14 @@ export default defineComponent({
       });
     };
 
+    const checkThumbnailLoaded = (index) => {
+      thumbnailsLoadedCount.value += 1;
+      if (thumbnailsLoadedCount.value === filteredvideos.value.length) {
+        // Emit the event when all thumbnails are loaded
+        emit('thumbnails-loaded');
+      }
+    };
+
     const selectVideo = (video) => {
       emit('video-selected', video);
     };
@@ -130,6 +139,7 @@ export default defineComponent({
       getSlideStyle,
       carouselContainer,
       selectVideo,
+      checkThumbnailLoaded, 
     };
   }
 });

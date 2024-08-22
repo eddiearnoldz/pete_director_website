@@ -179,12 +179,17 @@ export default {
 @media screen and (min-width: 1440px) {
   .video-footer {
     flex-direction: row-reverse;
+    min-height: 140px;
+    position: relative;
   }
   .title-wrapper {
-    width: 100%;
-    height: 100%;
     margin-left: auto;
     flex-direction: column;
+    position: absolute;
+    width: 50%;
+    bottom: 2rem;
+    right: 2rem;
+    height: auto;
   }
 
   .video-footer {

@@ -9,10 +9,11 @@
       @mouseleave="handleMouseLeave(index)"
       @click="handleClick(video)"
     >
-    <img 
+      <img 
         :src="isGifLoaded[index] ? video.image : video.thumbnail" 
         :alt="video.title" 
         class="video-img" 
+        @load="checkThumbnailLoaded(index)"
       />
     </div>
   </div>
@@ -32,9 +33,10 @@ export default defineComponent({
       default: () => []
     }
   },
-  emits: ['update-video-title', 'video-selected'],
+  emits: ['update-video-title', 'video-selected', 'thumbnails-loaded'],
   setup(props, { emit }) {
     const isGifLoaded = ref(Array(props.videos.length).fill(false));
+    const thumbnailsLoadedCount = ref(0);
 
     const preloadGif = (url, index) => {
       return new Promise((resolve, reject) => {
@@ -61,8 +63,6 @@ export default defineComponent({
 
     const handleMouseOver = async (video, pos) => {
       try {
-   
-
         const work = video.filters
           .filter(filter => filter.includes('work'))
           .map(filter => filter.replace('work_', '').replace("-", " "));
@@ -103,6 +103,14 @@ export default defineComponent({
 
     const handleClick = (video) => {
       emit('video-selected', video);
+    };
+
+    const checkThumbnailLoaded = (index) => {
+      thumbnailsLoadedCount.value += 1;
+      if (thumbnailsLoadedCount.value === filteredvideos.value.length) {
+        console.log('Thumbnails loaded!'); // Debugging line
+        emit('thumbnails-loaded');
+      }
     };
 
     const columnLayouts = [
@@ -148,11 +156,11 @@ export default defineComponent({
       handleMouseLeave,
       handleClick,
       isGifLoaded,
+      checkThumbnailLoaded
     };
   },
 });
 </script>
-
 
 <style scoped>
 .video-grid {
@@ -165,7 +173,7 @@ export default defineComponent({
   height: 70vh;
   width: 100%;
   margin-left: auto;
-  -ms-overflow-style: none;  /* IE and Edge */
+  -ms-overflow-style: none; 
   scrollbar-width: none;
   z-index: 2;
   transition: grid-template-columns 1s ease, grid-template-rows 1s ease;

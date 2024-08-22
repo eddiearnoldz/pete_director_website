@@ -78,22 +78,7 @@ onMounted(() => {
         gsap.set(letter, { clearProps: 'all' })
       })
     }
-  })
-
-  // Add a scaling effect on load for each letter
-  tl.fromTo(
-    letters,
-    { y: -20, opacity: 0, rotate: -20 },
-    {
-      y: 0,
-      opacity: 1,
-      rotate: 0,
-      ease: 'elastic.out(1,0.3)',
-      duration: 3,
-      delay: 0.5,
-      stagger: 0.05
-    }
-  )
+  });
 
   // Add hover animations for each letter in the logo
   if (!isMobile()) {
