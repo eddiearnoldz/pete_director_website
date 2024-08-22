@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- Loading screen displayed until all thumbnails are loaded -->
-    <div v-if="loading" ref="loadingScreen" class="loading-screen">
+    <div :style="{ visibility: loading ? 'visible' : 'hidden' }" ref="loadingScreen" class="loading-screen">
       <div ref="loadingText" class="loading-text">
         <span v-for="(char, index) in textChars" :key="index" class="char">{{ char === ' ' ? '\u00A0' : char }}</span>
       </div>
@@ -28,38 +28,38 @@ const text = "PETE CANDELAND";
 // Split the text into an array of characters
 const textChars = text.split('');
 
-// GSAP animation setup
 onMounted(() => {
   nextTick(() => {
     // Select all span elements within loadingText for animation
     const chars = loadingText?.value.querySelectorAll('.char');
     
     // GSAP animation for each character
-    gsap.fromTo(chars, {
-      rotation: 0,
-      y: -1000,
+    gsap.fromTo(chars, 
+    {
+      color: () => gsap.utils.random(["#FF69B4", "#00FFFF", "#FFD700", "#ADFF2F"]),
       opacity: 0,
-      color: () => gsap.utils.random(["#FF69B4", "#00FFFF", "#FFD700", "#ADFF2F"]),
-    }, {
-      rotation: 360,
-      color: () => gsap.utils.random(["#FF69B4", "#00FFFF", "#FFD700", "#ADFF2F"]),
-      duration: 3,
-      ease: "power1.inOut",
-      repeat: -1,
-      y:0,
-      yoyo: true,
-      stagger: 0.1,
-      opacity: 1,
-      transformOrigin: "center center"
-    });
-  });
+      scale: 0.1
+    },
+    {
+    duration: 2,
+    scale: 1,
+    repeat: -1,
+    opacity: 1,
+    yoyo: true, 
+    ease: "elastic.put(1,0.3)",
+    color: () => gsap.utils.random(["#FF69B4", "#00FFFF", "#FFD700", "#ADFF2F"]),
+    stagger: {
+      grid: [7,15],
+      from: "center",
+      amount: 1
+    }
+  }
+  );
+});
 });
 
 // Handle when all thumbnails have been loaded
 function handleThumbnailsLoaded() {
-  // Ensure the loadingScreen reference is available before proceeding
-  if (loadingScreen.value) {
-    // Trigger fade-out animation
     gsap.to(loadingScreen.value, {
       opacity: 0,
       duration: 0.5,
@@ -78,7 +78,6 @@ function handleThumbnailsLoaded() {
             stagger: 0.05
           }
         )
-        loading.value = false; // Remove loading screen after fade-out
       }
     });
 
@@ -87,8 +86,8 @@ function handleThumbnailsLoaded() {
       const chars = loadingText.value.querySelectorAll('.char');
       gsap.killTweensOf(chars);
     }
+    loading.value = false; // Remove loading screen after fade-out
   }
-}
 
 const isMobile = () => window.innerWidth <= 768
 </script>
