@@ -167,7 +167,7 @@ export default defineComponent({
 
 .filter-group {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   padding: 0;
   width: max-content;
   justify-content: flex-end;
@@ -184,14 +184,13 @@ export default defineComponent({
 }
 
 .filter-options {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: flex-start;
+  display: grid;
   margin-left: 10px;
-  max-height: 70px;
-  column-gap: 20px;
   width: max-content;
+  grid-template-rows: repeat(5, 1fr);
+  grid-auto-flow: column;
+  justify-items: left;
+  column-gap: 20px;
 }
 
 
@@ -201,7 +200,7 @@ export default defineComponent({
   border: none;
   cursor: pointer;
   color: var(--text-color);
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   margin: 0px;
   font-family: "Architects Daughter", cursive;
   transition: color 0.4s;

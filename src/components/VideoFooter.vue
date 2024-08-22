@@ -87,7 +87,7 @@ export default {
   font-size: 24px; /* Adjust as needed */
   font-weight: bold; /* Adjust as needed */
   text-align: left;
-  line-height: 1.2;
+  line-height: 1;
   font-family: "Londrina Solid", sans-serif;
   color: var(--text-color);
   letter-spacing: 1.1px;
@@ -96,7 +96,6 @@ export default {
 .video--work {
   font-size: 16px;
   text-align: right;
-  margin-top: 0.5rem;
   color: var(--text-color-hover);
 }
 
