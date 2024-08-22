@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { defineComponent, computed, ref } from 'vue';
+import { defineComponent, computed, ref, onMounted } from 'vue';
 
 export default defineComponent({
   props: {
@@ -61,9 +61,7 @@ export default defineComponent({
 
     const handleMouseOver = async (video, pos) => {
       try {
-        if (!isGifLoaded.value[pos]) {
-          await preloadGif(video.image, pos); // Preload the GIF
-        }
+   
 
         const work = video.filters
           .filter(filter => filter.includes('work'))
@@ -134,6 +132,15 @@ export default defineComponent({
       const normalizedPos = Math.floor((pos - 1) / 8) % 4;
       return rowLayouts[normalizedPos];
     };
+
+    onMounted(() => {
+      // Preload all GIFs once the component is mounted
+      filteredvideos.value.forEach((video, index) => {
+        preloadGif(video.image, index).catch((error) => {
+          console.error('Error loading GIF:', error);
+        });
+      });
+    });
 
     return {
       filteredvideos,
