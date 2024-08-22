@@ -1,7 +1,7 @@
 export const videos = [
   {
     title: "Tomorrow Comes Today | Gorillaz | Music Video",
-    image: '/assets/gifs/Gorillaz-Tomorrow-Comes-Today-(Official-Video)-720p.gif',
+    image: '/assets/gifs/Gorillaz-Tomorrow-Comes-Today.gif',
     filters: ['work_director', 'genre_music-video', 'year_2018', 'clients_gorillaz'],
     videoUrl: 'https://vimeo.com/1001274500',
     thumbnail:'/assets/thumbnails/gorillaz_tomorrow.webp'
