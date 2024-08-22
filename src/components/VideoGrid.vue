@@ -170,6 +170,7 @@ export default defineComponent({
   z-index: 2;
   transition: grid-template-columns 1s ease, grid-template-rows 1s ease;
   max-width: 1800px;
+  margin: 0 auto;
 }
 
 .video-grid::-webkit-scrollbar {
