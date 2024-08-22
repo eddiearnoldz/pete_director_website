@@ -165,7 +165,7 @@ export default defineComponent({
 <style scoped>
 .video-grid {
   display: grid;
-  grid-template-columns: 30vw 10vw 10vw 10vw 10vw 10vw 10vw 10vw;
+  grid-template-columns: 30% 10% 10% 10% 10% 10% 10% 10%;
   grid-template-rows: 40% 20% 20% 20%;
   padding: 2rem 0 1rem;
   padding-left: 0;
