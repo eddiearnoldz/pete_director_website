@@ -204,7 +204,7 @@ nav a {
   display: none;
   font-size: 3rem;
   cursor: pointer;
-  margin-top: -15px;
+  margin-top: -16px;
 }
 
 .mobile-nav {
