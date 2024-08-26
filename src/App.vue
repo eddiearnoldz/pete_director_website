@@ -8,14 +8,12 @@ const showMobileMenu = ref(false);
 const showPlayer = ref(false);
 const vimeoUrl = "https://vimeo.com/1001251940";
 const brightColors = [
-  '#ff0019', // Bright Red
-  '#00fae6', // Bright Cyan
-  '#70def7', // Bright Sky Blue
-  '#9906fa', // Bright Purple
-  '#0f1af9', // Bright Blue
-  '#2ad10c', // Bright Green
-  '#8000ff', // Bright Purple
-  '#ffe205'  // Bright Yellow
+  '#FFC31D',
+  '#F44200',
+  '#FB95AF',
+  '#F2FFFF',
+  '#A9B646',
+  '#085CE4'
 ];
 
 const toggleMobileMenu = () => {
