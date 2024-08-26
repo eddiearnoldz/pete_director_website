@@ -131,12 +131,11 @@ export default {
 
   .video-footer {
     position: unset;
-    padding: 2rem;
     padding-top: 0;
     display: flex;
     flex-direction: column;
     background-image: none;
-    width: calc(100% - 4rem);
+    width: calc(100% - 2rem);
     z-index: 1;
     background-image: none;
   }
@@ -149,6 +148,8 @@ export default {
     min-height: 40px;
     gap: 10px;
     align-items: flex-end;
+    padding-left: 2rem;
+    padding-bottom: 1rem;
   }
 }
 
@@ -173,6 +174,8 @@ export default {
     width: auto;
     flex-direction: row;
     height: 100%;
+    padding-bottom: 0;
+    align-items: center;
   }
 }
 
@@ -187,7 +190,7 @@ export default {
     flex-direction: column;
     position: absolute;
     width: 50%;
-    bottom: 2rem;
+    top: 0;
     right: 2rem;
     height: auto;
   }

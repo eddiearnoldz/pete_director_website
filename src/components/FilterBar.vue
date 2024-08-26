@@ -228,9 +228,9 @@ export default defineComponent({
   border: none;
   cursor: pointer;
   color: var(--text-color);
-  font-size: 0.8rem;
+  font-size: 1rem;
   margin: 0px;
-  font-family: "Architects Daughter", cursive;
+  font-family: "Teko", cursive;
   transition: color 0.4s;
   line-height: 1;
   text-transform: capitalize;
@@ -261,13 +261,13 @@ export default defineComponent({
   }
 
   .filter-bar button {
-    font-size: clamp(0.8rem, 0.9vw, 1.1rem);
+    font-size: clamp(0.8rem, 1.5vw, 1.3rem);
   }
 
   .filter-group h3,
   .filter-bar h2,
   .filter-bar  .clear-filters {
-    font-size: clamp(0.9rem, 1.1vw, 1.2rem);
+    font-size: clamp(0.9rem, 1.5vw, 1.5rem);
   }
 
   .clear-filters {
@@ -283,7 +283,7 @@ export default defineComponent({
 
   .filter-header,
   .filters-container {
-    padding-left: unset;
+    padding-left: 2rem;
   }
 }
 

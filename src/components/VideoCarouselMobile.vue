@@ -4,7 +4,6 @@
       v-for="(video, index) in filteredvideos"
       :key="index"
       :class="['slide', { 'active-slide': activeIndex === index }]"
-      :style="getSlideStyle(index)"
       @click="selectVideo(video)"
     >
       <div class="image-container">
@@ -28,7 +27,7 @@ export default defineComponent({
       default: () => []
     }
   },
-  emits: ['update-video-title', 'video-selected'],
+  emits: ['update-video-title', 'video-selected', 'thumbnails-loaded'],
   setup(props, { emit }) {
     const activeIndex = ref(0);
     const carouselContainer = ref(null);
@@ -40,33 +39,6 @@ export default defineComponent({
         return props.selectedFilters.every(filter => video.filters.includes(filter));
       });
     });
-
-    const getSlideStyle = (index) => {
-      const container = carouselContainer.value;
-      if (!container) return {};
-
-      const slide = container.children[index];
-      if (!slide) return {}; 
-      const slideRect = slide.getBoundingClientRect();
-      const slideMiddleY = slideRect.top + slideRect.height / 2;
-      const thresholdY = window.innerHeight * 0.5; // 50vh from the top
-
-      let scale;
-      if (index === activeIndex.value) {
-        scale = 1;
-      } else if (slideMiddleY > thresholdY) {
-        const distanceToThreshold = slideMiddleY - thresholdY;
-        const maxDistance = window.innerHeight - thresholdY;
-        const scaleFactor = Math.max(0.4, 1 - (distanceToThreshold / maxDistance));
-        scale = scaleFactor;
-      } else {
-        scale = 1;
-      }
-
-      return {
-        transform: `scale(${scale})`,
-      };
-    };
 
     const onScroll = () => {
       const container = carouselContainer.value;
@@ -108,19 +80,10 @@ export default defineComponent({
       emit('video-selected', video);
     };
 
-    const initializeScaling = () => {
-      const container = carouselContainer.value;
-      const slides = container.children;
-      for (let i = 0; i < slides.length; i++) {
-        getSlideStyle(i);
-      }
-    };
-
     onMounted(() => {
       const container = carouselContainer.value;
       container.addEventListener('scroll', onScroll);
       nextTick(() => {
-        initializeScaling();
         onScroll(); // Initial call to set the first active slide
       });
     });
@@ -136,7 +99,6 @@ export default defineComponent({
     return {
       activeIndex,
       filteredvideos,
-      getSlideStyle,
       carouselContainer,
       selectVideo,
       checkThumbnailLoaded, 
@@ -166,6 +128,8 @@ export default defineComponent({
   justify-content: center;
   position: relative;
   scroll-snap-align: start;
+  border: 2px solid transparent;
+  transition: border 0.5s;
 }
 
 .image-container {
@@ -182,6 +146,12 @@ export default defineComponent({
   border-radius: 2px;
   animation: zoom-in-out 20s infinite;
   position: absolute;
+}
+
+.slide.active-slide {
+  border: 2px solid var(--text-color-hover);
+  border-radius: 2px;
+  transition: border 0.5s;
 }
 
 .slide:nth-of-type(2n) .video-image {

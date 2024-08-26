@@ -1,8 +1,7 @@
 :root {
-  --text-color: #f5f838;
-  --text-color-hover: #38f915;
-  --background-color: #fa38d0;
-  --customCOlor: #8000ff;
+  --text-color: #fefef6;
+  --text-color-hover: #fcf800;
+  --background-color: #0f0e01;
 }
 
 html,
@@ -12,7 +11,7 @@ body {
   box-sizing: border-box;
   background-color: var(--background-color);
   color: var(--text-color);
-  font-family:"Architects Daughter", cursive;;
+  font-family: "Teko", cursive;
 }
 
 #app {
@@ -115,8 +114,10 @@ nav a:hover::before {
   font-style: normal;
 }
 
-.architects-daughter-regular {
-  font-family: "Architects Daughter", cursive;
+
+.teko-regular {
+  font-family: "Teko", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 }

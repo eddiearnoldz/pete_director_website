@@ -103,7 +103,7 @@ onMounted(() => {
           ease: 'elastic.out(1, 0.9)',
           duration: 2,
           transformOrigin: 'center',
-          color: "#f5f838"
+          color: "#fefef6"
     }); 
     });
   });
@@ -246,7 +246,7 @@ nav a {
   cursor: pointer;
   opacity: 0;
   position: absolute;
-  top: -8px;
+  top: 0px;
   right: 1.2rem;
   transition: opacity 1s ease;
 }
