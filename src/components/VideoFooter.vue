@@ -102,7 +102,7 @@ export default {
 .title-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
   width: 100%;
   justify-content: flex-start;
 }
@@ -146,6 +146,7 @@ export default {
     justify-content: flex-start;
     align-items: flex-end;
     height: auto;
+    gap: 10px;
     grid-area: 1/2/2/3;
     padding-left: unset;
     padding-bottom: unset;
