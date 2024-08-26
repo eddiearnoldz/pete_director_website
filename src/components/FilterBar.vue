@@ -158,7 +158,7 @@ export default defineComponent({
   cursor: pointer;
   font-weight: bold;
   margin: 0;
-  font-family: "Londrina Solid", sans-serif;
+  font-family: "Anton", sans-serif;
   letter-spacing: 0.8px;
 }
 
@@ -207,7 +207,7 @@ export default defineComponent({
   font-size: 0.9rem;
   width: 100%;
   color: var(--text-color-hover);
-  font-family: "Londrina Solid", sans-serif;
+  font-family: "Anton", sans-serif;
   letter-spacing: 0.8px;
   margin-bottom: 0.25em;
   margin-top: 0.25em;
@@ -245,7 +245,7 @@ export default defineComponent({
   border: none;
   font-size: 0.9rem;
   cursor: pointer;
-  font-family: "Londrina Solid", sans-serif;
+  font-family: "Anton", sans-serif;
   letter-spacing: 0.8px;
   font-weight: bold;
   text-transform: uppercase;
@@ -267,7 +267,7 @@ export default defineComponent({
   .filter-group h3,
   .filter-bar h2,
   .filter-bar  .clear-filters {
-    font-size: clamp(0.9rem, 1.5vw, 1.5rem);
+    font-size: clamp(0.8rem, 1.1vw, 1.3rem);
   }
 
   .clear-filters {
@@ -287,11 +287,13 @@ export default defineComponent({
   }
 }
 
-@media screen and (min-width: 1440px) {
- 
+@media screen and (min-width: 1024px) {
 
-  .filters-container {
-    width: 100%;
+  .filter-bar {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    width: calc(100% - 2rem);
+    overflow-x: scroll;
   }
 }
 

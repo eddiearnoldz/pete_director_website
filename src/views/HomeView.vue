@@ -22,17 +22,6 @@ const loading = ref(true);
 const loadingText = ref(null);
 const loadingScreen = ref(null);
 
-const brightColors = [
-  '#ff0019', // Bright Red
-  '#00fae6', // Bright Cyan
-  '#70def7', // Bright Sky Blue
-  '#9906fa', // Bright Purple
-  '#0f1af9', // Bright Blue
-  '#2ad10c', // Bright Green
-  '#8000ff', // Bright Purple
-  '#ffe205'  // Bright Yellow
-];
-
 // Text to display
 const text = "PETE CANDELAND";
 
@@ -47,18 +36,16 @@ onMounted(() => {
     // GSAP animation for each character
     gsap.fromTo(chars, 
     {
-      color: () => gsap.utils.random(brightColors),
       opacity: 0,
       scale: 0.1
     },
     {
-    duration: 1,
+    duration: 0.5,
     scale: 1,
     repeat: -1,
     opacity: 1,
     yoyo: true, 
     ease: "elastic.put(1,0.3)",
-    color: () => gsap.utils.random(brightColors),
     stagger: {
       grid: [7,15],
       from: "center",
@@ -100,7 +87,7 @@ function handleThumbnailsLoaded() {
     loading.value = false; // Remove loading screen after fade-out
   }
 
-const isMobile = () => window.innerWidth <= 768
+const isMobile = () => window.innerWidth < 768
 </script>
 
 <style>
@@ -123,9 +110,9 @@ const isMobile = () => window.innerWidth <= 768
 /* Styling for loading text */
 .loading-text {
   font-size: 2.5rem;
-  color: #fff;
+  color: var(--text-color);
   display: flex;
-  font-family: "Londrina Solid", sans-serif;
+  font-family: "Anton", sans-serif;
 }
 
 /* Styling for each character */

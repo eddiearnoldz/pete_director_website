@@ -35,7 +35,7 @@ const openShowreel = () => {
   closeMobileMenu()
 }
 
-const isMobile = () => window.innerWidth <= 768
+const isMobile = () => window.innerWidth < 768
 
 onMounted(() => {
   const logoText = document.querySelector('.logo span')
@@ -168,7 +168,7 @@ onMounted(() => {
     </nav>
     <div class="hamburger" @click="toggleMobileMenu">☰</div>
     <div class="mobile-nav" :class="{ open: showMobileMenu }">
-      <a class="close-btn" @click="closeMobileMenu">&times;</a>
+      <a class="close-btn" @click="closeMobileMenu">x</a>
       <RouterLink class="londrina-solid-regular animated" to="/" @click="closeMobileMenu"
         >work</RouterLink
         >
@@ -206,6 +206,7 @@ nav a {
   display: none;
   font-size: 3rem;
   cursor: pointer;
+  margin-top: -15px;
 }
 
 .mobile-nav {
@@ -242,12 +243,12 @@ nav a {
 }
 
 .close-btn {
-  font-size: 5rem;
+  font-size: 3rem;
   cursor: pointer;
   opacity: 0;
   position: absolute;
-  top: 0px;
-  right: 1.2rem;
+  top: 0.6rem;
+  right: 1.6rem;
   transition: opacity 1s ease;
 }
 
@@ -255,7 +256,7 @@ nav a {
   opacity: 1;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .desktop-nav {
     display: none;
   }

@@ -47,7 +47,7 @@ export default {
   },
   methods: {
     onPlayerReady(player) {
-      player.setColors(['#f5f838', '#23cc05', '#fff', '#000'])
+      player.setColors(['#fcf800', '#fcf800', '#000', '#000'])
       this.player = player;
       this.animateVideoIn();
     },
@@ -126,7 +126,7 @@ export default {
   position: absolute;
   bottom: 1em;
   right: 1em;
-  background:  var(--text-color);;
+  background:  var(--background-color);;
   color: var(--text-color-hover);
   border: 3px solid var(--text-color-hover);
   font-size: 20px;
