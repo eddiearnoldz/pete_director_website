@@ -96,7 +96,7 @@ export default {
 }
 
 .video-container {
-  width: 75%;
+  width: calc(100% - 3rem);
   height: 100%;
 }
 
@@ -163,6 +163,11 @@ export default {
 
   .embed-container {
     margin-top: 0;
+  }
+
+  .video-container {
+    width: 75%;
+    height: 100%;
   }
 }
 </style>
