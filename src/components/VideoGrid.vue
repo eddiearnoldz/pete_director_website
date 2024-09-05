@@ -211,5 +211,6 @@ export default defineComponent({
   top: 0;
   left: 0;
   transition: opacity 0.3s;
+  padding: 5px;
 }
 </style>

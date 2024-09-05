@@ -50,18 +50,7 @@ export default defineComponent({
     const isMobileView = ref(window.innerWidth < 768);
     const selectedFilters = ref([]);
     const filters = ref([
-      'work_animator',
       'work_director',
-      'genre_commercial',
-      'genre_live', 
-      'genre_music-video', 
-      'genre_sizzle',
-      'year_2024',
-      'year_2023',
-      'year_2022',
-      'year_2021',
-      'year_2020',
-      'year_2019',
       'clients_BBC',
       'clients_finlandia',
       'clients_gorillaz',
