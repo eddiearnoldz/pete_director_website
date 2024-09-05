@@ -1,7 +1,8 @@
 :root {
-  --text-color: #fefef6;
-  --text-color-hover: #fcf800;
-  --background-color: #0f0e01;
+  --text-color: #f12602;
+  --text-color-hover: #1ba703;
+  --background-color: #fda4ea;
+  color: #ff0909
 }
 
 html,
@@ -27,6 +28,7 @@ body {
   width: 100%;
   position: absolute;
   top: 75px;
+  min-height: calc(100vh - 131px)
 }
 
 header {
@@ -50,7 +52,7 @@ header {
 }
 
 .logo a {
-  font-size: 40px;
+  font-size: 30px;
   text-decoration: none;
   color: var(--text-color);
   transition: color 0.4s;
@@ -79,7 +81,7 @@ nav a::before {
  width: 0%;
  transform: rotate(3deg);
  transform-origin: bottom left;
- bottom: 2px;
+ bottom:-2px;
  height: clamp(2px, 0.3vw, 4px);
  background-color: var( --text-color-hover);
   transition: width 0.4s;
@@ -131,6 +133,10 @@ nav a:hover::before {
   header {
     padding: 1rem 2rem;
     width: calc(100% - 4rem);
+  }
+
+  .logo a {
+    font-size: 38px
   }
 }
 

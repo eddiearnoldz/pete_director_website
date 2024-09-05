@@ -91,8 +91,8 @@ export default defineComponent({
       try {
         updatevideoTitle('', '', '');
         const gridContainer = document.querySelector('.video-grid');
-        gridContainer.style.gridTemplateColumns = getGridTemplateColumns('30% 20% 20% 20% 20% 20% 20% 10%');
-        gridContainer.style.gridTemplateRows = getGridTemplateRows('40% 20% 20% 20%');
+        gridContainer.style.gridTemplateColumns = getGridTemplateColumns('40% 18% 18% 18% 18% 18% 18% 18%');
+        gridContainer.style.gridTemplateRows = getGridTemplateRows('55% 15% 15% 15%');
         gridContainer.style.transition = 'grid-template-columns 1s ease, grid-template-rows 1s ease';
 
         document.querySelectorAll('.grid-item')[0].classList.add('enlarged');
@@ -114,26 +114,25 @@ export default defineComponent({
     };
 
     const columnLayouts = [
-      '30% 20% 20% 20% 20% 20% 20% 20%', // 1, 9, 17, 25, 33, ...
-      '20% 30% 20% 20% 20% 20% 20% 20%', // 2, 10, 18, 26, 34, ...
-      '20% 20% 30% 20% 20% 20% 20% 20%', // 3, 11, 19, 27, 35, ...
-      '20% 20% 20% 30% 20% 20% 20% 20%', // 4, 12, 20, 28, 36, ...
-      '20% 20% 20% 20% 30% 20% 20% 20%', // 5, 13, 21, 29, 37, ...
-      '20% 20% 20% 20% 20% 30% 20% 20%', // 6, 14, 22, 30, 38, ...
-      '20% 20% 20% 20% 20% 20% 30% 20%', // 7, 15, 23, 31, 39, ...
-      '20% 20% 20% 20% 20% 20% 20% 30%'  // 8, 16, 24, 32, 40, ...
-    ];
-
+      '40% 18% 18% 18% 18% 18% 18% 18%', // 1, 9, 17, 25, 33, ...
+      '18% 40% 18% 18% 18% 18% 18% 18%', // 2, 10, 18, 26, 34, ...
+      '18% 18% 40% 18% 18% 18% 18% 18%', // 3, 11, 19, 27, 35, ...
+      '18% 18% 18% 40% 18% 18% 18% 18%', // 4, 12, 20, 28, 36, ...
+      '18% 18% 18% 18% 40% 18% 18% 18%', // 5, 13, 21, 29, 37, ...
+      '18% 18% 18% 18% 18% 40% 18% 18%', // 6, 14, 22, 30, 38, ...
+      '18% 18% 18% 18% 18% 18% 40% 18%', // 7, 15, 23, 31, 39, ...
+      '18% 18% 18% 18% 18% 18% 18% 40%'  // 8, 16, 24, 32, 40, ...
+    ]
     const getGridTemplateColumns = (pos) => {
       const normalizedPos = (pos - 1) % 8;
       return columnLayouts[normalizedPos];
     };
 
     const rowLayouts = [
-      '40% 20% 20% 20%', // 1-8
-      '20% 40% 20% 20%', // 9-16
-      '20% 20% 40% 20%', // 17-24
-      '20% 20% 20% 40%'  // 25-32
+      '55% 15% 15% 15%', // 1-8
+      '15% 55% 15% 15%', // 9-16
+      '15% 15% 55% 15%', // 17-24
+      '15% 15% 15% 55%'  // 25-32
     ];
 
     const getGridTemplateRows = (pos) => {
@@ -165,8 +164,8 @@ export default defineComponent({
 <style scoped>
 .video-grid {
   display: grid;
-  grid-template-columns: 30% 20% 20% 20% 20% 20% 20% 20%;
-  grid-template-rows: 40% 20% 20% 20%;
+  grid-template-columns: 40% 18% 18% 18% 18% 18% 18% 18%;
+  grid-template-rows: 55% 15% 15% 15%;
   padding: 2rem 0 1rem;
   grid-auto-flow: row;
   padding-left: 0;

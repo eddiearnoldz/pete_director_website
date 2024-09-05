@@ -47,7 +47,7 @@ export default {
   },
   methods: {
     onPlayerReady(player) {
-      player.setColors(['#fcf800', '#fcf800', '#000', '#000'])
+      player.setColors(['#fda4ea', '#fda4ea', '#148600', '#148600'])
       this.player = player;
       this.animateVideoIn();
     },

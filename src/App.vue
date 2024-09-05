@@ -8,12 +8,7 @@ const showMobileMenu = ref(false);
 const showPlayer = ref(false);
 const vimeoUrl = "https://vimeo.com/1001251940";
 const brightColors = [
-  '#FFC31D',
-  '#F44200',
-  '#FB95AF',
-  '#F2FFFF',
-  '#A9B646',
-  '#085CE4'
+'#1E3A8A', '#16A34A', '#8B5CF6', '#ff0909', '#0D9488', '#FACC15'
 ];
 
 const toggleMobileMenu = () => {
@@ -101,32 +96,60 @@ onMounted(() => {
           ease: 'elastic.out(1, 0.9)',
           duration: 2,
           transformOrigin: 'center',
-          color: "#fefef6"
+          color: "#f12602"
     }); 
     });
   });
 
 
     // Apply the same hover animations to each individual letter of the nav links
-    navLetters.forEach((letter) => {
-      letter.addEventListener('mouseenter', () => {
-        gsap.to(letter, {
-          y: -10,
-          ease: 'elastic.out(1, 0.9)',
-          duration: 3
-        })
-      })
+    // navLetters.forEach((letter) => {
+    //   letter.addEventListener('mouseenter', () => {
+    //     gsap.to(letter, {
+    //       y: -10,
+    //       ease: 'elastic.out(1, 0.9)',
+    //       duration: 3
+    //     })
+    //   })
 
-      letter.addEventListener('mouseleave', () => {
-        gsap.to(letter, {
-          y: 0,
-          ease: 'elastic.out(1, 0.9)',
-          duration: 3,
-          transformOrigin: 'center'
-        })
-      })
-    })
+    //   letter.addEventListener('mouseleave', () => {
+    //     gsap.to(letter, {
+    //       y: 0,
+    //       ease: 'elastic.out(1, 0.9)',
+    //       duration: 3,
+    //       transformOrigin: 'center'
+    //     })
+    //   })
+    // })
+
+   if (!isMobile()) {
+      navLetters.forEach((letter) => {
+      let hoverAnimation;
+
+      letter.addEventListener('mouseenter', () => {
+        if (hoverAnimation?.isActive()) {
+          return; // Do nothing if any animation is active
+        }
+
+        hoverAnimation = gsap.timeline()
+          .to(letter, {
+            ease: 'elastic.out(1, 0.9)',
+            rotateY: 360,
+            duration: 3,
+            transformOrigin: 'center',
+            color: gsap.utils.random(brightColors)
+          })
+          .to(letter, {
+            rotateY: 0,
+            ease: 'elastic.out(1, 0.9)',
+            duration: 2,
+            transformOrigin: 'center',
+            color: "#f12602"
+      }); 
+      });
+    });
   }
+}
 
   watch(showMobileMenu, (newValue) => {
     if (newValue) {
@@ -161,6 +184,7 @@ onMounted(() => {
     <nav class="desktop-nav">
       <RouterLink class="londrina-solid-regular" to="/" @click="closeMobileMenu">work</RouterLink>
       <a class="londrina-solid-regular" href="#" @click.prevent="openShowreel">showreel</a>
+      <RouterLink class="londrina-solid-regular" to="/art">art</RouterLink>
       <RouterLink class="londrina-solid-regular" to="/about">about</RouterLink>
       <a class="londrina-solid-regular" href="mailto:petecandeland@gmail.com">contact</a>
     </nav>
@@ -173,6 +197,9 @@ onMounted(() => {
         <a class="londrina-solid-regular animated" href="#" @click.prevent="openShowreel">showreel</a>
       <RouterLink class="londrina-solid-regular animated" to="/about" @click="closeMobileMenu"
         >about</RouterLink
+      >
+      <RouterLink class="londrina-solid-regular animated" to="/art" @click="closeMobileMenu"
+        >art</RouterLink
       >
       <a
         class="londrina-solid-regular animated"
@@ -204,7 +231,7 @@ nav a {
   display: none;
   font-size: 3rem;
   cursor: pointer;
-  margin-top: -16px;
+  margin-top: -15px;
 }
 
 .mobile-nav {
