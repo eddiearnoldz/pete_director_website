@@ -64,6 +64,7 @@ export default defineComponent({
       'clients_jack-daniels',
       'clients_kia',
       'clients_league-of-legends',
+      'clients_cannons',
       'clients_mazda',
       'clients_rock-band',
       'clients_red-bull',

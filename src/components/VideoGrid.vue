@@ -142,7 +142,7 @@ export default defineComponent({
 
     const isVideoFiltered = (video) => {
       if (props.selectedFilters.length === 0) return true;
-      return props.selectedFilters.every(filter => video.filters.includes(filter));
+      return props.selectedFilters.some(filter => video.filters.includes(filter));
     };
 
     onMounted(() => {

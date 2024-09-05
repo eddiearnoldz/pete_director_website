@@ -182,9 +182,9 @@ export const videos = [
     thumbnail: '/assets/thumbnails/the-rockband-II-thumbnail.webp'
   },
   {
-    title: "Richboom | Cannon | Music Video",
+    title: "Fire for You | Cannons | Music Video",
     image: '/assets/gifs/Richboom_Cannon.gif',
-    filters: ['work_director', 'genre_music-video', 'clients_cannon'],
+    filters: ['work_director', 'genre_music-video', 'clients_cannons'],
     videoUrl: 'https://vimeo.com/1001277447',
     thumbnail: '/assets/thumbnails/richboom_cannon.webp'
   },

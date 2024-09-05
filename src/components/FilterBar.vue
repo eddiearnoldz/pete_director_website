@@ -238,6 +238,7 @@ export default defineComponent({
 
 .filter-bar button.active {
   color: var(--text-color-hover);
+  font-style: italic;
 }
 
 .filter-bar  .clear-filters {
@@ -248,9 +249,9 @@ export default defineComponent({
   font-family: "Anton", sans-serif;
   letter-spacing: 0.8px;
   font-weight: bold;
-  text-transform: uppercase;
+  text-transform: lowercase;
   font-style: italic;
-
+  padding: 0;
 }
 
 @media (min-width: 768px) {
@@ -261,13 +262,14 @@ export default defineComponent({
   }
 
   .filter-bar button {
-    font-size: clamp(0.8rem, 1.5vw, 1.3rem);
+    font-size: clamp(1rem, 1.5vw, 1.8rem);
   }
 
   .filter-group h3,
   .filter-bar h2,
   .filter-bar  .clear-filters {
-    font-size: clamp(0.8rem, 1.1vw, 1.3rem);
+    font-size: clamp(0.8rem, 1.5vw, 1.8rem);
+    line-height: 1.2;
   }
 
   .clear-filters {
