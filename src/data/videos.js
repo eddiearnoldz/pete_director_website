@@ -148,10 +148,10 @@ export const videos = [
   },
   {
     title: "Riot | Pentakill Mortal Reminder | Music Video",
-    image: '/assets/gifs/Riot-Pentakill-Mortal-Reminder.gif',
+    image: '/assets/gifs/riot-pentakill.gif',
     filters: ['work_director', 'genre_music-video', 'clients_league-of-legends'],
     videoUrl: 'https://vimeo.com/1001280164',
-    thumbnail: '/assets/thumbnails/pentakill-thumbnail.webp'
+    thumbnail: '/assets/thumbnails/riot-pentakill.webp'
   },
   {
     title: "Tennessee Honey | Jack Daniels | Commercial",
@@ -183,10 +183,10 @@ export const videos = [
   },
   {
     title: "Richboom | Cannon | Music Video",
-    image: '/assets/gifs/Richboom_Cannon_v1.gif',
+    image: '/assets/gifs/Richboom_Cannon.gif',
     filters: ['work_director', 'genre_music-video', 'clients_cannon'],
     videoUrl: 'https://vimeo.com/1001277447',
-    thumbnail: '/assets/thumbnails/richboom-cannon-thumbnail.webp'
+    thumbnail: '/assets/thumbnails/richboom_cannon.webp'
   },
   {
     title: "Dirty Harry | Gorillaz @ BRITs | LIVE",
