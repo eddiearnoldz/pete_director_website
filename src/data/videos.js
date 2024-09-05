@@ -203,11 +203,11 @@ export const videos = [
     thumbnail: '/assets/thumbnails/beatles-words-with-love-thumbnail.webp'
   },
   {
-    title: "Gods and Monsters | Sizzle",
-    image: '/assets/gifs/Monsters-Sizzle.gif',
-    filters: ['work_director', 'genre_sizzle'],
-    videoUrl: 'https://vimeo.com/1001257684',
-    thumbnail: '/assets/thumbnails/monster-sizzle-thumbnail.webp'
+    title: "Monkey Olympics | BBC | Commercial",
+    image: '/assets/gifs/monkey_olympics.gif',
+    filters: ['work_director', 'genre_commercial', 'clients_BBC'],
+    videoUrl: 'https://vimeo.com/1006736456',
+    thumbnail: '/assets/thumbnails/monkey_olympics.webp'
   },
   {
     title: "Feel Good Inc. and Hung Up | Gorillaz ft. Madonna | LIVE",
