@@ -3,7 +3,7 @@
     <div
       v-for="(video, index) in filteredvideos"
       :key="index"
-      :class="['slide', { 'active-slide': activeIndex === index }]"
+      :class="['slide', { 'active-slide': activeIndex === index, 'filtered-out': !isVideoFiltered(video) }]"
       @click="selectVideo(video)"
     >
       <div class="image-container">
@@ -80,6 +80,11 @@ export default defineComponent({
       emit('video-selected', video);
     };
 
+    const isVideoFiltered = (video) => {
+      if (props.selectedFilters.length === 0) return true;
+      return props.selectedFilters.every(filter => video.filters.includes(filter));
+    };
+
     onMounted(() => {
       const container = carouselContainer.value;
       container.addEventListener('scroll', onScroll);
@@ -101,7 +106,8 @@ export default defineComponent({
       filteredvideos,
       carouselContainer,
       selectVideo,
-      checkThumbnailLoaded, 
+      checkThumbnailLoaded,
+      isVideoFiltered
     };
   }
 });
@@ -130,6 +136,10 @@ export default defineComponent({
   scroll-snap-align: start;
   border: 2px solid transparent;
   transition: border 0.5s;
+}
+
+.slide.filtered-out {
+  display: none;
 }
 
 .image-container {

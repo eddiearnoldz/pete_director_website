@@ -3,7 +3,7 @@
     <div
       v-for="(video, index) in filteredvideos"
       :key="index"
-      class="grid-item"
+      :class="['grid-item', { 'filtered-out': !isVideoFiltered(video) }]"
       :data-pos="index + 1"
       @mouseover="handleMouseOver(video, index)"
       @mouseleave="handleMouseLeave(index)"
@@ -28,6 +28,9 @@ export default defineComponent({
       type: Array,
       required: true
     },
+    isVideoFiltered: {
+      type: Function
+    },
     selectedFilters: {
       type: Array,
       default: () => []
@@ -49,13 +52,6 @@ export default defineComponent({
         img.onerror = reject;
       });
     };
-
-    const filteredvideos = computed(() => {
-      if (props.selectedFilters.length === 0) return props.videos;
-      return props.videos.filter(video => {
-        return props.selectedFilters.every(filter => video.filters.includes(filter));
-      });
-    });
 
     const updatevideoTitle = (title, image, work) => {
       emit('update-video-title', { title, image, work });
@@ -140,6 +136,15 @@ export default defineComponent({
       return rowLayouts[normalizedPos];
     };
 
+    const filteredvideos = computed(() => {
+      return props.videos;
+    });
+
+    const isVideoFiltered = (video) => {
+      if (props.selectedFilters.length === 0) return true;
+      return props.selectedFilters.every(filter => video.filters.includes(filter));
+    };
+
     onMounted(() => {
       // Preload all GIFs once the component is mounted
       filteredvideos.value.forEach((video, index) => {
@@ -155,9 +160,10 @@ export default defineComponent({
       handleMouseLeave,
       handleClick,
       isGifLoaded,
-      checkThumbnailLoaded
+      checkThumbnailLoaded,
+      isVideoFiltered
     };
-  },
+  }
 });
 </script>
 
@@ -194,13 +200,9 @@ export default defineComponent({
   height: 100%;
 }
 
-.grid-item.enlarged {
-  opacity: 1;
-  transition: opacity 1s ease;
-}
-
-.grid-item.shrunken {
-  opacity: 0.9;
+.grid-item.filtered-out {
+  opacity: 0.1;
+  transition: opacity 0.3s;
 }
 
 .video-img{

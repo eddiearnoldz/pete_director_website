@@ -2,7 +2,8 @@
   <div class="video_gallery">
     <video-carousel-mobile 
       v-if="isMobileView" 
-      :videos="filteredvideos" 
+      :videos="videos" 
+      :isVideoFiltered="isVideoFiltered"
       :selectedFilters="selectedFilters"
       @update-video-title="updatevideoTitle"
       @video-selected="selectVideo"
@@ -10,7 +11,8 @@
     />
     <video-grid 
       v-else 
-      :videos="filteredvideos" 
+      :videos="videos"
+      :isVideoFiltered="isVideoFiltered"
       :selectedFilters="selectedFilters"
       @update-video-title="updatevideoTitle"
       @video-selected="selectVideo"
@@ -89,12 +91,10 @@ export default defineComponent({
       selectedFilters.value = [];
     };
 
-    const filteredvideos = computed(() => {
-      if (selectedFilters.value.length === 0) return videos;
-      return videos.filter(video =>
-        selectedFilters.value.every(filter => video.filters.includes(filter))
-      );
-    });
+    const isVideoFiltered = (video) => {
+      if (selectedFilters.value.length === 0) return false; // Show all if no filters
+      return !selectedFilters.value.every(filter => video.filters.includes(filter)); // Filter out if it doesn't match
+    };
 
     const updateView = () => {
       isMobileView.value = window.innerWidth < 768;
@@ -136,6 +136,7 @@ export default defineComponent({
       isMobileView,
       selectedFilters,
       filters,
+      isVideoFiltered,
       videos,
       activevideoTitle,
       activevideoImage,
@@ -143,7 +144,6 @@ export default defineComponent({
       updatevideoTitle,
       toggleFilter,
       clearFilters,
-      filteredvideos,
       selectVideo,
       selectedVideo,
       handleThumbnailsLoaded
