@@ -156,7 +156,7 @@ onMounted(() => {
 <template>
   <header>
     <div class="logo">
-      <RouterLink class="londrina-solid-regular" to="/" @click="closeMobileMenu"><span>PETE CANDELAND</span></RouterLink>
+      <RouterLink class="londrina-solid-regular" to="/" @click="closeMobileMenu"><span>PETE CANDELAND DIRECTOR</span></RouterLink>
     </div>
     <nav class="desktop-nav">
       <RouterLink class="londrina-solid-regular" to="/" @click="closeMobileMenu">work</RouterLink>
