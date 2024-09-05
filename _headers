@@ -1,0 +1,2 @@
+/* 
+  Content-Security-Policy: script-src 'self' https://f.vimeocdn.com;
