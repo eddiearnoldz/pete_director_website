@@ -39,7 +39,28 @@ onMounted(() => {
 
   const letters = document.querySelectorAll('.logo .letter')
   const navLinks = document.querySelectorAll('.desktop-nav a')
-  const mobileNavLinks = document.querySelectorAll('.mobile-nav a.animated')
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav a.animated');
+
+  gsap.to(letters, {
+      opacity: 0,
+      duration: 1.5,
+      ease: "power1.out",
+      onComplete: () => {
+        gsap.fromTo(
+          document.querySelectorAll('.logo .letter'),
+          { y: -20, opacity: 0, rotate: -20 },
+          {
+            y: 0,
+            opacity: 1,
+            rotate: 0,
+            ease: 'elastic.out(1,0.3)',
+            duration: 3,
+            delay: 0,
+            stagger: 0.05
+          }
+        )
+      }
+    });
 
   // Split the text in nav links into individual letters
   navLinks.forEach((link) => {
@@ -268,11 +289,11 @@ nav a {
 }
 
 .close-btn {
-  font-size: 3rem;
+  font-size: 2.5rem;
   cursor: pointer;
   opacity: 0;
   position: absolute;
-  top: 0.6rem;
+  top: 0.7rem;
   right: 1.6rem;
   transition: opacity 1s ease;
 }

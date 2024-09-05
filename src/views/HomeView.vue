@@ -58,36 +58,13 @@ onMounted(() => {
 
 // Handle when all thumbnails have been loaded
 function handleThumbnailsLoaded() {
-    gsap.to(loadingScreen.value, {
-      opacity: 0,
-      duration: 1.5,
-      ease: "power1.out",
-      onComplete: () => {
-        gsap.fromTo(
-          document.querySelectorAll('.logo .letter'),
-          { y: -20, opacity: 0, rotate: -20 },
-          {
-            y: 0,
-            opacity: 1,
-            rotate: 0,
-            ease: 'elastic.out(1,0.3)',
-            duration: 3,
-            delay: 0,
-            stagger: 0.05
-          }
-        )
-      }
-    });
-
     // Stop animation for loading text
     if (loadingText.value) {
       const chars = loadingText.value.querySelectorAll('.char');
       gsap.killTweensOf(chars);
     }
-    loading.value = false; // Remove loading screen after fade-out
+    loading.value = false;
   }
-
-const isMobile = () => window.innerWidth < 768
 </script>
 
 <style>

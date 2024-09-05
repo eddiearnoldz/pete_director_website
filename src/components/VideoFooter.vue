@@ -76,7 +76,7 @@ export default {
   flex-direction: column;
   align-items: center;
   padding: 1rem 0;
-  background-image: linear-gradient(to top,var(--background-color), rgba(0, 0, 0, 0) 100%);
+  background-image: linear-gradient(to top,var(--background-color) 50%, rgba(0, 0, 0, 0) 100%);
 }
 
 .video-title,

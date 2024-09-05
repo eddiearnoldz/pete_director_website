@@ -51,6 +51,9 @@ export default defineComponent({
     const selectedFilters = ref([]);
     const filters = ref([
       'work_director',
+      'clients_Netflix',
+      'clients_Disney',
+      'clients_Universal-Pictures',
       'clients_BBC',
       'clients_finlandia',
       'clients_gorillaz',
@@ -64,6 +67,9 @@ export default defineComponent({
       'clients_red-bull',
       'clients_skyo',
       'clients_the-beatles',
+      'clients_Illumination',
+      'clients_Mythos',
+      'clients_Laika',
     ]);
     const activevideoTitle = ref('');
     const activevideoImage = ref('');
