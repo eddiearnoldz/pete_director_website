@@ -179,7 +179,8 @@ export default defineComponent({
 }
 
 .filters-container {
-  overflow-x: none;
+  overflow-x: auto;
+  overflow-y: hidden;
   width: 100%;
   padding-left: 1rem;
   scrollbar-width: none;
@@ -290,6 +291,10 @@ export default defineComponent({
   .filter-header,
   .filters-container {
     padding-left: 2rem;
+  }
+
+  .filters-container {
+    overflow-x: unset;
   }
 }
 
