@@ -18,7 +18,7 @@ body {
 #app {
   height: 100dvh;
   width: 100vw;
-
+  overflow: hidden;
 }
 
 .container {
@@ -43,11 +43,16 @@ header {
   background-image: linear-gradient(to bottom, var(--background-color) 50%, rgba(0, 0, 0, 0) 100%);
 }
 
+.transparent-header {
+  background-image: none !important;
+  background-color: transparent !important;
+}
+
 .logo {
   z-index: 1;
 }
 
-.logo .letter{
+.logo .letter {
   opacity: 0;
 }
 
@@ -69,21 +74,21 @@ nav a {
   color: var(--text-color);
   transition: color 0.4s;
   position: relative;
-  -webkit-user-select: none;       
-  -moz-user-select: none; 
+  -webkit-user-select: none;
+  -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none; 
+  user-select: none;
 }
 
 nav a::before {
- content: '';
- position: absolute;
- width: 0%;
- transform: rotate(3deg);
- transform-origin: bottom left;
- bottom:-2px;
- height: clamp(2px, 0.3vw, 4px);
- background-color: var( --text-color-hover);
+  content: '';
+  position: absolute;
+  width: 0%;
+  transform: rotate(3deg);
+  transform-origin: bottom left;
+  bottom: -2px;
+  height: clamp(2px, 0.3vw, 4px);
+  background-color: var(--text-color-hover);
   transition: width 0.4s;
 }
 
@@ -101,12 +106,12 @@ nav a:nth-of-type(2n):before {
 }
 
 nav a:hover::before {
- width: 100%;
+  width: 100%;
   transition: width 0.4s;
 }
 
- nav a:hover{
-  color: var( --text-color-hover);
+nav a:hover {
+  color: var(--text-color-hover);
   transition: color 0.6s;
 }
 
@@ -139,5 +144,3 @@ nav a:hover::before {
     font-size: 38px
   }
 }
-
-

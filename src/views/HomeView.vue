@@ -8,7 +8,11 @@
         }}</span>
       </div>
     </div>
-    <video-gallery @thumbnails-loaded="handleThumbnailsLoaded" />
+    <video-gallery
+      @thumbnails-loaded="handleThumbnailsLoaded"
+      @video-open="$emit('video-open')"
+      @video-close="$emit('video-close')"
+    />
   </div>
 </template>
 
@@ -16,9 +20,13 @@
 defineOptions({
   name: 'home'
 })
+const showPlayer = ref(false)
 import VideoGallery from '@/components/VideoGallery.vue'
 import { ref, onMounted, nextTick } from 'vue'
 import { gsap } from 'gsap'
+import { defineEmits } from 'vue'
+
+const emit = defineEmits(['video-open', 'video-close'])
 
 // Reactive state to manage loading status
 const loading = ref(true)

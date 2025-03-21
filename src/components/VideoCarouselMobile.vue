@@ -3,18 +3,26 @@
     <div
       v-for="(video, index) in filteredvideos"
       :key="index"
-      :class="['slide', { 'active-slide': activeIndex === index, 'filtered-out': !isVideoFiltered(video) }]"
+      :class="[
+        'slide',
+        { 'active-slide': activeIndex === index, 'filtered-out': !isVideoFiltered(video) }
+      ]"
       @click="selectVideo(video)"
     >
       <div class="image-container">
-        <img :src="video.thumbnail" :alt="video.title" @load="checkThumbnailLoaded(index)" class="video-image" />
+        <img
+          :src="video.thumbnail"
+          :alt="video.title"
+          @load="checkThumbnailLoaded(index)"
+          class="video-image"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { defineComponent, ref, computed, onMounted, nextTick, watch } from 'vue';
+import { defineComponent, ref, computed, onMounted, nextTick, watch } from 'vue'
 
 export default defineComponent({
   props: {
@@ -29,77 +37,81 @@ export default defineComponent({
   },
   emits: ['update-video-title', 'video-selected', 'thumbnails-loaded'],
   setup(props, { emit }) {
-    const activeIndex = ref(0);
-    const carouselContainer = ref(null);
-    const thumbnailsLoadedCount = ref(0); 
+    const activeIndex = ref(0)
+    const carouselContainer = ref(null)
+    const thumbnailsLoadedCount = ref(0)
 
     const filteredvideos = computed(() => {
-      if (props.selectedFilters.length === 0) return props.videos;
-      return props.videos.filter(video => {
-        return props.selectedFilters.every(filter => video.filters.includes(filter));
-      });
-    });
+      if (props.selectedFilters.length === 0) return props.videos
+      return props.videos.filter((video) => {
+        return props.selectedFilters.every((filter) => video.filters.includes(filter))
+      })
+    })
 
     const onScroll = () => {
-      const container = carouselContainer.value;
-      const thresholdY = window.innerHeight * 0.4; // 50vh from the top
+      const container = carouselContainer.value
+      const thresholdY = window.innerHeight * 0.4 // 50vh from the top
 
-      let closestIndex = 0;
-      let closestDistance = Infinity;
+      let closestIndex = 0
+      let closestDistance = Infinity
 
-      const slides = container.children;
+      const slides = container.children
       for (let i = 0; i < slides.length; i++) {
-        const slide = slides[i];
-        const slideRect = slide.getBoundingClientRect();
-        const slideMiddleY = slideRect.top + slideRect.height / 2;
-        const distance = Math.abs(thresholdY - slideMiddleY);
+        const slide = slides[i]
+        const slideRect = slide.getBoundingClientRect()
+        const slideMiddleY = slideRect.top + slideRect.height / 2
+        const distance = Math.abs(thresholdY - slideMiddleY)
 
         if (distance < closestDistance) {
-          closestDistance = distance;
-          closestIndex = i;
+          closestDistance = distance
+          closestIndex = i
         }
       }
 
-      activeIndex.value = closestIndex;
+      activeIndex.value = closestIndex
       emit('update-video-title', {
         title: filteredvideos.value[closestIndex].title,
         image: filteredvideos.value[closestIndex].image,
-        work: filteredvideos.value[closestIndex].filters.filter(filter => filter.includes('work')).map(filter => filter.replace('work_', '').replace("-", " "))
-      });
-    };
+        work: filteredvideos.value[closestIndex].filters
+          .filter((filter) => filter.includes('work'))
+          .map((filter) => filter.replace('work_', '').replace('-', ' '))
+      })
+    }
 
     const checkThumbnailLoaded = (index) => {
-      thumbnailsLoadedCount.value += 1;
+      thumbnailsLoadedCount.value += 1
       if (thumbnailsLoadedCount.value === filteredvideos.value.length) {
         // Emit the event when all thumbnails are loaded
-        emit('thumbnails-loaded');
+        emit('thumbnails-loaded')
       }
-    };
+    }
 
     const selectVideo = (video) => {
-      emit('video-selected', video);
-    };
+      emit('video-selected', video)
+    }
 
     const isVideoFiltered = (video) => {
-      if (props.selectedFilters.length === 0) return true;
-      return props.selectedFilters.every(filter => video.filters.includes(filter));
-    };
+      if (props.selectedFilters.length === 0) return true
+      return props.selectedFilters.every((filter) => video.filters.includes(filter))
+    }
 
     onMounted(() => {
-      const container = carouselContainer.value;
-      container.addEventListener('scroll', onScroll);
+      const container = carouselContainer.value
+      container.addEventListener('scroll', onScroll)
       nextTick(() => {
-        onScroll(); // Initial call to set the first active slide
-      });
-    });
+        onScroll() // Initial call to set the first active slide
+      })
+    })
 
     watch(activeIndex, (newIndex) => {
       emit('update-video-title', {
         title: filteredvideos.value[newIndex].title,
         image: filteredvideos.value[newIndex].image,
-        work: filteredvideos.value[newIndex].filters.filter(filter => filter.includes('work')).map(filter => filter.replace('work_', '').replace("-", " ")),
-      });
-    });
+        work: filteredvideos.value[newIndex].filters
+          .filter((filter) => filter.includes('work'))
+          .map((filter) => filter.replace('work_', '').replace('-', ' '))
+      })
+    })
 
     return {
       activeIndex,
@@ -108,9 +120,9 @@ export default defineComponent({
       selectVideo,
       checkThumbnailLoaded,
       isVideoFiltered
-    };
+    }
   }
-});
+})
 </script>
 
 <style scoped>
@@ -191,5 +203,4 @@ export default defineComponent({
     transform: scale(1.4);
   }
 }
-
 </style>

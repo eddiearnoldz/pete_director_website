@@ -33,7 +33,7 @@
       :autoplay="selectedVideo.autoplay"
       :loop="selectedVideo.loop"
       :controls="selectedVideo.controls"
-      @close="selectedVideo = null"
+      @close="handleClose"
     />
   </div>
 </template>
@@ -66,7 +66,7 @@ export default defineComponent({
       'clients_rock-band',
       'clients_red-bull',
       'clients_skyo',
-      'clients_the-beatles',
+      'clients_the-beatles'
       // 'clients_Illumination',
       // 'clients_Mythos',
       // 'clients_Laika'
@@ -87,6 +87,11 @@ export default defineComponent({
 
     const clearFilters = () => {
       selectedFilters.value = []
+    }
+
+    const handleClose = () => {
+      selectedVideo.value = null
+      emit('video-close') // ✅ fire event to parent (HomeView)
     }
 
     const isVideoFiltered = (video) => {
@@ -111,6 +116,7 @@ export default defineComponent({
         loop: false,
         controls: true
       }
+      emit('video-open') // let App.vue know
     }
 
     const closePlayer = () => {
@@ -143,7 +149,8 @@ export default defineComponent({
       clearFilters,
       selectVideo,
       selectedVideo,
-      handleThumbnailsLoaded
+      handleThumbnailsLoaded,
+      handleClose
     }
   }
 })

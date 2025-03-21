@@ -6,6 +6,7 @@ import VideoPlayer from '@/components/VideoPlayer.vue'
 
 const showMobileMenu = ref(false)
 const showPlayer = ref(false)
+const showShowreelPlayer = ref(false)
 const vimeoUrl = 'https://vimeo.com/1001251940'
 const brightColors = ['#1E3A8A', '#16A34A', '#8B5CF6', '#ff0909', '#0D9488', '#FACC15']
 
@@ -18,11 +19,12 @@ const closeMobileMenu = () => {
 }
 
 const closePlayer = () => {
-  showPlayer.value = false // Close the video player
+  showPlayer.value = false
+  showShowreelPlayer.value = false
 }
 
 const openShowreel = () => {
-  showPlayer.value = true
+  showShowreelPlayer.value = true
   closeMobileMenu()
 }
 
@@ -121,26 +123,6 @@ onMounted(() => {
       })
     })
 
-    // Apply the same hover animations to each individual letter of the nav links
-    // navLetters.forEach((letter) => {
-    //   letter.addEventListener('mouseenter', () => {
-    //     gsap.to(letter, {
-    //       y: -10,
-    //       ease: 'elastic.out(1, 0.9)',
-    //       duration: 3
-    //     })
-    //   })
-
-    //   letter.addEventListener('mouseleave', () => {
-    //     gsap.to(letter, {
-    //       y: 0,
-    //       ease: 'elastic.out(1, 0.9)',
-    //       duration: 3,
-    //       transformOrigin: 'center'
-    //     })
-    //   })
-    // })
-
     if (!isMobile()) {
       navLetters.forEach((letter) => {
         let hoverAnimation
@@ -196,7 +178,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <header>
+  <header :class="{ 'transparent-header': showPlayer || showShowreelPlayer }">
     <div class="logo">
       <RouterLink class="londrina-solid-regular" to="/" @click="closeMobileMenu"
         ><span>PETE CANDELAND DIRECTOR</span></RouterLink
@@ -241,7 +223,7 @@ onMounted(() => {
   </header>
 
   <VideoPlayer
-    v-if="showPlayer"
+    v-if="showShowreelPlayer"
     :video-url="vimeoUrl"
     :autoplay="true"
     :loop="false"
@@ -251,7 +233,7 @@ onMounted(() => {
 
   <RouterView v-slot="{ Component }">
     <KeepAlive include="home">
-      <component :is="Component" />
+      <component :is="Component" @video-open="showPlayer = true" @video-close="closePlayer" />
     </KeepAlive>
   </RouterView>
 </template>

@@ -1,11 +1,17 @@
 <template>
   <div v-if="showPlayer" class="video-overlay" @click="closePlayer">
     <div class="video-container">
-      <vimeo-player 
+      <vimeo-player
         ref="videoPlayer"
         :video-url="videoUrl"
         class="embed-container"
-        :options="{'responsive':true, autoplay: autoplay, loop: loop, controls: controls}"
+        :options="{
+          responsive: true,
+          autoplay: autoplay,
+          loop: loop,
+          controls: controls,
+          full: true
+        }"
         @ready="onPlayerReady"
       />
       <button @click="closePlayer" class="close-button">X</button>
@@ -14,70 +20,70 @@
 </template>
 
 <script>
-import { vueVimeoPlayer } from 'vue-vimeo-player';
+import { vueVimeoPlayer } from 'vue-vimeo-player'
 
 export default {
   components: {
-    'vimeo-player': vueVimeoPlayer,
+    'vimeo-player': vueVimeoPlayer
   },
   props: {
     videoUrl: {
       type: String,
-      required: true,
+      required: true
     },
     autoplay: {
       type: Boolean,
-      default: false,
+      default: false
     },
     loop: {
       type: Boolean,
-      default: false,
+      default: false
     },
     controls: {
       type: Boolean,
-      default: true,
-    },
+      default: true
+    }
   },
   data() {
     return {
       showPlayer: true,
       playerWidth: window.innerWidth * 0.9,
-      playerHeight: window.innerHeight,
-    };
+      playerHeight: window.innerHeight
+    }
   },
   methods: {
     onPlayerReady(player) {
       player.setColors(['#fda4ea', '#fda4ea', '#148600', '#148600'])
-      this.player = player;
-      this.animateVideoIn();
+      this.player = player
+      this.animateVideoIn()
     },
     closePlayer() {
-      this.showPlayer = false;
+      this.showPlayer = false
       if (this.player) {
-        this.player.pause();
+        this.player.pause()
       }
-      this.$emit('close');
+      this.$emit('close')
     },
     updatePlayerSize() {
-      this.playerWidth = window.innerWidth * 0.9;
-      this.playerHeight = window.innerHeight;
+      this.playerWidth = window.innerWidth * 0.9
+      this.playerHeight = window.innerHeight
     },
     animateVideoIn() {
-      const videoContainer = this.$refs.videoPlayer.$el.parentElement;
-      videoContainer.classList.add('animate-in');
+      const videoContainer = this.$refs.videoPlayer.$el.parentElement
+      videoContainer.classList.add('animate-in')
     }
   },
   mounted() {
-    this.updatePlayerSize();
-    window.addEventListener('resize', this.updatePlayerSize);
+    this.updatePlayerSize()
+    window.addEventListener('resize', this.updatePlayerSize)
   },
   beforeUnmount() {
-    window.removeEventListener('resize', this.updatePlayerSize);
+    window.removeEventListener('resize', this.updatePlayerSize)
     if (this.player) {
-      this.player.unload();
+      this.player.unload()
     }
-  },
-};
+  }
+}
 </script>
 
 <style scoped>
@@ -96,7 +102,7 @@ export default {
 }
 
 .video-container {
-  width: calc(100% - 3rem);
+  width: calc(100% - 5vw);
   height: 100%;
 }
 
@@ -126,7 +132,7 @@ export default {
   position: absolute;
   bottom: 1dvh;
   right: 1em;
-  background:  var(--background-color);;
+  background: var(--background-color);
   color: var(--text-color-hover);
   border: 3px solid var(--text-color-hover);
   font-size: 20px;
@@ -168,6 +174,25 @@ export default {
   .video-container {
     width: 75%;
     height: 100%;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 767px) {
+  .video-container {
+    width: calc(75vw)
+  }
+
+  .video-overlay {
+    position: fixed;
+    width: 100vw;
+    margin: auto;
+  }
+  .embed-container {
+    margin-top: 10vh;
+  }
+
+  .close-button {
+    bottom: 5dvh;
   }
 }
 </style>
