@@ -3,68 +3,74 @@
     <!-- Loading screen displayed until all thumbnails are loaded -->
     <div v-if="loading" ref="loadingScreen" class="loading-screen">
       <div ref="loadingText" class="loading-text">
-        <span v-for="(char, index) in textChars" :key="index" class="char">{{ char === ' ' ? '\u00A0' : char }}</span>
+        <span v-for="(char, index) in textChars" :key="index" class="char">{{
+          char === ' ' ? '\u00A0' : char
+        }}</span>
       </div>
     </div>
-    <video-gallery @thumbnails-loaded="handleThumbnailsLoaded"/>
+    <video-gallery @thumbnails-loaded="handleThumbnailsLoaded" />
   </div>
 </template>
 
 <script setup>
-import VideoGallery from '@/components/VideoGallery.vue';
-import { ref, onMounted, nextTick } from 'vue';
-import { gsap } from 'gsap';
+defineOptions({
+  name: 'home'
+})
+import VideoGallery from '@/components/VideoGallery.vue'
+import { ref, onMounted, nextTick } from 'vue'
+import { gsap } from 'gsap'
 
 // Reactive state to manage loading status
-const loading = ref(true);
+const loading = ref(true)
 
 // Reference for the loading text element
-const loadingText = ref(null);
-const loadingScreen = ref(null);
+const loadingText = ref(null)
+const loadingScreen = ref(null)
 
 // Text to display
-const text = "PETE CANDELAND";
+const text = 'PETE CANDELAND'
 
 // Split the text into an array of characters
-const textChars = text.split('');
+const textChars = text.split('')
 
 onMounted(() => {
   nextTick(() => {
     // Select all span elements within loadingText for animation
-    const chars = loadingText?.value.querySelectorAll('.char');
-    
+    const chars = loadingText?.value.querySelectorAll('.char')
+
     // GSAP animation for each character
-    gsap.fromTo(chars, 
-    {
-      opacity: 0,
-      scale: 0.1
-    },
-    {
-    duration: 0.5,
-    scale: 1,
-    repeat: -1,
-    opacity: 1,
-    yoyo: true, 
-    ease: "elastic.put(1,0.3)",
-    stagger: {
-      grid: [7,15],
-      from: "center",
-      amount: 1
-    }
-  }
-  );
-});
-});
+    gsap.fromTo(
+      chars,
+      {
+        opacity: 0,
+        scale: 0.1
+      },
+      {
+        duration: 0.5,
+        scale: 1,
+        repeat: -1,
+        opacity: 1,
+        yoyo: true,
+        ease: 'elastic.put(1,0.3)',
+        stagger: {
+          grid: [7, 15],
+          from: 'center',
+          amount: 1
+        }
+      }
+    )
+  })
+})
 
 // Handle when all thumbnails have been loaded
 function handleThumbnailsLoaded() {
-    // Stop animation for loading text
-    if (loadingText.value) {
-      const chars = loadingText.value.querySelectorAll('.char');
-      gsap.killTweensOf(chars);
-    }
-    loading.value = false;
+  // Stop animation for loading text
+  if (loadingText.value) {
+    const chars = loadingText.value.querySelectorAll('.char')
+    gsap.killTweensOf(chars)
   }
+  loading.value = false
+}
 </script>
 
 <style>
@@ -89,7 +95,7 @@ function handleThumbnailsLoaded() {
   font-size: 2.5rem;
   color: var(--text-color);
   display: flex;
-  font-family: "Anton", sans-serif;
+  font-family: 'Anton', sans-serif;
 }
 
 /* Styling for each character */

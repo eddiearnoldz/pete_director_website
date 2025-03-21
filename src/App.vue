@@ -249,7 +249,11 @@ onMounted(() => {
     @close="closePlayer"
   />
 
-  <RouterView />
+  <RouterView v-slot="{ Component }">
+    <KeepAlive include="home">
+      <component :is="Component" />
+    </KeepAlive>
+  </RouterView>
 </template>
 
 <style scoped>
