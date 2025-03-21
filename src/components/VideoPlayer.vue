@@ -86,7 +86,7 @@ export default {
   top: -75px;
   left: 0;
   width: 100vw;
-  height: calc(100vh + 75px);
+  height: calc(100dvh + 75px);
   background: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
@@ -124,7 +124,7 @@ export default {
 
 .close-button {
   position: absolute;
-  bottom: 1em;
+  bottom: 1dvh;
   right: 1em;
   background:  var(--background-color);;
   color: var(--text-color-hover);
