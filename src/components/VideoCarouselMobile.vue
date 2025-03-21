@@ -120,7 +120,7 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 15vh 1.5rem 30vh;
+  padding: 15vh 1.5rem 50vh;
 }
 
 .slide {
