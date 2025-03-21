@@ -42,7 +42,7 @@ export default defineComponent({
 
     const onScroll = () => {
       const container = carouselContainer.value;
-      const thresholdY = window.innerHeight * 0.5; // 50vh from the top
+      const thresholdY = window.innerHeight * 0.4; // 50vh from the top
 
       let closestIndex = 0;
       let closestDistance = Infinity;
@@ -120,7 +120,7 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30vh 1.5rem 30vh;
+  padding: 15vh 1.5rem 30vh;
 }
 
 .slide {
