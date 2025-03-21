@@ -18,6 +18,11 @@ const router = createRouter({
       path: '/art',
       name: 'art',
       component: () => import('../views/ArtView.vue')
+    },
+    {
+      path: '/podcast-nscb',
+      name: 'podcast-nscb',
+      component: () => import('../views/PodcastView.vue')
     }
   ]
 })

@@ -1,16 +1,7 @@
 <template>
   <div class="video_gallery">
-    <video-carousel-mobile 
-      v-if="isMobileView" 
-      :videos="videos" 
-      :isVideoFiltered="isVideoFiltered"
-      :selectedFilters="selectedFilters"
-      @update-video-title="updatevideoTitle"
-      @video-selected="selectVideo"
-      @thumbnails-loaded="handleThumbnailsLoaded"
-    />
-    <video-grid 
-      v-else 
+    <video-carousel-mobile
+      v-if="isMobileView"
       :videos="videos"
       :isVideoFiltered="isVideoFiltered"
       :selectedFilters="selectedFilters"
@@ -18,9 +9,18 @@
       @video-selected="selectVideo"
       @thumbnails-loaded="handleThumbnailsLoaded"
     />
-    <video-footer 
-      :filters="filters" 
-      :toggleFilter="toggleFilter" 
+    <video-grid
+      v-else
+      :videos="videos"
+      :isVideoFiltered="isVideoFiltered"
+      :selectedFilters="selectedFilters"
+      @update-video-title="updatevideoTitle"
+      @video-selected="selectVideo"
+      @thumbnails-loaded="handleThumbnailsLoaded"
+    />
+    <video-footer
+      :filters="filters"
+      :toggleFilter="toggleFilter"
       @clear-filters="clearFilters"
       :activevideoTitle="activevideoTitle"
       :activevideoImage="activevideoImage"
@@ -39,23 +39,20 @@
 </template>
 
 <script>
-import { defineComponent, ref, computed, onMounted, onUnmounted } from 'vue';
-import videoCarouselMobile from '@/components/VideoCarouselMobile.vue';
-import videoGrid from '@/components/VideoGrid.vue';
-import videoFooter from '@/components/VideoFooter.vue';
-import { videos } from '@/data/videos';
-import VideoPlayer from '@/components/VideoPlayer.vue';
+import { defineComponent, ref, computed, onMounted, onUnmounted } from 'vue'
+import videoCarouselMobile from '@/components/VideoCarouselMobile.vue'
+import videoGrid from '@/components/VideoGrid.vue'
+import videoFooter from '@/components/VideoFooter.vue'
+import { videos } from '@/data/videos'
+import VideoPlayer from '@/components/VideoPlayer.vue'
 
 export default defineComponent({
   components: { videoCarouselMobile, videoGrid, videoFooter, VideoPlayer },
-  setup(props, {emit}) {
-    const isMobileView = ref(window.innerWidth < 768);
-    const selectedFilters = ref([]);
+  setup(props, { emit }) {
+    const isMobileView = ref(window.innerWidth < 768)
+    const selectedFilters = ref([])
     const filters = ref([
       'work_director',
-      'clients_Netflix',
-      'clients_Disney',
-      'clients_Universal-Pictures',
       'clients_BBC',
       'clients_finlandia',
       'clients_gorillaz',
@@ -70,68 +67,67 @@ export default defineComponent({
       'clients_red-bull',
       'clients_skyo',
       'clients_the-beatles',
-      'clients_Illumination',
-      'clients_Mythos',
-      'clients_Laika',
-    ]);
-    const activevideoTitle = ref('');
-    const activevideoImage = ref('');
-    const activevideoWork = ref([]);
-    const selectedVideo = ref(null);
+      // 'clients_Illumination',
+      // 'clients_Mythos',
+      // 'clients_Laika'
+    ])
+    const activevideoTitle = ref('')
+    const activevideoImage = ref('')
+    const activevideoWork = ref([])
+    const selectedVideo = ref(null)
 
-    const toggleFilter = filter => {
-      const index = selectedFilters.value.indexOf(filter);
+    const toggleFilter = (filter) => {
+      const index = selectedFilters.value.indexOf(filter)
       if (index === -1) {
-        selectedFilters.value.push(filter);
+        selectedFilters.value.push(filter)
       } else {
-        selectedFilters.value.splice(index, 1);
+        selectedFilters.value.splice(index, 1)
       }
-    };
+    }
 
     const clearFilters = () => {
-      selectedFilters.value = [];
-    };
+      selectedFilters.value = []
+    }
 
     const isVideoFiltered = (video) => {
-      if (selectedFilters.value.length === 0) return false; // Show all if no filters
-      return !selectedFilters.value.every(filter => video.filters.includes(filter)); // Filter out if it doesn't match
-    };
+      if (selectedFilters.value.length === 0) return false // Show all if no filters
+      return !selectedFilters.value.every((filter) => video.filters.includes(filter)) // Filter out if it doesn't match
+    }
 
     const updateView = () => {
-      isMobileView.value = window.innerWidth < 768;
-    };
+      isMobileView.value = window.innerWidth < 768
+    }
 
     const updatevideoTitle = ({ title, image, work }) => {
-      activevideoTitle.value = title;
-      activevideoImage.value = image;
-      activevideoWork.value = Array.isArray(work) ? work : [work];
-    };
+      activevideoTitle.value = title
+      activevideoImage.value = image
+      activevideoWork.value = Array.isArray(work) ? work : [work]
+    }
 
     const selectVideo = (video) => {
       selectedVideo.value = {
         videoUrl: video.videoUrl,
         autoplay: true,
         loop: false,
-        controls: true,
-      };
-    };
+        controls: true
+      }
+    }
 
     const closePlayer = () => {
-      selectedVideo.value = null;
-    };
+      selectedVideo.value = null
+    }
 
     const handleThumbnailsLoaded = () => {
-      console.log('Thumbnails loaded event caught in video-gallery!'); // Debugging line
-      emit('thumbnails-loaded');
-    };
+      emit('thumbnails-loaded')
+    }
 
     onMounted(() => {
-      window.addEventListener('resize', updateView);
-    });
+      window.addEventListener('resize', updateView)
+    })
 
     onUnmounted(() => {
-      window.removeEventListener('resize', updateView);
-    });
+      window.removeEventListener('resize', updateView)
+    })
 
     return {
       isMobileView,
@@ -148,9 +144,9 @@ export default defineComponent({
       selectVideo,
       selectedVideo,
       handleThumbnailsLoaded
-    };
+    }
   }
-});
+})
 </script>
 
 <style scoped>
@@ -168,10 +164,10 @@ export default defineComponent({
   z-index: 1;
 }
 
-@media screen and (min-width:768px) {
+@media screen and (min-width: 768px) {
   .video_gallery {
     top: 75px;
-    height: calc(100% - 75px);
+    height: calc(100% - 100px);
     z-index: 3;
   }
 }

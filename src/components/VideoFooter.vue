@@ -105,6 +105,7 @@ export default {
   gap: 5px;
   width: 100%;
   justify-content: flex-start;
+  padding-top: 40px;
 }
 
 
@@ -132,7 +133,7 @@ export default {
 
   .video-footer {
     flex-direction: row;
-    min-height: 140px;
+    min-height: 150px;
     position: relative;
     max-width: 1800px;
     margin: 0 auto;
@@ -149,7 +150,6 @@ export default {
     gap: 10px;
     grid-area: 1/2/2/3;
     padding-left: unset;
-    padding-bottom: unset;
     text-align: right;
     width: calc(100% - 2rem);
   }

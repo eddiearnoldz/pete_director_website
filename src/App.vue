@@ -2,14 +2,12 @@
 import { ref, onMounted, watch } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import gsap from 'gsap'
-import VideoPlayer from '@/components/VideoPlayer.vue';
+import VideoPlayer from '@/components/VideoPlayer.vue'
 
-const showMobileMenu = ref(false);
-const showPlayer = ref(false);
-const vimeoUrl = "https://vimeo.com/1001251940";
-const brightColors = [
-'#1E3A8A', '#16A34A', '#8B5CF6', '#ff0909', '#0D9488', '#FACC15'
-];
+const showMobileMenu = ref(false)
+const showPlayer = ref(false)
+const vimeoUrl = 'https://vimeo.com/1001251940'
+const brightColors = ['#1E3A8A', '#16A34A', '#8B5CF6', '#ff0909', '#0D9488', '#FACC15']
 
 const toggleMobileMenu = () => {
   showMobileMenu.value = !showMobileMenu.value
@@ -24,7 +22,7 @@ const closePlayer = () => {
 }
 
 const openShowreel = () => {
-  showPlayer.value = true 
+  showPlayer.value = true
   closeMobileMenu()
 }
 
@@ -39,28 +37,28 @@ onMounted(() => {
 
   const letters = document.querySelectorAll('.logo .letter')
   const navLinks = document.querySelectorAll('.desktop-nav a')
-  const mobileNavLinks = document.querySelectorAll('.mobile-nav a.animated');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav a.animated')
 
   gsap.to(letters, {
-      opacity: 0,
-      duration: 1.5,
-      ease: "power1.out",
-      onComplete: () => {
-        gsap.fromTo(
-          document.querySelectorAll('.logo .letter'),
-          { y: -20, opacity: 0, rotate: -20 },
-          {
-            y: 0,
-            opacity: 1,
-            rotate: 0,
-            ease: 'elastic.out(1,0.3)',
-            duration: 3,
-            delay: 0,
-            stagger: 0.05
-          }
-        )
-      }
-    });
+    opacity: 0,
+    duration: 1.5,
+    ease: 'power1.out',
+    onComplete: () => {
+      gsap.fromTo(
+        document.querySelectorAll('.logo .letter'),
+        { y: -20, opacity: 0, rotate: -20 },
+        {
+          y: 0,
+          opacity: 1,
+          rotate: 0,
+          ease: 'elastic.out(1,0.3)',
+          duration: 3,
+          delay: 0,
+          stagger: 0.05
+        }
+      )
+    }
+  })
 
   // Split the text in nav links into individual letters
   navLinks.forEach((link) => {
@@ -92,36 +90,36 @@ onMounted(() => {
         gsap.set(letter, { clearProps: 'all' })
       })
     }
-  });
+  })
 
   // Add hover animations for each letter in the logo
   if (!isMobile()) {
     letters.forEach((letter) => {
-    let hoverAnimation;
+      let hoverAnimation
 
-    letter.addEventListener('mouseenter', () => {
-      if (hoverAnimation?.isActive()) {
-        return; // Do nothing if any animation is active
-      }
+      letter.addEventListener('mouseenter', () => {
+        if (hoverAnimation?.isActive()) {
+          return // Do nothing if any animation is active
+        }
 
-      hoverAnimation = gsap.timeline()
-        .to(letter, {
-          ease: 'elastic.out(1, 0.9)',
-          rotateY: 360,
-          duration: 3,
-          transformOrigin: 'center',
-          color: gsap.utils.random(brightColors)
-        })
-        .to(letter, {
-          rotateY: 0,
-          ease: 'elastic.out(1, 0.9)',
-          duration: 2,
-          transformOrigin: 'center',
-          color: "#f12602"
-    }); 
-    });
-  });
-
+        hoverAnimation = gsap
+          .timeline()
+          .to(letter, {
+            ease: 'elastic.out(1, 0.9)',
+            rotateY: 360,
+            duration: 3,
+            transformOrigin: 'center',
+            color: gsap.utils.random(brightColors)
+          })
+          .to(letter, {
+            rotateY: 0,
+            ease: 'elastic.out(1, 0.9)',
+            duration: 2,
+            transformOrigin: 'center',
+            color: '#f12602'
+          })
+      })
+    })
 
     // Apply the same hover animations to each individual letter of the nav links
     // navLetters.forEach((letter) => {
@@ -143,34 +141,35 @@ onMounted(() => {
     //   })
     // })
 
-   if (!isMobile()) {
+    if (!isMobile()) {
       navLetters.forEach((letter) => {
-      let hoverAnimation;
+        let hoverAnimation
 
-      letter.addEventListener('mouseenter', () => {
-        if (hoverAnimation?.isActive()) {
-          return; // Do nothing if any animation is active
-        }
+        letter.addEventListener('mouseenter', () => {
+          if (hoverAnimation?.isActive()) {
+            return // Do nothing if any animation is active
+          }
 
-        hoverAnimation = gsap.timeline()
-          .to(letter, {
-            ease: 'elastic.out(1, 0.9)',
-            rotateY: 360,
-            duration: 3,
-            transformOrigin: 'center',
-            color: gsap.utils.random(brightColors)
-          })
-          .to(letter, {
-            rotateY: 0,
-            ease: 'elastic.out(1, 0.9)',
-            duration: 2,
-            transformOrigin: 'center',
-            color: "#f12602"
-      }); 
-      });
-    });
+          hoverAnimation = gsap
+            .timeline()
+            .to(letter, {
+              ease: 'elastic.out(1, 0.9)',
+              rotateY: 360,
+              duration: 3,
+              transformOrigin: 'center',
+              color: gsap.utils.random(brightColors)
+            })
+            .to(letter, {
+              rotateY: 0,
+              ease: 'elastic.out(1, 0.9)',
+              duration: 2,
+              transformOrigin: 'center',
+              color: '#f12602'
+            })
+        })
+      })
+    }
   }
-}
 
   watch(showMobileMenu, (newValue) => {
     if (newValue) {
@@ -184,7 +183,7 @@ onMounted(() => {
           ease: 'elastic.out(1,0.3)',
           duration: 2,
           stagger: {
-            from: "random",
+            from: 'random',
             amount: 0.3,
             each: 0.1
           },
@@ -194,18 +193,22 @@ onMounted(() => {
     }
   })
 })
-
 </script>
 
 <template>
   <header>
     <div class="logo">
-      <RouterLink class="londrina-solid-regular" to="/" @click="closeMobileMenu"><span>PETE CANDELAND DIRECTOR</span></RouterLink>
+      <RouterLink class="londrina-solid-regular" to="/" @click="closeMobileMenu"
+        ><span>PETE CANDELAND DIRECTOR</span></RouterLink
+      >
     </div>
     <nav class="desktop-nav">
       <RouterLink class="londrina-solid-regular" to="/" @click="closeMobileMenu">work</RouterLink>
       <a class="londrina-solid-regular" href="#" @click.prevent="openShowreel">showreel</a>
       <RouterLink class="londrina-solid-regular" to="/art">art</RouterLink>
+      <RouterLink class="londrina-solid-regular" to="/podcast-nscb"
+        >never stop candy bang</RouterLink
+      >
       <RouterLink class="londrina-solid-regular" to="/about">about</RouterLink>
       <a class="londrina-solid-regular" href="mailto:petecandeland@gmail.com">contact</a>
     </nav>
@@ -214,13 +217,19 @@ onMounted(() => {
       <a class="close-btn" @click="closeMobileMenu">x</a>
       <RouterLink class="londrina-solid-regular animated" to="/" @click="closeMobileMenu"
         >work</RouterLink
-        >
-        <a class="londrina-solid-regular animated" href="#" @click.prevent="openShowreel">showreel</a>
+      >
+      <a class="londrina-solid-regular animated" href="#" @click.prevent="openShowreel">showreel</a>
       <RouterLink class="londrina-solid-regular animated" to="/about" @click="closeMobileMenu"
         >about</RouterLink
       >
       <RouterLink class="londrina-solid-regular animated" to="/art" @click="closeMobileMenu"
         >art</RouterLink
+      >
+      <RouterLink
+        class="londrina-solid-regular animated"
+        to="/podcast-nscb"
+        @click="closeMobileMenu"
+        >never stop candy bang</RouterLink
       >
       <a
         class="londrina-solid-regular animated"
@@ -262,7 +271,7 @@ nav a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color:  var(--background-color);
+  background-color: var(--background-color);
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -278,8 +287,7 @@ nav a {
   display: flex;
   opacity: 1;
   visibility: visible;
-  transition:
-    opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .mobile-nav a.animated {

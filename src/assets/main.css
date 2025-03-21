@@ -52,7 +52,7 @@ header {
 }
 
 .logo a {
-  font-size: 30px;
+  font-size: 28px;
   text-decoration: none;
   color: var(--text-color);
   transition: color 0.4s;
@@ -97,7 +97,7 @@ nav a.router-link-active::before {
 }
 
 nav a:nth-of-type(2n):before {
-  transform: rotate(-3deg);
+  transform: rotate(-2deg);
 }
 
 nav a:hover::before {
