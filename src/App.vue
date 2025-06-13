@@ -7,7 +7,7 @@ import VideoPlayer from '@/components/VideoPlayer.vue'
 const showMobileMenu = ref(false)
 const showPlayer = ref(false)
 const showShowreelPlayer = ref(false)
-const vimeoUrl = 'https://vimeo.com/1001251940'
+const vimeoUrl = 'https://vimeo.com/1091957965'
 const brightColors = ['#1E3A8A', '#16A34A', '#8B5CF6', '#ff0909', '#0D9488', '#FACC15']
 
 const toggleMobileMenu = () => {

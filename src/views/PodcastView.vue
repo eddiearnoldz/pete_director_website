@@ -1,6 +1,7 @@
 <template>
   <div class="podcast container">
-    <h1 class="fade-in">The Never Stop Candy Bang podcast is coming soon...</h1>
+    <img src="/assets/images/CandyBang.webp" alt="">
+    <h1 class="fade-in">coming soon...</h1>
   </div>
 </template>
 
@@ -8,11 +9,17 @@
 .podcast.container {
   padding: 2rem;
   width: calc(100vw - 4rem);
+  display: flex;
+  flex-direction: column;
 }
 .podcast h1 {
   color: var(--text-color-hover);
   font-size: 40px;
-  text-align: center;
+  text-align: center; 
+}
+
+.podcast img {
+  width: clamp(300px, 50vw, 1000px);
 }
 
 .fade-in {

@@ -44,7 +44,7 @@ export const videos = [
   {
     title: "Famous Five | Great Western Railway | Commercial",
     image: '/assets/gifs/Great-Western-Railway-Famous-Five-Directors-Cut.gif',
-    filters: ['work_director', 'genre_commercial', 'clients_great-western' ],
+    filters: ['work_director', 'genre_commercial', 'clients_GWR' ],
     videoUrl: 'https://vimeo.com/1001262508',
     thumbnail:'/assets/thumbnails/great_western_famous_five.webp'
   },
@@ -65,7 +65,7 @@ export const videos = [
   {
     title: "Five and the Missing Jewels | Great Western Railway | Commercial",
     image: '/assets/gifs/Great-Western-Railway-Five-&-The-Missing-Jewels.gif',
-    filters: ['work_director', 'genre_commercial', 'clients_great-western'],
+    filters: ['work_director', 'genre_commercial', 'clients_GWR'],
     videoUrl: 'https://vimeo.com/1001263136',
     thumbnail: '/assets/thumbnails/great_western_five_missing_jewels.webp'
   },
@@ -222,5 +222,26 @@ export const videos = [
     filters: ['work_director', 'genre_live', 'clients_gorillaz'],
     videoUrl: 'https://vimeo.com/1001251021/847126dd9c',
     thumbnail: '/assets/thumbnails/gorillaz-clint-eastwood-live.webp'
+  },
+  {
+    title: "Emmy Lou | Disney | Screen Test",
+    image: '/assets/gifs/emmy_Lou.gif',
+    filters: ['work_director', 'clients_test'],
+    videoUrl: 'https://vimeo.com/1091957644',
+    thumbnail: '/assets/thumbnails/emmy_lou.webp'
+  },
+  {
+    title: "Toad's Wild Ride | Disney | Screen Test",
+    image: '/assets/gifs/toads_wild_ride.gif',
+    filters: ['work_director', 'clients_test'],
+    videoUrl: 'https://vimeo.com/1091959037',
+    thumbnail: '/assets/thumbnails/toads_wild_ride.webp'
+  },
+  {
+    title: "Pan | Pete Candeland | Screen Test",
+    image: '/assets/gifs/pan.gif',
+    filters: ['work_director', 'clients_test'],
+    videoUrl: 'https://vimeo.com/1091957766',
+    thumbnail: '/assets/thumbnails/pan.webp'
   }
 ];
