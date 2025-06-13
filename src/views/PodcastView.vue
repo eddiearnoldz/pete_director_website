@@ -1,6 +1,6 @@
 <template>
   <div class="podcast container">
-    <img src="/assets/images/CandyBang.webp" alt="">
+    <img class="fade-in" src="/assets/images/CandyBang.webp" alt="">
     <h1 class="fade-in">coming soon...</h1>
   </div>
 </template>
