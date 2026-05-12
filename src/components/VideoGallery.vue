@@ -54,7 +54,6 @@ export default defineComponent({
     const filters = ref([
       'work_director',
       'clients_BBC',
-      'clients_coke',
       'clients_finlandia',
       'clients_gorillaz',
       'clients_GWR',
@@ -64,6 +63,7 @@ export default defineComponent({
       'clients_kia',
       'clients_league-of-legends',
       'clients_mazda',
+      'clients_coinbase',
       'clients_riot-games',
       'clients_rock-band',
       'clients_red-bull',
