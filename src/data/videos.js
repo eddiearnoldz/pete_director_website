@@ -7,11 +7,11 @@ export const videos = [
     thumbnail: '/assets/thumbnails/coinbase.webp'
   },
   {
-    title: 'Iron Maiden World Tour 2025 | Teaser',
-    image: '/assets/gifs/iron_maiden_teaser.gif',
-    filters: ['work_director', 'genre_music-video', 'clients_iron-maiden'],
-    videoUrl: 'https://vimeo.com/1191620188',
-    thumbnail: '/assets/thumbnails/iron_maiden_teaser.webp'
+    title: 'Famous Five | Great Western Railway | Commercial',
+    image: '/assets/gifs/Great-Western-Railway-Famous-Five-Directors-Cut.gif',
+    filters: ['work_director', 'genre_commercial', 'clients_GWR'],
+    videoUrl: 'https://vimeo.com/1001262508',
+    thumbnail: '/assets/thumbnails/great_western_famous_five.webp'
   },
   {
     title: 'Iron Maiden World Tour: Aces high | Visuals',
@@ -19,6 +19,20 @@ export const videos = [
     filters: ['work_director', 'genre_music-video', 'clients_iron-maiden'],
     videoUrl: 'https://vimeo.com/1191620187',
     thumbnail: '/assets/thumbnails/iron_maiden_aces.webp'
+  },
+  {
+    title: 'Pan | Pete Candeland | Screen Test',
+    image: '/assets/gifs/pan.gif',
+    filters: ['work_director', 'clients_test'],
+    videoUrl: 'https://vimeo.com/1091957766',
+    thumbnail: '/assets/thumbnails/pan.webp'
+  },
+  {
+    title: 'BBC Stadium Olympics | BBC | Commercial',
+    image: '/assets/gifs/BBC_stadiumUK_full_length.gif',
+    filters: ['work_director', 'genre_commercial', 'clients_BBC'],
+    videoUrl: 'https://vimeo.com/1001261655',
+    thumbnail: '/assets/thumbnails/bbc_olympics.webp'
   },
   {
     title: 'Iron Maiden World Tour: Killers | Visuals',
@@ -35,18 +49,18 @@ export const videos = [
     thumbnail: '/assets/thumbnails/gorillaz_tomorrow.webp'
   },
   {
-    title: 'BBC Stadium Olympics | BBC | Commercial',
-    image: '/assets/gifs/BBC_stadiumUK_full_length.gif',
-    filters: ['work_director', 'genre_commercial', 'clients_BBC'],
-    videoUrl: 'https://vimeo.com/1001261655',
-    thumbnail: '/assets/thumbnails/bbc_olympics.webp'
-  },
-  {
     title: 'Stylo | Gorillaz | Music Video',
     image: '/assets/gifs/Gorillaz-Stylo-(Official-Video).gif',
     filters: ['work_director', 'genre_music-video', 'clients_gorillaz'],
     videoUrl: 'https://vimeo.com/1001274314',
     thumbnail: '/assets/thumbnails/gorillaz_stylo.webp'
+  },
+  {
+    title: 'Iron Maiden World Tour 2025 | Teaser',
+    image: '/assets/gifs/iron_maiden_teaser.gif',
+    filters: ['work_director', 'genre_music-video', 'clients_iron-maiden'],
+    videoUrl: 'https://vimeo.com/1191620188',
+    thumbnail: '/assets/thumbnails/iron_maiden_teaser.webp'
   },
   {
     title: 'Incredible World | MAZDA | Commercial',
@@ -68,13 +82,6 @@ export const videos = [
     filters: ['work_director', 'genre_commercial', 'clients_rock-band'],
     videoUrl: 'https://vimeo.com/1001264309',
     thumbnail: '/assets/thumbnails/rockband.webp'
-  },
-  {
-    title: 'Famous Five | Great Western Railway | Commercial',
-    image: '/assets/gifs/Great-Western-Railway-Famous-Five-Directors-Cut.gif',
-    filters: ['work_director', 'genre_commercial', 'clients_GWR'],
-    videoUrl: 'https://vimeo.com/1001262508',
-    thumbnail: '/assets/thumbnails/great_western_famous_five.webp'
   },
   {
     title: '19-2000 | Gorillaz | Music Video',
@@ -138,6 +145,13 @@ export const videos = [
     filters: ['work_director', 'genre_music-video', 'clients_gorillaz'],
     videoUrl: 'https://vimeo.com/1001273137',
     thumbnail: '/assets/thumbnails/gorillaz_dare.webp'
+  },
+  {
+    title: "Toad's Wild Ride | Disney | Screen Test",
+    image: '/assets/gifs/toads_wild_ride.gif',
+    filters: ['work_director', 'clients_test'],
+    videoUrl: 'https://vimeo.com/1091959037',
+    thumbnail: '/assets/thumbnails/toads_wild_ride.webp'
   },
   {
     title: 'El Mañana | Gorillaz | Music Video',
@@ -257,19 +271,5 @@ export const videos = [
     filters: ['work_director', 'clients_test'],
     videoUrl: 'https://vimeo.com/1091957644',
     thumbnail: '/assets/thumbnails/emmy_lou.webp'
-  },
-  {
-    title: "Toad's Wild Ride | Disney | Screen Test",
-    image: '/assets/gifs/toads_wild_ride.gif',
-    filters: ['work_director', 'clients_test'],
-    videoUrl: 'https://vimeo.com/1091959037',
-    thumbnail: '/assets/thumbnails/toads_wild_ride.webp'
-  },
-  {
-    title: 'Pan | Pete Candeland | Screen Test',
-    image: '/assets/gifs/pan.gif',
-    filters: ['work_director', 'clients_test'],
-    videoUrl: 'https://vimeo.com/1091957766',
-    thumbnail: '/assets/thumbnails/pan.webp'
   }
 ]
